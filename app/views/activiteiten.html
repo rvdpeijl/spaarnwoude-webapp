@@ -1,0 +1,7 @@
+Filter: <input ng-model="actFilter"> <br>
+<table>
+    <tr ng-repeat="activiteit in activiteiten | filter:actFilter">
+        <td>{{ activiteit.naam }} </td>
+        <td>{{ activiteit.locatie.locatieNaam }}</td>
+    </tr>
+</table>
