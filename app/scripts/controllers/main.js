@@ -33,7 +33,12 @@ app.controller('HomeCtrl', function ($scope, activiteiten, weerData) {
 });
 
 app.controller('ActiviteitenCtrl', function ($scope, activiteiten) {
-
+    $scope.activiteitenLimit = 2;
+    $scope.addMoreItems = function() {
+        for(var i = 1; i <= 8; i++) {
+          $scope.activiteitenLimit++;
+        }
+    }
 });
 
 app.controller('KaartCtrl', function ($scope, activiteiten) {

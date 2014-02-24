@@ -34,5 +34,77 @@
             "latitude":"52.404615"
         },
         "homepage":"http://www.google.nl"
+    },
+    {
+        "naam":"Snowboarden",
+        "id":"0",
+        "url":"",
+        "organisatie":"Snow Planet",
+        "locatie" : {
+            "locatieNaam":"Snow planet Spaarnwoude",
+            "longitude":"4.692171",
+            "latitude":"52.404615"
+        },
+        "homepage":"http://www.google.nl"
+    },
+    {
+        "naam":"Dineren",
+        "id":"1",
+        "url":"",
+        "organisatie":"Maccie Donalds",
+        "locatie" : {
+            "locatieNaam":"Mac Donalds",
+            "longitude":"4.692171",
+            "latitude":"52.404615"
+        },
+        "homepage":"http://www.google.nl"
+    },
+    {
+        "naam":"Luchtvaart",
+        "id":"2",
+        "url":"",
+        "organisatie":"OAD Reizen",
+        "locatie" : {
+            "locatieNaam":"De lucht",
+            "longitude":"4.692171",
+            "latitude":"52.404615"
+        },
+        "homepage":"http://www.google.nl"
+    },
+    {
+        "naam":"Snowboarden",
+        "id":"0",
+        "url":"",
+        "organisatie":"Snow Planet",
+        "locatie" : {
+            "locatieNaam":"Snow planet Spaarnwoude",
+            "longitude":"4.692171",
+            "latitude":"52.404615"
+        },
+        "homepage":"http://www.google.nl"
+    },
+    {
+        "naam":"Dineren",
+        "id":"1",
+        "url":"",
+        "organisatie":"Maccie Donalds",
+        "locatie" : {
+            "locatieNaam":"Mac Donalds",
+            "longitude":"4.692171",
+            "latitude":"52.404615"
+        },
+        "homepage":"http://www.google.nl"
+    },
+    {
+        "naam":"Luchtvaart",
+        "id":"2",
+        "url":"",
+        "organisatie":"OAD Reizen",
+        "locatie" : {
+            "locatieNaam":"De lucht",
+            "longitude":"4.692171",
+            "latitude":"52.404615"
+        },
+        "homepage":"http://www.google.nl"
     }
 ]

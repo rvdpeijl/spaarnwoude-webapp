@@ -1,6 +1,6 @@
 Filter: <input ng-model="actFilter"> <br>
     <ul>
-        <li ng-repeat="activiteit in activiteiten | filter:actFilter" >
+        <li ng-repeat="activiteit in activiteiten | filter:actFilter | limitTo:activiteitenLimit" infinite-scroll="addMoreItems()" infinite-scroll-distance='1'>
         <h1>{{ activiteit.naam }}</h1>
         <p>{{ activiteit.locatie.locatieNaam }}</p>
         <small>{{ activiteit.id }}</small>
