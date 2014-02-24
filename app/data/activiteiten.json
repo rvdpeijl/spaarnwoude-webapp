@@ -37,7 +37,7 @@
     },
     {
         "naam":"Snowboarden",
-        "id":"0",
+        "id":"3",
         "url":"",
         "organisatie":"Snow Planet",
         "locatie" : {
@@ -49,7 +49,7 @@
     },
     {
         "naam":"Dineren",
-        "id":"1",
+        "id":"4",
         "url":"",
         "organisatie":"Maccie Donalds",
         "locatie" : {
@@ -61,7 +61,7 @@
     },
     {
         "naam":"Luchtvaart",
-        "id":"2",
+        "id":"5",
         "url":"",
         "organisatie":"OAD Reizen",
         "locatie" : {
@@ -73,7 +73,7 @@
     },
     {
         "naam":"Snowboarden",
-        "id":"0",
+        "id":"6",
         "url":"",
         "organisatie":"Snow Planet",
         "locatie" : {
@@ -85,7 +85,7 @@
     },
     {
         "naam":"Dineren",
-        "id":"1",
+        "id":"7",
         "url":"",
         "organisatie":"Maccie Donalds",
         "locatie" : {
@@ -97,7 +97,7 @@
     },
     {
         "naam":"Luchtvaart",
-        "id":"2",
+        "id":"8",
         "url":"",
         "organisatie":"OAD Reizen",
         "locatie" : {
