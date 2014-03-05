@@ -1,0 +1,11 @@
+<p>kaart</p>
+
+<input type="text" ng-model="filtertje.naam">
+
+<google-map center="map.center" zoom="map.zoom" draggable="true" bounds="map.bounds">
+
+	<markers>
+        <marker ng-repeat="marker in markers | filter:filtertje" coords="marker" icon="icon">
+        </marker>
+    </markers>
+</google-map>
