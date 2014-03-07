@@ -21,4 +21,5 @@ app.factory('weerData', function($http) {
 
 app.controller('AppCtrl', function($scope, $rootScope, weerData) {
     $rootScope.activiteit = {};
+    $rootScope.singleHidden = true;
 })
