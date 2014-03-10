@@ -5,7 +5,7 @@
 <google-map center="map.center" zoom="map.zoom" draggable="true" bounds="map.bounds">
 
 	<markers>
-        <marker ng-repeat="marker in markers | filter:filtertje" coords="marker" icon="icon">
+        <marker ng-repeat="activiteit in activiteiten | filter:filtertje" coords="{ latitude: activiteit.latitude, longitude: activiteit.longitude }" icon="icon" click="getActiviteit({ activiteit: activiteit })">
         </marker>
     </markers>
 </google-map>

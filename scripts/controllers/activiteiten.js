@@ -7,7 +7,7 @@ app.controller('ActiviteitenCtrl', function ($scope, $rootScope) {
         });
 
         $rootScope.activiteit = activiteit;
-        console.log(activiteit)
+        console.log(activiteit);
 
     }
 })
