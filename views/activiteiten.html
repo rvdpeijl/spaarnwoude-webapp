@@ -1,3 +1,11 @@
+<div ng-hide="singleHidden" id="single" ng-click="singleHandler.closeSingle($event)">
+    <div class="wrapper">
+    	<div class="close" ng-click="singleHandler.closeSingle($event)">X</div>
+        <h1>Naam: {{ activiteit.naam }}</h1>
+        <p>Organisatie {{ activiteit.organisatie }}</p>
+    </div>
+</div>
+
 Filter: <input ng-model="actFilter">
 
 <div class="activiteitenContainer">

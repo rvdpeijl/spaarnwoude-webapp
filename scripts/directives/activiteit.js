@@ -5,8 +5,7 @@ app.directive('activiteit', function($rootScope) {
 
             var id = $scope.$eval(attrs.activiteitId),
                 activiteiten = $scope.activiteiten,
-                index = id - 1,
-                activiteit = activiteiten[index];
+                activiteit = $scope.singleHandler.filter(id);
 
             // maak foto wrapper en element
             var fotoWrapper = document.createElement('div'),
@@ -29,7 +28,7 @@ app.directive('activiteit', function($rootScope) {
             knop.innerHTML = 'Bekijk';
             
             knop.onclick = function() {
-                console.log(id);
+                $scope.singleHandler.showSingle(id);
             };
 
             element[0].appendChild(fotoWrapper);

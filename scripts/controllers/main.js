@@ -1,13 +1,14 @@
 'use strict';
 
 app.run(function($rootScope, activiteiten){
+
+    $rootScope.activiteiten = [];
+
     activiteiten.success(function(data) { 
         $rootScope.activiteiten = data;
     })
 
-    $rootScope.activiteit = {
-        naam:'undefined',
-    }
+    $rootScope.singleHidden = true;
 
 })
 
@@ -20,6 +21,5 @@ app.factory('weerData', function($http) {
 })
 
 app.controller('AppCtrl', function($scope, $rootScope, weerData) {
-    $rootScope.activiteit = {};
-    $rootScope.singleHidden = true;
+    
 })

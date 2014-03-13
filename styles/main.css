@@ -221,3 +221,17 @@ activiteit button:active {
   background-color: rgba(2,2,2, 0.6);
   z-index: 5;
 }
+
+#single .wrapper {
+  width: 800px;
+  height: 600px;
+  background-color: #fff;
+
+  margin: 5% auto;
+}
+
+#single .wrapper .close {
+  padding: 5px;
+  float: right;
+  cursor: pointer; cursor: hand;
+}

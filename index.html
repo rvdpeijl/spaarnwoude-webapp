@@ -16,15 +16,9 @@
         </ul>
     </nav>
 
-    <div ng-hide="singleHidden" id="single">
-        <hr>
-            <h1> Naam: {{ activiteit[0].naam }} </h1>
-            <p> Organisatie {{ activiteit[0].organisatie }}</p>
-        <hr>
-    </div>
-
     <div class="container" ng-view=""></div>
 
+    <script src='scripts/vendor/jquery.js'></script>
     <script src="scripts/vendor/angular/angular.min.js"></script>
     <script src="scripts/vendor/angular/angular-animate.js"></script>
     <script src="scripts/vendor/angular/angular-route.js"></script>
