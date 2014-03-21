@@ -68,7 +68,7 @@ a:hover {
 .container {
   width: 1000px;
   margin: 50px auto;
-  overflow: auto;
+  /*overflow: auto;*/
 }
 
 #fbContainer {
