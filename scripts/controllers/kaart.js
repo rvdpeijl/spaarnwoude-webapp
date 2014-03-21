@@ -22,5 +22,5 @@ app.controller('KaartCtrl', function ($scope) {
 		{ latitude: 63, longitude: -34, naam: '#twerkit' },
 	];
 
-	$scope.icon = '../spaarnwoude/images/yeoman.png';
+	$scope.icon = 'images/yeoman.png';
 })
