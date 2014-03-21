@@ -1,6 +1,9 @@
 'use strict';
 
-app.controller('KaartCtrl', function ($scope, $rootScope) {
+app.controller('KaartCtrl', function ($scope, $rootScope, activiteiten) {
+
+	var infoWindow = new google.maps.InfoWindow();
+	
 	$scope.map = {
 	    center: {
 	        latitude: 45,
@@ -12,7 +15,7 @@ app.controller('KaartCtrl', function ($scope, $rootScope) {
 	    	southwest: "-72.147047, -172.377385"
 	    }
 	};
-
+	
 	$scope.markers = [
 		{ latitude: 45, longitude: -73, naam: 'snowplanet' },
 		{ latitude: 46, longitude: -72, naam: 'klimhal' },
@@ -22,11 +25,12 @@ app.controller('KaartCtrl', function ($scope, $rootScope) {
 		{ latitude: 63, longitude: -34, naam: '#twerkit' },
 	];
 
-	$scope.icon = '../spaarnwoude/images/yeoman.png';
+	$scope.icon = '../spaarnwoude-webapp/images/yeoman.png';
 
 	$scope.getActiviteit = function(activiteit) {
 		var self = activiteit;
 		console.log(self.activiteit);
 		$rootScope.singleHidden = false;
 	};
+
 })

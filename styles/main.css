@@ -72,22 +72,52 @@ a:hover {
 }
 
 #fbContainer {
+  background-image:url(../images/bg_user_login.png);
+  /*background-repeat: no-repeat;*/
   float: left;
   width: 250px;
-  height: 100px;
+  height: 156px;
   position: relative;
-  background: #fff;
-
   -webkit-box-shadow: 0px 2px 0px rgba(2,2,2, 0.4);
   -moz-box-shadow: 0px 2px 0px rgba(2,2,2, 0.4);
   box-shadow: 0px 2px 0px rgba(2,2,2, 0.4);
+}
+#fbContainer .foto {
+  background-image: url(http://frankselhorst.nl/img/foto_frank.png);
+  margin: auto;
+  display: block;
+  width: 199px;
+  height: 190px;
+  position: absolute;
+  top: -27px;
+  left: -44px;
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 3px 4px rgba(0,0,0,0.5);
+  -o-box-shadow: 1px 3px 4px rgba(0,0,0,0.5);
+  -webkit-transform: scale(0.4);
+  border-radius: 100%;
+}
+
+#fbContainer .loggedInAs {
+color: #FFF;
+text-shadow: 1px 1px 1px #000;
+position: absolute;
+right: 5px;
+top: 41px;
+font-size: 13px;
+text-align: right;
+}
+
+#fbContainer .loggedInAs b {
+  font-size: 19px;
 }
 
 #welcome {
   float: left;
   width: 25%;
   height: 200px;
-  margin-top: -200px;
+  margin-top: -146px;
 
   text-align: center;
   font-style: italic;

@@ -8,9 +8,9 @@ app.controller('HomeCtrl', function ($scope, $rootScope, $interval, weerData, ac
 
     $scope.interval = null;
 
-    // $scope.interval = $interval(function() {
-    //     $scope.nextSlide();
-    // }, 4000);
+    $scope.interval = $interval(function() {
+        $scope.nextSlide();
+    }, 4000);
 
     $scope.getWeather = function getWeather(weather) {
         $scope.weer.vandaag = weather.list[0];
