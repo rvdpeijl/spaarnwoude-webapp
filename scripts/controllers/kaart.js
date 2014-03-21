@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('KaartCtrl', function ($scope) {
+app.controller('KaartCtrl', function ($scope, $rootScope) {
 	$scope.map = {
 	    center: {
 	        latitude: 45,
@@ -22,5 +22,11 @@ app.controller('KaartCtrl', function ($scope) {
 		{ latitude: 63, longitude: -34, naam: '#twerkit' },
 	];
 
-	$scope.icon = 'images/yeoman.png';
+	$scope.icon = '../spaarnwoude/images/yeoman.png';
+
+	$scope.getActiviteit = function(activiteit) {
+		var self = activiteit;
+		console.log(self.activiteit);
+		$rootScope.singleHidden = false;
+	};
 })

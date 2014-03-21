@@ -1,10 +1,16 @@
-Filter: <input ng-model="actFilter">
-	<br>
-    <ul>
-        <li ng-repeat="activiteit in activiteiten | filter:actFilter">
-        <h1>{{ activiteit.naam }}</h1>
-        <p>{{ activiteit.locatie.locatieNaam }}</p>
-		<img ng-src="data/uploads/{{ activiteit.id }}.png" alt="">
-		<button ng-click="getActivity(activiteit.id)">BUTTOTNNNN</button>
-    	</li>
-    </ul>
+<div ng-hide="singleHidden" id="single" ng-click="singleHandler.closeSingle($event)">
+    <div class="wrapper">
+    	<div class="close" ng-click="singleHandler.closeSingle($event)">X</div>
+        <h1>Naam: {{ activiteit.naam }}</h1>
+        <p>Organisatie {{ activiteit.organisatie }}</p>
+    </div>
+</div>
+
+<div class="filter"> 
+	<p>Filter:</p> 
+	<input ng-model="actFilter" placeholder="Bijvoorbeeld: Fietsen">
+</div>
+
+<div class="activiteitenContainer">
+	<activiteit activiteit-id="{{activiteit.aID}}" class="repeat-item" ng-repeat="activiteit in activiteiten | filter:actFilter"></activiteit>
+</div>

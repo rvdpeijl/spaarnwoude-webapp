@@ -1,4 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@font-face {
+    font-family: 'Open Sans'; /*a name to be used later*/
+    src: url('../fonts/Open_Sans/OpenSans-Regular.ttf'); /*URL to font*/
+}
 
 * {
   margin: 0;
@@ -8,6 +11,7 @@
 html {
   min-height: 100%;
   min-width: 700px;
+  font-family: 'Open Sans';
 }
 
 nav {
@@ -62,13 +66,14 @@ a:hover {
 }
 
 .container {
-  width: 90%;
+  width: 1000px;
   margin: 50px auto;
+  overflow: auto;
 }
 
 #fbContainer {
   float: left;
-  width: 25%;
+  width: 250px;
   height: 100px;
   position: relative;
   background: #fff;
@@ -116,9 +121,11 @@ a:hover {
 }
 
 #fotoSlider {
-  width: 50%;
+  position: relative;
+  width: 500px;
   height: 300px;
   background: #fff;
+  overflow: hidden;
   float: left;
 
   -webkit-box-shadow: 0px 2px 0px rgba(2,2,2, 0.4);
@@ -126,15 +133,99 @@ a:hover {
   box-shadow: 0px 2px 0px rgba(2,2,2, 0.4);
 }
 
+#fotoSlider .wrapper {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+#fotoSlider .wrapper div button:active {
+  background-color: #faf;
+}
+
+#fotoSlider .wrapper activiteit {
+  position: absolute;
+  margin: 0 !important;
+}
+
+#fotoSlider activiteit .fotoWrapper {
+height: 240px;
+}
+
+#fotoSlider .wrapper activiteit button {
+  height: 60px;
+}
+
+#fotoSlider activiteit .wrapper p {
+margin-top: 22px;
+margin-left: 22px;
+float: left;
+font-size: 14px;
+}
+
+#fotoSlider .left {
+  position: absolute;
+  color: #fff;
+  width: 40px;
+  background: transparent;
+  left: 0;
+  top: 0;
+  bottom: 70px;
+  cursor: pointer;
+  cursor: hand;
+  z-index: 5;
+}
+
+#fotoSlider .right {
+  position: absolute;
+  color: #fff;
+  width: 40px;
+  background: transparent;
+  right: 0;
+  top: 0;
+  bottom: 70px;
+  cursor: pointer;
+  cursor: hand;
+
+  z-index: 5;
+}
+
 #mapsWidget {
-  width: 25%;
+  width: 250px;
   height: 150px;
   float: left;
-  background: #ff9405;
+  background-color: #ff9405;
+  position: relative;
+}
+
+#mapsWidget .wrap {
+  width: 100%;
+  height: 100%;
+}
+
+#mapsWidget .wrap p {
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  width: 100%;
+  background-color: #ff9405;
+
+  font-size: 12px;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  color: #fff;
+}
+
+#mapsWidget img {
+  width: 100%;
+  height: 100%;
 }
 
 #weatherWidget {
-  width: 25%;
+  width: 250px;
   height: 150px;
   float: left;
   background: #32aadf;
@@ -144,18 +235,114 @@ a:hover {
   box-shadow: 0px 2px 0px rgba(2,2,2, 0.4);
 }
 
-#activiteiten {
-  width:100%;
-  display: block;
-  list-style: none;
+.filter {
+  width: 1030px;
+  margin: auto;
 }
 
-#activiteiten .activiteit {
+.filter p {
+  width: 200px;
+  padding: 10px;
+  color: white;
+  font-style: italic;
+  background-color: #222;
+  font-size: 14px;
+}
+
+.filter input {
+  width: 200px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  font-size: 14px;
+}
+
+.activiteitenContainer {
+  width: 1030px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+activiteit {
+  width: 500px;
   float: left;
-  background: white;
-  padding: 0px;
-  margin: 0px;
-  width: 50%;
+  margin-bottom: 15px;
+}
+
+activiteit:nth-child(odd) {
+  margin-right: 15px;
+}
+
+activiteit .fotoWrapper {
+  height: 200px;
+}
+
+activiteit .foto {
+  width: 100%;
+  height: 100%;
+}
+
+activiteit .wrapper {
+  background: #fff;
+  height: 50px;
+}
+
+activiteit .wrapper p {
+  margin-top: 15px;
+  margin-left: 15px;
+  float: left;
+  font-size: 14px;
+}
+
+activiteit button {
+  background-color: #222;
+  width: 150px;
+  height: 100%;
+  float: right;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer; cursor: hand;
+  text-transform: uppercase;
+  font-size: 13px;
+
+  -webkit-transition: background-color .3s;
+  -moz-transition: background-color .3s;
+  -ms-transition: background-color .3s;
+  -o-transition: background-color .3s;
+  transition: background-color .3s;
+}
+
+activiteit button:hover {
+  background-color: #333;
+}
+
+activiteit button:active {
+  background-color: #555;
 }
 
 .angular-google-map-container { height: 400px; }
+
+#single {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(2,2,2, 0.6);
+  z-index: 5;
+}
+
+#single .wrapper {
+  width: 800px;
+  height: 600px;
+  background-color: #fff;
+
+  margin: 5% auto;
+}
+
+#single .wrapper .close {
+  padding: 5px;
+  float: right;
+  cursor: pointer; cursor: hand;
+}
