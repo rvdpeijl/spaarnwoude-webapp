@@ -13,7 +13,7 @@ app.directive('activiteit', function($rootScope) {
 
             fotoWrapper.className = 'fotoWrapper';
             foto.className = 'foto';
-            foto.src = 'data/uploads/' + id + '.png';
+            foto.src = $rootScope.config.url + activiteit.images.big;
             fotoWrapper.appendChild(foto);
 
             // maak titel wrapper en element

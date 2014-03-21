@@ -10,6 +10,11 @@ app.run(function($rootScope, activiteiten){
 
     $rootScope.singleHidden = true;
 
+    $rootScope.config = {
+		env: 'staging',
+		url: 'http://spaarnwoude.creadiv.nl/files'
+    };
+
 })
 
 app.factory('activiteiten', function($http) { 

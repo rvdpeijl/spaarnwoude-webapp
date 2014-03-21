@@ -22,7 +22,10 @@ app.controller('ActiviteitenCtrl', function ($scope, $rootScope) {
                         aID: item.aID,
                         naam: item.naam,
                         categorie: item.categorie,
-                        organisatie: item.organisatie
+                        organisatie: item.organisatie,
+                        images: {
+                            big: item.big_image1
+                        }
                     };
                 }
             });

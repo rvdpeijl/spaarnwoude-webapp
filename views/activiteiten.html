@@ -6,8 +6,11 @@
     </div>
 </div>
 
-Filter: <input ng-model="actFilter">
+<div class="filter"> 
+	<p>Filter:</p> 
+	<input ng-model="actFilter" placeholder="Bijvoorbeeld: Fietsen">
+</div>
 
 <div class="activiteitenContainer">
-	<activiteit activiteit-id="{{activiteit.aID}}" ng-repeat="activiteit in activiteiten | filter:actFilter"></activiteit>
+	<activiteit activiteit-id="{{activiteit.aID}}" class="repeat-item" ng-repeat="activiteit in activiteiten | filter:actFilter"></activiteit>
 </div>

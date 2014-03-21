@@ -1,14 +1,29 @@
+<div ng-hide="singleHidden" id="single" ng-click="singleHandler.closeSingle($event)">
+    <div class="wrapper">
+    	<div class="close" ng-click="singleHandler.closeSingle($event)">X</div>
+        <h1>Naam: {{ activiteit.naam }}</h1>
+        <p>Organisatie {{ activiteit.organisatie }}</p>
+    </div>
+</div>
+
 <div id="fbContainer">
 	<div class="foto"></div>
 	<div class="loguit"><a href="#/">Log uit</a></div>
 </div>
 
 <div id="fotoSlider">
-	
+	<div class="left" ng-click="prevSlide()"></div>
+	<div class="right" ng-click="nextSlide()"></div>
+	<div class="wrapper" ng-mouseover="pauseAnimation()" ng-mouseleave="resumeAnimation()">
+		<activiteit activiteit-id="{{activiteit.aID}}" class="slide slide-animation" ng-hide="!isCurrentSlideIndex($index)" ng-repeat="activiteit in activiteiten | filter:actFilter"></activiteit>
+	</div>
 </div>
 
 <div id="mapsWidget">
-	
+	<div class="wrap">
+		<a href="#/kaart"><p>Bekijk de interactieve kaart van Spaarnwoude</p></a>
+		<img ng-src="{{$root.config.url}}/images/minimap.jpg" alt="">
+	</div>
 </div>
 
 <div id="weatherWidget">
