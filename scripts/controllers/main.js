@@ -12,7 +12,8 @@ app.run(function($rootScope, activiteiten){
 
     $rootScope.config = {
 		env: 'staging',
-		url: 'http://spaarnwoude.creadiv.nl/files'
+		url: 'http://spaarnwoude.creadiv.nl/files',
+        home: 'http://localhost/spaarnwoude-webapp'
     };
 
 })
