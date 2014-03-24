@@ -365,17 +365,90 @@ activiteit button:active {
 }
 
 #single .wrapper {
-  width: 800px;
-  height: 600px;
-  background-color: #fff;
-
+  width: 1000px;
+  min-height: 600px;
   margin: 5% auto;
+  position: relative;
 }
 
 #single .wrapper .close {
   padding: 5px;
   float: right;
-  cursor: pointer; cursor: hand;
+  color: #FFF;
+  cursor: pointer;
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  cursor: hand;
+  background: url(../images/close_icon_single.png);
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+}
+
+#single .wrapper .left, .right {
+  float:left;
+  width:50%;
+  color:#333;
+  overflow:hidden;
+  height:100%;
+  min-height:600px;
+}
+
+#single .left .bigImage img {
+  display: block;
+  margin: auto;
+  -webkit-transform: scale(1.2);
+}
+
+#single .wrapper .right {
+    background:white;
+}
+
+#single .wrapper .right p.categorie {
+  background-image: url(../images/categorie_icon_single.png);
+  background-position: 0px 7px;
+  padding-left: 24px;
+  background-repeat: no-repeat;
+  margin: 10px 0 10px 23px;
+  font-size: 11px;
+  color:#333;
+}
+
+#single .wrapper .right p.organisatie {
+  background-image: url(../images/locatie_icon_single.png);
+  background-position: 4px 6px;
+  padding-left: 20px;
+  background-repeat: no-repeat;
+  margin: 10px 0 10px 23px;
+  font-size: 11px;
+  color:#555;
+
+}
+
+#single .wrapper .right p.organisatie a {
+  color:orange;
+}
+
+#single .wrapper .right p.over {
+  font-size: 13px;
+  color:#555;
+  line-height: 155%;
+  margin-left:23px;
+}
+
+#single .wrapper .right h1.titel {  
+  margin:10px 0 0 24px;
+}
+
+#single .wrapper .right h2 {
+  margin: 10px 0 10px 20px;
+}
+
+#single .wrapper .right .beschikbaarheid {
+  font-size:12px;
+  color:#555;
+  margin-left:23px;
 }
 
 .filterContainer {

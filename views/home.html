@@ -1,8 +1,20 @@
 <div ng-hide="singleHidden" id="single" ng-click="singleHandler.closeSingle($event)">
     <div class="wrapper">
-    	<div class="close" ng-click="singleHandler.closeSingle($event)">X</div>
-        <h1>Naam: {{ activiteit.naam }}</h1>
-        <p>Organisatie {{ activiteit.organisatie }}</p>
+    	<div class="close" ng-click="singleHandler.closeSingle($event)"></div>
+    	<div class="left">
+    		<div class="bigImage"><img src="{{$root.config.url}}/{{activiteit.images.big}}" alt="" class="src"></div>
+    	</div>
+    	<div class="right">
+    		<h1 class="titel">Spaarnwoude</h1>
+    		<p class="organisatie">Snow Planet, Spaarnwoude <br> <a href="#/kaart">Bekijk op de kaart</a>	</p>
+    		<p class="categorie">Categorie(en)<br>Doen, Genieten</p>
+
+    		<h2 class="over">Over deze activiteit</h2>
+    		<p class="over">{{activiteit.long_desc}}</p>
+
+    		<h2>Beschikbaarheid</h2>
+    		<p class="beschikbaarheid">Maandag, Woensdag, Donderdag, Vrijdag, Zaterdag</p>
+    	</div>
     </div>
 </div>
 

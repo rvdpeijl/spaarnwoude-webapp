@@ -76,7 +76,8 @@ app.controller('HomeCtrl', function ($scope, $rootScope, $interval, weerData, ac
                         organisatie: item.organisatie,
                         images: {
                             big: item.big_image1
-                        }
+                        },
+                        long_desc: item.long_desc
                     };
                 }
             });

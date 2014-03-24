@@ -32,7 +32,7 @@ app.controller('ActiviteitenCtrl', function ($scope, $rootScope) {
             return activiteit;
         },
         closeSingle: function(evt) {
-			if(evt.target.id == "single" || evt.target.className == "close") {
+			if(evt.target.id == "single" || evt.target.className == "close" || evt.target.id == "openKaart") {
 				$rootScope.singleHidden = true;
 			}
 		}
