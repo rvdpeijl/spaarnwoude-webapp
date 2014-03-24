@@ -25,7 +25,8 @@ app.controller('ActiviteitenCtrl', function ($scope, $rootScope) {
                         organisatie: item.organisatie,
                         images: {
                             big: item.big_image1
-                        }
+                        },
+                        long_desc: item.long_desc
                     };
                 }
             });
