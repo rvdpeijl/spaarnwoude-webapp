@@ -79,7 +79,9 @@ app.controller('KaartCtrl', function ($scope, $rootScope, $window, activiteiten)
                         organisatie: item.organisatie,
                         images: {
                             big: item.big_image1
-                        }
+                        },
+                        long_desc: item.long_desc
+
                     };
                 }
             });

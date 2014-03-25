@@ -40,13 +40,25 @@
 </div>
 
 <div id="weatherWidget">
-	<table>
+	<div class="wrapper">
+		<p class="weerTop">Weersverwachting Spaarnwoude</p>
+		<div class="slider">
+			<div class="prev">  </div>
+			<div class="deDag">Vandaag</div>
+			<div class="next">  </div>
+			<p class="voorspelling">Regenachtig, 10C</p>
+			<p class="windkracht">Windkracht: 3</p>
+			<img src="" alt="" class="weerIcon">
+		</div>
+	</div>
+
+<!-- 	<table>
 		<tr ng-repeat="dag in weer">
 			<td>{{ dag.dag }}</td>
 			<td>{{ dag.temp.min }} °C</td>
 			<td>{{ dag.temp.max }} °C</td>
 		</tr>
-	</table>	
+	</table>	 -->
 </div>
 
 <div id="welcome">
