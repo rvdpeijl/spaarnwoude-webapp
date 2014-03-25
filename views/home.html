@@ -42,23 +42,18 @@
 <div id="weatherWidget">
 	<div class="wrapper">
 		<p class="weerTop">Weersverwachting Spaarnwoude</p>
+		<div ng-click="prevDag()" class="prev">  </div>
+		<div ng-click="nextDag()" class="next">  </div>
+
 		<div class="slider">
-			<div class="prev">  </div>
-			<div class="deDag">Vandaag</div>
-			<div class="next">  </div>
-			<p class="voorspelling">Regenachtig, 10C</p>
-			<p class="windkracht">Windkracht: 3</p>
-			<img src="" alt="" class="weerIcon">
+			<div ng-repeat="dag in weer" class="slide slide-animation" ng-hide="!isCurrentDagIndex($index)">
+				<div class="deDag">{{dag.dag}}</div>
+				<p class="voorspelling">Temperatuur: {{dag.temp.max}}</p>
+				<p class="windkracht">Windkracht: {{dag.speed}}</p>
+				<img src="" alt="" class="weerIcon">
+			</div>
 		</div>
 	</div>
-
-<!-- 	<table>
-		<tr ng-repeat="dag in weer">
-			<td>{{ dag.dag }}</td>
-			<td>{{ dag.temp.min }} °C</td>
-			<td>{{ dag.temp.max }} °C</td>
-		</tr>
-	</table>	 -->
 </div>
 
 <div id="welcome">

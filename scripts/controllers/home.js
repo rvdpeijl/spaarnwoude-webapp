@@ -2,12 +2,19 @@
 
 app.controller('HomeCtrl', function ($scope, $rootScope, $interval, weerData, activiteiten) {
     $scope.weer = {};
+    $scope.weerIterator = [
+        { niks:'0'},
+        { niks:'1'},
+        { niks:'2'}
+    ]
+    
     weerData.success(function(data) {
         $scope.getWeather(data);
+        
     });
 
     $scope.interval = null;
-
+    $('.prev').hide()
     $scope.interval = $interval(function() {
         $scope.nextSlide();
     }, 4000);
@@ -15,14 +22,20 @@ app.controller('HomeCtrl', function ($scope, $rootScope, $interval, weerData, ac
     $scope.getWeather = function getWeather(weather) {
         $scope.weer.vandaag = weather.list[0];
         $scope.weer.vandaag.dag = 'Vandaag';
+
         $scope.weer.morgen = weather.list[1];
         $scope.weer.morgen.dag = 'Morgen';
+
         $scope.weer.overmorgen = weather.list[2];
         $scope.weer.overmorgen.dag = 'Overmorgen';
     };
 
     $scope.direction = 'left';
     $scope.currentIndex = 0;
+    
+    $scope.directionDag = 'right'
+    $scope.currentDagIndex = 0;
+
 
     $scope.setCurrentSlideIndex = function (index) {
         $scope.direction = (index > $scope.currentIndex) ? 'left' : 'right';
@@ -41,6 +54,48 @@ app.controller('HomeCtrl', function ($scope, $rootScope, $interval, weerData, ac
     $scope.prevSlide = function () {
         $scope.direction = 'right';
         $scope.currentIndex = ($scope.currentIndex > 0) ? --$scope.currentIndex : $scope.activiteiten.length - 1;
+    };
+
+
+
+    $scope.setCurrentDagIndex = function (index) {
+        
+        $scope.directionDag = (index > $scope.currentDagIndex) ? 'left' : 'right';
+        $scope.currentDagIndex = index;
+    };
+
+    $scope.isCurrentDagIndex = function (index) {
+        return $scope.currentDagIndex === index;
+    };
+
+    $scope.nextDag = function () {
+        
+        $scope.currentDagIndex = ($scope.currentDagIndex < $scope.weerIterator.length - 1) ? ++$scope.currentDagIndex : 0;
+        if ($scope.currentDagIndex > 0) {
+            $('.prev').show()
+        } else {
+            $scope.directionDag = 'left';
+        }
+
+        if ($scope.currentDagIndex == 2) {
+            $('.next').hide()
+        }
+        
+    };
+
+    $scope.prevDag = function () {
+        $scope.currentDagIndex = ($scope.currentDagIndex > 0) ? --$scope.currentDagIndex : $scope.weerIterator.length - 1;
+        if ($scope.currentDagIndex < 2) {
+            $('.next').show();
+        } else {
+            $scope.directionDag = 'left';
+        }
+
+        if($scope.currentDagIndex == 0) {
+
+            $('.prev').hide();
+        }
+
     };
 
     $scope.pauseAnimation = function () {
@@ -100,6 +155,10 @@ app.controller('HomeCtrl', function ($scope, $rootScope, $interval, weerData, ac
                 if(scope.direction !== 'right') {
                     finishPoint = -finishPoint;
                 }
+                // if(scope.directionDag !== 'right') {
+                //     finishPoint = -finishPoint;
+                // }
+
                 TweenMax.to(element, 0.5, {left: finishPoint, onComplete: done });
             }
             else {
@@ -116,6 +175,10 @@ app.controller('HomeCtrl', function ($scope, $rootScope, $interval, weerData, ac
                 if(scope.direction === 'right') {
                     startPoint = -startPoint;
                 }
+                // var startPoint = element.parent().width();
+                // if(scope.directionDag === 'right') {
+                //     startPoint = -startPoint;
+                // }
 
                 TweenMax.fromTo(element, 0.5, { left: startPoint }, {left: 0, onComplete: done });
             }
