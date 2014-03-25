@@ -1,8 +1,33 @@
 'use strict';
 
-app.controller('KaartCtrl', function ($scope, $rootScope, activiteiten) {
+var current = '';
+
+var setActiviteit = function(id) {
+	current = id;
+};
+
+var getActiviteit = function() {
+	return current;
+};
+
+app.controller('KaartCtrl', function ($scope, $rootScope, $window, activiteiten) {
 
 	$scope.currentActiviteit = null;
+
+	$(document).on('click', '#infoWindowLink', function(event){
+		var id = $window.getActiviteit();
+	    $scope.singleHandler.showSingle(id);
+	});
+
+	$scope.infoWindow = function(activiteit) {
+		var infoWindowContent =
+			'<p class="infowindow_naam">' + activiteit.naam + '</p>' +
+			'<br>' +
+			'<p>' + activiteit.short_desc + '</p>' +
+			'<a id="infoWindowLink" onclick="setActiviteit(' + activiteit.aID + ')">Bekijk deze activiteit</a>';
+		
+		return infoWindowContent;
+	};
 	
 	$scope.map = {
 	    center: {
@@ -31,25 +56,50 @@ app.controller('KaartCtrl', function ($scope, $rootScope, activiteiten) {
 		}
 	};
 
-	$scope.infoWindow = function(activiteit) {
-		var infoWindowContent =
-			'<p class="infowindow_naam">' + activiteit.naam + '</p>' +
-			'<br>' +
-			'<p>' + activiteit.short_desc + '</p>';
-		
-		return infoWindowContent;
+	$scope.activiteit = {
+		naam: ''
 	};
+
+	$scope.singleHandler = {
+        showSingle: function(id) {
+            $rootScope.$apply($rootScope.singleHidden = false);
+            this.getActivity(id);
+        },
+        getActivity: function(id) {
+            $scope.$apply($scope.activiteit = this.filter(id));
+        },
+        filter: function(id) {
+            var activiteit = {};
+            $scope.activiteiten.forEach(function(item) {
+                if (item.aID == id) {
+                    activiteit = {
+                        aID: item.aID,
+                        naam: item.naam,
+                        categorie: item.categorie,
+                        organisatie: item.organisatie,
+                        images: {
+                            big: item.big_image1
+                        }
+                    };
+                }
+            });
+            return activiteit;
+        },
+        closeSingle: function(evt) {
+			if(evt.target.id == "single" || evt.target.className == "close") {
+				$rootScope.singleHidden = true;
+			}
+		}
+    };
 
 
 	$scope.getActiviteit = function(activiteit) {
 		var self = activiteit;
-		console.log(self.activiteit);
 		$rootScope.singleHidden = false;
 	};
 
 	$scope.openWindow = function(id) {
 		$scope.currentActiviteit = id;
-		console.log($scope.currentActiviteit);
 	};
 
 	$scope.isCurrentActiviteit = function(activiteit) {
