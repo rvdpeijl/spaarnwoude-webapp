@@ -14,20 +14,45 @@ app.controller('KaartCtrl', function ($scope, $rootScope, $window, activiteiten)
 
 	$scope.currentActiviteit = null;
 
-	$(document).on('click', '#infoWindowLink', function(event){
+	$(document).on('click', '.infoWindowLink', function(event){
 		var id = $window.getActiviteit();
 	    $scope.singleHandler.showSingle(id);
 	});
 
 	$scope.infoWindow = function(activiteit) {
+
+		var colors = {
+            beleven: {
+                hex: '#dbdb01'
+            },
+            doen: {
+                hex: '#f18a01'
+            },
+            genieten: {
+                hex: '#b7037e'
+            },
+            verblijven: {
+                hex: '#32aadf'
+            }
+        };
+
 		var infoWindowContent =
-			'<p class="infowindow_naam">' + activiteit.naam + '</p>' +
-			'<br>' +
+			'<div class="infoContainer">' +
+			'<p class="infowindow_naam" style="margin-bottom: 5px;">' + activiteit.naam + '</p>' +
 			'<p>' + activiteit.short_desc + '</p>' +
-			'<a id="infoWindowLink" onclick="setActiviteit(' + activiteit.aID + ')">Bekijk deze activiteit</a>';
+			'<div class="images">' +
+			'<div class="image1"></div>' +
+			'<div class="image2"></div>' +
+			'<div class="image3"></div>' +
+			'</div>' +
+			'<a class="infoWindowLink" style="color:' + colors[activiteit.categorie].hex + ';" onclick="setActiviteit(' + activiteit.aID + ')">Bekijk deze activiteit</a>' + 
+			'<div class="lijntje" style="position: absolute; bottom: 0px; left: 0; right: 0; height: 5px; background-color:' + colors[activiteit.categorie].hex + ';"></div>' +
+			'</div>';
 		
 		return infoWindowContent;
 	};
+
+	$('.gm-style-iw').next().className = 'bla';
 	
 	$scope.map = {
 	    center: {
