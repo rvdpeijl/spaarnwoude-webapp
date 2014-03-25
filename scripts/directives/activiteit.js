@@ -8,7 +8,7 @@ app.directive('activiteit', function($rootScope) {
                 hex: '#dbdb01'
             },
             doen: {
-                hex: '#dbdb01'
+                hex: '#f18a01'
             },
             genieten: {
                 hex: '#b7037e'
