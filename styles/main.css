@@ -22,13 +22,15 @@ nav {
   -moz-box-shadow: 0px 2px 0px rgba(2,2,2, 0.4);
   box-shadow: 0px 2px 0px rgba(2,2,2, 0.4);
 }
+nav .wrap {
+  width:1000px;
+  margin: 0 auto;
+}
 
-nav .logo {
-  padding: 25px;
+nav .wrap .logo {
+  padding: 18px;
   background: #fff;
   float: left;
-  margin-left: 4%;
-
   -webkit-box-shadow: 0px 2px 0px rgba(2,2,2, 0.4);
   -moz-box-shadow: 0px 2px 0px rgba(2,2,2, 0.4);
   box-shadow: 0px 2px 0px rgba(2,2,2, 0.4);
