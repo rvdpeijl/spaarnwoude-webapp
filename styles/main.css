@@ -117,7 +117,7 @@ text-align: right;
 #welcome {
   float: left;
   width: 25%;
-  height: 200px;
+  height: 155px;
   margin-top: -155px;
 
   text-align: center;
@@ -193,6 +193,23 @@ margin-left: 22px;
 float: left;
 font-size: 14px;
 }
+
+#buttons {
+  float:left;
+  margin-top:80px;
+}
+
+#buttons .btn {
+  width: 250px;
+  cursor:pointer;
+  height: 120px;
+  float: left;
+  text-align: right;
+  line-height: 660%;
+  color: #FFF;
+  font-size: 20px;
+}
+
 
 #fotoSlider .left {
   position: absolute;
@@ -500,7 +517,7 @@ activiteit button:active {
 }
 
 #single .wrapper .right h1.titel {  
-  margin:10px 0 0 24px;
+  margin:20px 0 0 24px;
 }
 
 #single .wrapper .right h2 {
@@ -564,19 +581,19 @@ activiteit button:active {
 }
 
 .doen {
-  background-color: #f18931;
+  background-color: #b7037e;
 }
 
 .verblijven {
-  background-color: #30abdf;
+  background-color: #dbdb00;
 }
 
 .genieten {
-  background: #b8007a;
+  background: #32aadf;
 }
 
 .beleven {
-  background: #dada49;
+  background: #f18a01;
 }
 
 .infoContainer {

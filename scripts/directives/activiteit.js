@@ -5,16 +5,16 @@ app.directive('activiteit', function($rootScope) {
 
         var colors = {
             beleven: {
-                hex: '#dbdb01'
-            },
-            doen: {
                 hex: '#f18a01'
             },
-            genieten: {
+            doen: {
                 hex: '#b7037e'
             },
-            verblijven: {
+            genieten: {
                 hex: '#32aadf'
+            },
+            verblijven: {
+                hex: '#dbdb00'
             }
         };
 
