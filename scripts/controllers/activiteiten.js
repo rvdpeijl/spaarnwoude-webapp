@@ -1,10 +1,15 @@
 'use strict';
 
-app.controller('ActiviteitenCtrl', function ($scope, $rootScope) {
+app.controller('ActiviteitenCtrl', function ($scope, $rootScope, $routeParams) {
 
 	$scope.activiteit = {
 		naam: ''
 	};
+
+    if ($routeParams) {
+        var catFilter = $routeParams.categorie;
+        $scope.actFilter = catFilter;
+    }
 
 	$scope.singleHandler = {
         showSingle: function(id) {

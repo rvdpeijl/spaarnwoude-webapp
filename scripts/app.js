@@ -16,7 +16,15 @@ app.config(function ($routeProvider) {
       templateUrl: 'views/activiteiten.html',
       controller: 'ActiviteitenCtrl'
     })
+    .when('/activiteiten/categorie/:categorie', {
+      templateUrl: 'views/activiteiten.html',
+      controller: 'ActiviteitenCtrl'
+    })
     .when('/kaart', {
+      templateUrl: 'views/kaart.html',
+      controller: 'KaartCtrl'
+    })
+    .when('/kaart/:id', {
       templateUrl: 'views/kaart.html',
       controller: 'KaartCtrl'
     })

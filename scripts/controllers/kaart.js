@@ -10,7 +10,7 @@ var getActiviteit = function() {
 	return current;
 };
 
-app.controller('KaartCtrl', function ($scope, $rootScope, $window, activiteiten) {
+app.controller('KaartCtrl', function ($scope, $rootScope, $window, $routeParams) {
 
 	$scope.currentActiviteit = null;
 
@@ -18,6 +18,10 @@ app.controller('KaartCtrl', function ($scope, $rootScope, $window, activiteiten)
 		var id = $window.getActiviteit();
 	    $scope.singleHandler.showSingle(id);
 	});
+
+	if ($routeParams) {
+
+	}
 
 	$scope.infoWindow = function(activiteit) {
 
