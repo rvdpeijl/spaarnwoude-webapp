@@ -19,9 +19,14 @@
 </div>
 
 <div id="fbContainer">
-	<div class="foto"></div>
-	<p class="loggedInAs">Ingelogd als,<br> <b>Frank Selhorst</b>{{ fb.Voornaam }}</p>
-	<div class="loguit"><a href="#/">Log uit</a></div>
+	<div class="loggedIn">
+		<div class="foto"></div>
+		<p class="loggedInAs">Ingelogd als,<br> <b>Frank Selhorst</b>{{ fb.Voornaam }}</p>
+		<div class="loguit"><a href="#/">Log uit</a></div>	
+	</div>
+	<div class="notLoggedIn">
+	<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
+	</div>
 </div>
 
 <div id="fotoSlider">

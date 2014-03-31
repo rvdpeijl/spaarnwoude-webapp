@@ -1,9 +1,9 @@
 'use strict';
 
-app.run(function($rootScope, activiteiten){
+app.run(function($rootScope, activiteiten, facebook){
 
     $rootScope.activiteiten = [];
-
+    $rootScope.facebook;
     activiteiten.success(function(data) { 
         $rootScope.activiteiten = data;
     })
