@@ -17,11 +17,12 @@
     	</div>
     </div>
 </div>
-
 <div id="fbContainer">
 	<div class="loggedIn">
-		<div class="foto"></div>
-		<p class="loggedInAs">Ingelogd als,<br> <b>Frank Selhorst</b>{{ fb.Voornaam }}</p>
+		<div class="foto">
+			<img src="{{ facebookUserImages.big }}" alt="">
+		</div>
+		<p class="loggedInAs">Ingelogd als,<br> <b>{{ facebookUserInfo.voornaam }}</b></p>
 		<div class="loguit"><a href="#/">Log uit</a></div>	
 	</div>
 	<div class="notLoggedIn">
@@ -61,7 +62,7 @@
 	</div>
 </div>
 <div id="welcome">
-	<h1>Hallo Frank!</h1>
+	<h1>Hallo {{ facebookUserInfo.voornaam }}!</h1>
 	<p>Welkom bij Spaarnwoude</p>
 	<div class="btn">Over deze website</div>
 </div>
