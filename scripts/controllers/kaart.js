@@ -10,17 +10,21 @@ var getActiviteit = function() {
 	return current;
 };
 
-app.controller('KaartCtrl', function ($scope, $rootScope, $window, $routeParams) {
+app.controller('KaartCtrl', function ($scope, $rootScope, $window, $routeParams, $interval, $timeout) {
 
 	$scope.currentActiviteit = null;
+	$scope.kaartActiviteit = null;
+	
+	$('.filter').clearSearch({ callback: function() { console.log("cleared"); } } );
 
 	$(document).on('click', '.infoWindowLink', function(event){
 		var id = $window.getActiviteit();
-	    $scope.singleHandler.showSingle(id);
+		$scope.singleHandler.showSingle(id);
 	});
 
 	if ($routeParams) {
-
+		var naamFilter = $routeParams.param;
+        $scope.filtertje = naamFilter;
 	}
 
 	$scope.infoWindow = function(activiteit) {
@@ -49,7 +53,7 @@ app.controller('KaartCtrl', function ($scope, $rootScope, $window, $routeParams)
 			'<div class="image2"></div>' +
 			'<div class="image3"></div>' +
 			'</div>' +
-			'<a class="infoWindowLink" style="color:' + colors[activiteit.categorie].hex + ';" onclick="setActiviteit(' + activiteit.aID + ')">Bekijk deze activiteit</a>' + 
+			'<a class="infoWindowLink" style="color:' + colors[activiteit.categorie].hex + ';" onclick="setActiviteit(' + activiteit.aID + ')">Bekijk deze activiteit</a>' +
 			'<div class="lijntje" style="position: absolute; bottom: 0px; left: 0; right: 0; height: 5px; background-color:' + colors[activiteit.categorie].hex + ';"></div>' +
 			'</div>';
 		
@@ -59,15 +63,31 @@ app.controller('KaartCtrl', function ($scope, $rootScope, $window, $routeParams)
 	$('.gm-style-iw').next().className = 'bla';
 	
 	$scope.map = {
-	    center: {
-	        latitude: 52.433826,
-	        longitude: 4.694815
-	    },
-	    zoom: 14,
-	    bounds: {
-	    	northeast: "84.451090, -28.588320",
-	    	southwest: "-72.147047, -172.377385"
-	    }
+		center: {
+			latitude: 52.433826,
+			longitude: 4.694815
+		},
+		zoom: 14,
+		bounds: {
+			northeast: "84.451090, -28.588320",
+			southwest: "-72.147047, -172.377385"
+		},
+		events: {
+			tilesloaded: function (map) {
+				var stop;
+				stop = $interval(function() {
+					google.maps.event.trigger(map, 'resize');
+				}, 300);
+
+				if ($rootScope.kaartLoaded === 0) {
+					var center = new google.maps.LatLng(this.center.latitude, this.center.longitude);
+					$timeout(function() {
+						map.panTo(center);
+					}, 400);
+					$rootScope.kaartLoaded = 1;
+				}
+			}
+		}
 	};
 
 	$scope.icons = {

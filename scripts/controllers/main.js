@@ -1,6 +1,11 @@
 'use strict';
 
 app.run(function($rootScope, activiteiten, facebook){
+    $rootScope.facebookUserInfo = {         
+    }
+    $rootScope.kaartLoaded = 0;
+    $rootScope.facebookUserImages = {        
+    }
 
     $rootScope.activiteiten = [];
     $rootScope.facebook;
@@ -30,6 +35,9 @@ app.controller('AppCtrl', function($scope, $rootScope, weerData) {
     
 })
 
-app.controller('FbCtrl', function($scope, $rootScope, facebook) {
-    $scope.fbLogout = facebook.getUser.fbLogout;
+app.controller('FbCtrl', function($scope, $rootScope) {
+    // $scope.fbLogout = facebook.facebook.getUser.fbLogout();
+    $scope.fbLogout = function() {
+        FB.logout();
+    }
 })

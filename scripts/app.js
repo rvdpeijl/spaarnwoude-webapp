@@ -24,7 +24,7 @@ app.config(function ($routeProvider) {
       templateUrl: 'views/kaart.html',
       controller: 'KaartCtrl'
     })
-    .when('/kaart/:id', {
+    .when('/kaart/:param', {
       templateUrl: 'views/kaart.html',
       controller: 'KaartCtrl'
     })

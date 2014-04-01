@@ -6,7 +6,7 @@
     	</div>
     	<div class="right">
     		<h1 class="titel">{{activiteit.naam}}</h1>
-    		<p class="organisatie">{{activiteit.organisatie}}<br> <a id="openKaart" ng-click="closeOnClick()" href="#/kaart">Bekijk op de kaart</a>	</p>
+    		<p class="organisatie">{{activiteit.organisatie}}<br> <a id="openKaart" ng-click="closeOnClick()" href="#/kaart/{{ activiteit.naam }}">Bekijk op de kaart</a>	</p>
     		<p class="categorie">Categorie:<br>{{activiteit.categorie}}</p>
 
     		<h2 class="over">Over deze activiteit</h2>
@@ -23,7 +23,7 @@
 			<img src="{{ facebookUserImages.big }}" alt="">
 		</div>
 		<p class="loggedInAs">Ingelogd als,<br> <b>{{ facebookUserInfo.voornaam }}</b></p>
-		<div class="loguit"><a ng-click="" href="#/">Log uit</a></div>	
+		<div class="loguit" ng-click="fbLogout()"><a href="#/">Log uit</a></div>	
 	</div>
 	<div class="notLoggedIn">
 	<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>

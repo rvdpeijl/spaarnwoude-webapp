@@ -1,7 +1,8 @@
 'use strict';
 
-app.controller('HomeCtrl', function ($scope, $rootScope, $interval, weerData, activiteiten) {
+app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, weerData, activiteiten) {
     $scope.weer = {};
+    $rootScope.kaartLoaded = 0;
     $scope.weerIterator = [
         { niks:'0'},
         { niks:'1'},

@@ -1,7 +1,7 @@
 'use strict';
 
 app.controller('ActiviteitenCtrl', function ($scope, $rootScope, $routeParams) {
-
+    $rootScope.kaartLoaded = 0;
 	$scope.activiteit = {
 		naam: ''
 	};
