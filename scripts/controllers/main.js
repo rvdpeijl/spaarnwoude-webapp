@@ -29,3 +29,7 @@ app.factory('weerData', function($http) {
 app.controller('AppCtrl', function($scope, $rootScope, weerData) {
     
 })
+
+app.controller('FbCtrl', function($scope, $rootScope, facebook) {
+    $scope.fbLogout = facebook.getUser.fbLogout;
+})

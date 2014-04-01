@@ -17,13 +17,13 @@
     	</div>
     </div>
 </div>
-<div id="fbContainer">
+<div ng-controller="FbCtrl" id="fbContainer">
 	<div class="loggedIn">
 		<div class="foto">
 			<img src="{{ facebookUserImages.big }}" alt="">
 		</div>
 		<p class="loggedInAs">Ingelogd als,<br> <b>{{ facebookUserInfo.voornaam }}</b></p>
-		<div class="loguit"><a href="#/">Log uit</a></div>	
+		<div class="loguit"><a ng-click="" href="#/">Log uit</a></div>	
 	</div>
 	<div class="notLoggedIn">
 	<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
