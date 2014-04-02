@@ -15,7 +15,7 @@ app.controller('KaartCtrl', function ($scope, $rootScope, $window, $routeParams,
 	$scope.currentActiviteit = null;
 	$scope.kaartActiviteit = null;
 	
-	$('.filter').clearSearch({ callback: function() { console.log("cleared"); } } );
+	$('.filter').clearSearch({ callback: function() { $scope.filtertje = ''; } } );
 
 	$(document).on('click', '.infoWindowLink', function(event){
 		var id = $window.getActiviteit();
@@ -92,16 +92,16 @@ app.controller('KaartCtrl', function ($scope, $rootScope, $window, $routeParams,
 
 	$scope.icons = {
 		beleven: {
-			icon: 'images/mapicon_beleven.png'
+			icon: 'images/beleven_icon.png'
 		},
 		doen: {
-			icon: 'images/mapicon_doen.png'
+			icon: 'images/doen_icon.png'
 		},
 		genieten: {
-			icon: 'images/mapicon_genieten.png'
+			icon: 'images/genieten_icon.png'
 		},
 		verblijven: {
-			icon: 'images/mapicon_verblijven.png'
+			icon: 'images/verblijven_icon.png'
 		}
 	};
 
