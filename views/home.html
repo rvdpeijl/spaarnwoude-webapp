@@ -23,7 +23,6 @@
 			<img src="{{ facebookUserImages.big }}" alt="">
 		</div>
 		<p class="loggedInAs">Ingelogd als,<br> <b>{{ facebookUserInfo.voornaam }}</b></p>
-		<div class="loguit" ng-click="fbLogout()"><a href="#/">Log uit</a></div>	
 	</div>
 	<div class="notLoggedIn">
 	<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
@@ -62,9 +61,10 @@
 	</div>
 </div>
 <div id="welcome">
-	<h1>Hallo {{ facebookUserInfo.voornaam }}!</h1>
 	<p>Welkom bij Spaarnwoude</p>
 	<div class="btn">Over deze website</div>
+	<div class="btn loguit" ng-click="fbLogout()"><a href="#/">Log uit</a></div>	
+
 </div>
 
 <div id="buttons">

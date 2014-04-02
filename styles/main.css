@@ -75,15 +75,13 @@ a:hover {
 }
 
 #fbContainer {
-  background-image:url(../images/bg_user_login.png);
-  /*background-repeat: no-repeat;*/
+/*  background-image:url(../images/bg_user_login.png);
+*/  /*background-repeat: no-repeat;*/
   float: left;
   width: 250px;
   height: 150px;
   position: relative;
-  -webkit-box-shadow: 0px 2px 0px rgba(2,2,2, 0.4);
-  -moz-box-shadow: 0px 2px 0px rgba(2,2,2, 0.4);
-  box-shadow: 0px 2px 0px rgba(2,2,2, 0.4);
+  
 }
 #fbContainer .foto {
   margin: auto;
@@ -93,13 +91,12 @@ a:hover {
   height: 190px;
   position: absolute;
   top: -27px;
-  left: -44px;
+  left: -60px;
   box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 1px 3px 4px rgba(0,0,0,0.5);
   -o-box-shadow: 1px 3px 4px rgba(0,0,0,0.5);
   -webkit-transform: scale(0.4);
-  border-radius: 100%;
 
 }
 
@@ -112,10 +109,11 @@ a:hover {
 color: #FFF;
 text-shadow: 1px 1px 1px #000;
 position: absolute;
-right: 5px;
-top: 41px;
+left: 87px;
+top: 30px;
 font-size: 13px;
-text-align: right;
+text-align: left;
+max-width: 160px;
 }
 
 #fbContainer .loggedInAs b {
@@ -128,20 +126,35 @@ text-align: right;
   height: 155px;
   margin-top: -155px;
 
-  text-align: center;
+  text-align: left;
   font-style: italic;
   color: #fff;
 }
 
 #welcome h1 {
   margin-top: 25px;
+  margin-left:0;
 }
+
 
 #welcome .btn {
   padding: 10px 25px 10px 25px;
   background: #4aaa49;
-  display: inline-block;
+  display: block;
   margin-top: 15px;
+  width: 137px;
+  font-size:16px;
+  text-align: center;
+
+}
+
+#welome .btn:hover {
+  background: #4FB44E;
+  transition:;
+}
+
+#welcome .btn.loguit {
+  background: #ff3636;
 }
 
 #fbContainer .loguit {
@@ -564,7 +577,7 @@ activiteit button:active {
   top: 0;
   bottom: 0;
   width: 175px;
-  background-color: #171715;
+  background-color: #f0ede5;
   z-index: 1;
 }
 
@@ -589,25 +602,36 @@ activiteit button:active {
 
 .filterContainer li {
   width: 100%;
-
   box-sizing: border-box;
-  padding: 20px;
-  color: #fff;
-
-  opacity: 0.8;
-  cursor: pointer; cursor: hand;
-
-  -webkit-transition: opacity .3s;
-  -moz-transition: opacity .3s;
-  -ms-transition: opacity .3s;
-  -o-transition: opacity .3s;
-  transition: opacity .3s;
+  /* padding: 20px 20px 20px 20px; */
+  color: #FFF;
+  cursor: pointer;
+  cursor: hand;
+  -webkit-transition: text-indent .3s;
+  -moz-transition: text-indent .3s;
+  -ms-transition: text-indent .3s;
+  -o-transition: text-indent .3s;
+  transition: text-indent .3s;
+  height: 61px;
+  text-indent: 10px;
+  line-height: 390%;
+  text-align: left;
 }
 
 .filterContainer li:hover {
-  opacity: 1;
+  text-indent: 21px;
 }
 
+.filterContainer li.doen .icon {
+  content: "";
+  background-image: url(../images/doen_icon_nocircle.png);
+  height:22px;
+  width:22px;
+  background-repeat: no-repeat;
+  float:left;
+  margin-top: 22px;
+  margin-left: 22px;
+}
 .doen {
   background-color: #b7037e;
 }
@@ -615,15 +639,43 @@ activiteit button:active {
 .verblijven {
   background-color: #dbdb00;
 }
+.filterContainer li.verblijven .icon{
+  content: "";
+  background-image: url(../images/house_icon_nocircle.png);
+  height:22px;
+  width:22px;
+  background-repeat: no-repeat;
+  float:left;
+  margin-top: 22px;
+  margin-left: 22px;
+}
 
 .genieten {
   background: #32aadf;
 }
-
+.filterContainer li.genieten .icon {
+  content: "";
+  background-image: url(../images/genieten_icon_nocircle.png);
+  height:22px;
+  width:22px;
+  background-repeat: no-repeat;
+  float:left;
+  margin-top: 22px;
+  margin-left: 22px;
+}
 .beleven {
   background: #f18a01;
 }
-
+.filterContainer li.beleven .icon {
+  content: "";
+  background-image: url(../images/beleven_icon_nocircle.png);
+  height:22px;
+  width:22px;
+  background-repeat: no-repeat;
+  float:left;
+  margin-top: 22px;
+  margin-left: 22px;
+}
 .infoContainer {
   padding: 10px;
 }
