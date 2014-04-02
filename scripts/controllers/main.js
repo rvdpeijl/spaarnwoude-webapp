@@ -7,6 +7,8 @@ app.run(function($rootScope, activiteiten, facebook){
     $rootScope.facebookUserImages = {        
     }
 
+    $rootScope.fbLoggedIn = false;
+
     $rootScope.activiteiten = [];
     $rootScope.facebook;
     activiteiten.success(function(data) { 

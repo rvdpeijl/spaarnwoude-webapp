@@ -146,6 +146,25 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
         }
     };
 
+    /////////////////////////////////// ANIMATIONS ///////////////////////////////////
+    ///////                                                                    ///////
+    //////////////////////////////////////////////////////////////////////////////////
+
+    // var fbContainer = $('#fbContainer');
+
+    // TweenMax.set(fbContainer, {opacity: 0});
+    // TweenMax.to(fbContainer, 0.5, {alpha: 1, delay: 1});
+
+    $rootScope.$watch('fbLoggedIn', function(newVal, oldVal) {
+        var fbContainer = $('.loggedIn');
+        TweenMax.set(fbContainer, {opacity: 0});
+        if (newVal === true && $rootScope.facebookUserImages) {
+            TweenMax.to(fbContainer, 0.5, {alpha: 1, delay: 1});
+        } else {
+            TweenMax.set(fbContainer, {opacity: 0});
+        }
+    });
+
 }).animation('.slide-animation', function () {
     return {
         beforeAddClass: function (element, className, done) {

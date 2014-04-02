@@ -31,8 +31,8 @@
 </div>
 
 <div id="fotoSlider">
-	<div class="left" ng-click="prevSlide()"></div>
-	<div class="right" ng-click="nextSlide()"></div>
+	<!-- <div class="left" ng-click="prevSlide()"></div>
+	<div class="right" ng-click="nextSlide()"></div> -->
 	<div class="wrapper" ng-mouseover="pauseAnimation()" ng-mouseleave="resumeAnimation()">
 		<activiteit activiteit-id="{{activiteit.aID}}" class="slide slide-animation" ng-hide="!isCurrentSlideIndex($index)" ng-repeat="activiteit in activiteiten | filter:actFilter"></activiteit>
 	</div>

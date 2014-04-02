@@ -12,13 +12,16 @@ app.factory('facebook', function($http, $rootScope) {
 		FB.Event.subscribe('auth.authResponseChange', function(response) {
 			if (response.status === 'connected') {
 			  userLoggedIn();
+			  $rootScope.fbLoggedIn = true;
 
 			} else if (response.status === 'not_authorized') {
 			  FB.login();
+			  $rootScope.fbLoggedIn = false;
 
 			} else {
 				hideLogin();
 			  	FB.login();
+			  	$rootScope.fbLoggedIn = false;
 			}
 		});
 	  };
