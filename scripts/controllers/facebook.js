@@ -1,4 +1,4 @@
-app.factory('facebook', function($http, $rootScope) { 
+app.factory('facebook', function($http, $rootScope, $q) { 
 	window.fbAsyncInit = function() {
 		$('.notLoggedIn').show();
   		$('.loggedIn').hide();
@@ -11,6 +11,7 @@ app.factory('facebook', function($http, $rootScope) {
 
 		FB.Event.subscribe('auth.authResponseChange', function(response) {
 			if (response.status === 'connected') {
+			  $('.loader').animate({opacity: 1});
 			  userLoggedIn();
 			  $rootScope.fbLoggedIn = true;
 
@@ -37,9 +38,11 @@ app.factory('facebook', function($http, $rootScope) {
 
 		function userLoggedIn() {
 			$('.notLoggedIn').hide();
+			$('.loader').fadeIn();
 			$('.loggedIn').show();
 			console.log('Welcome!  Fetching your information.... ');
 			FB.api('/me', function(response) {
+				console.log(response)
 				$rootScope.facebookUserInfo = {
 					voornaam : response.first_name,
 					achternaam : response.last_name,

@@ -74,6 +74,26 @@ a:hover {
   position: relative;
 }
 
+.loader {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  opacity: 0;
+}
+
+.loader img {
+  width: 20px;
+  height: 20px;
+}
+
+.loader span {
+  color: white;
+  font-size: 13px;
+  position: relative;
+  top: -5px;
+  left: 15px;
+}
+
 #fbContainer {
 /*  background-image:url(../images/bg_user_login.png);
 */  /*background-repeat: no-repeat;*/
