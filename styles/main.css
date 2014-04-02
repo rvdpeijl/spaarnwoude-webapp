@@ -74,6 +74,10 @@ a:hover {
   position: relative;
 }
 
+.loguit {
+  opacity: 0;
+}
+
 .loader {
   position: absolute;
   top: 50px;

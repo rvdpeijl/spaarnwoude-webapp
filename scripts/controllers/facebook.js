@@ -23,6 +23,8 @@ app.factory('facebook', function($http, $rootScope, $q) {
 				hideLogin();
 			  	FB.login();
 			  	$rootScope.fbLoggedIn = false;
+			  	$('.loguit').animate({opacity: 0});
+			  	$('.notLoggedIn').animate({opacity: 1});
 			}
 		});
 	  };

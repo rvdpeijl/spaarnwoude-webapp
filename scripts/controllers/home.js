@@ -158,8 +158,10 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
     $rootScope.$watch('fbLoggedIn', function(newVal, oldVal) {
         var fbContainer = $('.loggedIn');
         var loader = $('.loader');
+        var loguit = $('.loguit');
         // TweenMax.set(fbContainer, {opacity: 0});
         if (newVal === true) {
+            TweenMax.to(loguit, 0.5, {alpha:1});
             TweenMax.to(loader, 0.5, {alpha: 0});
             TweenMax.to(fbContainer, 0.5, {alpha: 1});
         } else {
