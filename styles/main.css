@@ -161,6 +161,9 @@ max-width: 160px;
   margin-left:0;
 }
 
+#welcome p {
+  font-weight:200;
+}
 
 #welcome .btn {
   padding: 10px 25px 10px 25px;
@@ -258,6 +261,7 @@ font-size: 14px;
   line-height: 620%;
   color: #FFF;
   font-size: 18px;
+  font-weight: 200;
 }
 
 
