@@ -15,7 +15,7 @@ app.controller('KaartCtrl', function ($scope, $rootScope, $window, $routeParams,
 	$scope.currentActiviteit = null;
 	$scope.kaartActiviteit = null;
 	
-	$('.filter').clearSearch({ callback: function() { $scope.filtertje = ''; } } );
+	// $('.filter').clearSearch({ callback: function() { console.log("cleared"); } } );
 
 	$(document).on('click', '.infoWindowLink', function(event){
 		var id = $window.getActiviteit();
