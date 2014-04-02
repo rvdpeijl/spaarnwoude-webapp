@@ -248,10 +248,10 @@ font-size: 14px;
 #buttons .btn {
   width: 250px;
   cursor: pointer;
-  height: 120px;
+  height: 100px;
   float: left;
   text-align: right;
-  line-height: 710%;
+  line-height: 620%;
   color: #FFF;
   font-size: 18px;
 }
@@ -288,8 +288,9 @@ font-size: 14px;
   width: 250px;
   height: 150px;
   float: left;
-  background-color: #ff9405;
   position: relative;
+  background-image:url(../images/minimap.jpg);
+  background-size: cover;
 }
 
 #mapsWidget .wrap {
@@ -306,7 +307,6 @@ font-size: 14px;
   text-align: center;
   width: 100%;
   background-color: #ff9405;
-
   font-size: 12px;
   font-weight: bold;
   -webkit-font-smoothing: antialiased;
