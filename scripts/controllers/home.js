@@ -8,7 +8,7 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
         { niks:'0'},
         { niks:'1'},
         { niks:'2'}
-    ]
+    ];
     
     weerData.success(function(data) {
         $scope.getWeather(data);
@@ -160,11 +160,13 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
         var fbContainer = $('.loggedIn');
         var loader = $('.loader');
         var loguit = $('.loguit');
+        var notLoggedIn = $('.notLoggedIn');
         // TweenMax.set(fbContainer, {opacity: 0});
         if (newVal === true) {
             TweenMax.to(loguit, 0.5, {alpha:1});
             TweenMax.to(loader, 0.5, {alpha: 0});
             TweenMax.to(fbContainer, 0.5, {alpha: 1});
+            TweenMax.set(notLoggedIn, {alpha: 0});
         } else {
             TweenMax.set(fbContainer, {opacity: 0});
         }
