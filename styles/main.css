@@ -74,6 +74,26 @@ a:hover {
   position: relative;
 }
 
+.notLoggedIn .btn {
+  padding: 10px 25px 10px 25px;
+  background: #3B5998;
+  display: block;
+  margin-top: 15px;
+  width: 137px;
+  font-size:14px;
+  text-align: center;
+  color: white;
+  font-style: italic;
+  cursor: pointer; cursor: hand;
+}
+
+.notLoggedIn p {
+  color: white;
+  font-size: 13px;
+  max-width: 138px;
+  margin: 10px;
+}
+
 .loguit {
   opacity: 0;
 }

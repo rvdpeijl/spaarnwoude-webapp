@@ -3,6 +3,7 @@
 app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, weerData, activiteiten) {
     $scope.weer = {};
     $rootScope.kaartLoaded = 0;
+    $scope.Facebook = facebook;
     $scope.weerIterator = [
         { niks:'0'},
         { niks:'1'},

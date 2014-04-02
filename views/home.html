@@ -25,7 +25,9 @@
 		<p class="loggedInAs">Ingelogd als<br> <b>{{ facebookUserInfo.voornaam }}</b></p>
 	</div>
 	<div class="notLoggedIn">
-	<fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
+	<!-- <fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button> -->
+	<div class="btn fbLogin" ng-click="fbLogin()">Login met Facebook</div>
+	<p>Voor een verbeterde gebruikerservaring</p>
 	</div>
 </div>
 

@@ -42,4 +42,8 @@ app.controller('FbCtrl', function($scope, $rootScope) {
     $scope.fbLogout = function() {
         FB.logout();
     }
+
+    $scope.fbLogin = function() {
+        FB.login();
+    }
 })

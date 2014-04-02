@@ -62,4 +62,8 @@ app.factory('facebook', function($http, $rootScope, $q) {
 			$('.notLoggedIn').show();
 			$('.loggedIn').hide();
 		}
+
+		function login() {
+			FB.login();
+		}
 })
