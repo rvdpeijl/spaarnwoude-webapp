@@ -842,7 +842,8 @@ body > div > google-map > div > div.angular-google-map-container > div > div:nth
 }
 
 #agenda .agendaLijst .item .punten li.naam {
-  margin-right:100px;
+  margin-right:0;
+  width:290px;
 }
 
 #agenda .agendaLijst .item .punten .open {
