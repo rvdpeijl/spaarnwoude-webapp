@@ -127,7 +127,7 @@ a:hover {
   width: 250px;
   height: 150px;
   position: relative;
-  
+
 }
 #fbContainer .foto {
   margin: auto;
@@ -607,7 +607,7 @@ activiteit button:active {
   margin-left:23px;
 }
 
-#single .wrapper .right h1.titel {  
+#single .wrapper .right h1.titel {
   margin:20px 0 0 24px;
 }
 
@@ -795,7 +795,3 @@ body > div > google-map > div > div.angular-google-map-container > div > div:nth
   top: 10px !important;
   right: 0px !important;
 }
-
-
-
-

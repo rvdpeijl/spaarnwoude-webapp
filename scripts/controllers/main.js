@@ -1,18 +1,23 @@
 'use strict';
 
-app.run(function($rootScope, activiteiten, facebook){
-    $rootScope.facebookUserInfo = {         
+app.run(function($rootScope, activiteiten, agenda, facebook){
+    $rootScope.facebookUserInfo = {
     }
     $rootScope.kaartLoaded = 0;
-    $rootScope.facebookUserImages = {        
+    $rootScope.facebookUserImages = {
     }
 
     $rootScope.fbLoggedIn = false;
 
     $rootScope.activiteiten = [];
     $rootScope.facebook;
-    activiteiten.success(function(data) { 
+
+    activiteiten.success(function(data) {
         $rootScope.activiteiten = data;
+    })
+
+    agenda.success(function(data) {
+        $rootScope.agenda = data;
     })
 
     $rootScope.singleHidden = true;
@@ -25,16 +30,20 @@ app.run(function($rootScope, activiteiten, facebook){
 
 })
 
-app.factory('activiteiten', function($http) { 
+app.factory('activiteiten', function($http) {
     return $http.get('http://spaarnwoude.creadiv.nl/api/activiteiten');
 })
 
-app.factory('weerData', function($http) { 
+app.factory('agenda', function($http) {
+    return $http.get('http://spaarnwoude.creadiv.nl/api/agenda');
+})
+
+app.factory('weerData', function($http) {
     return $http.get('http://api.openweathermap.org/data/2.5/forecast/daily?q=Spaarndam&mode=json&units=metric&cnt=5');
 })
 
 app.controller('AppCtrl', function($scope, $rootScope, weerData) {
-    
+
 })
 
 app.controller('FbCtrl', function($scope, $rootScope) {
