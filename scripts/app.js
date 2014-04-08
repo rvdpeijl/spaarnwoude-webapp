@@ -28,6 +28,10 @@ app.config(function ($routeProvider) {
       templateUrl: 'views/kaart.html',
       controller: 'KaartCtrl'
     })
+    .when('/agenda', {
+      templateUrl: 'views/agenda.html',
+      controller: 'AgendaCtrl'
+    })
     .otherwise({
       redirectTo: '/'
     });
