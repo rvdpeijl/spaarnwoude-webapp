@@ -803,6 +803,66 @@ body > div > google-map > div > div.angular-google-map-container > div > div:nth
   right: 0px !important;
 }
 
+#agenda {
+  width:1000px;
+  background: #FFF;
+}
 
+#agenda .agendaLijst {
+  list-style: none;
+  overflow: hidden;
 
+}
 
+#agenda .agendaLijst .item {
+  list-style: none;
+  overflow: hidden;
+  position: relative;
+  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 1px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.3);
+}
+#agenda .agendaLijst .item .lijntje {
+  float: left;
+  width: 10px;
+  height: 66px;
+  background: #000;
+  margin-right: 20px;
+}
+
+#agenda .agendaLijst .item .punten {
+  list-style: none;
+  padding: 23px;
+  overflow: hidden;
+}
+#agenda .agendaLijst .item .punten li {
+  float:left;
+  font-size:15px;
+  margin-right:2em;
+}
+
+#agenda .agendaLijst .item .punten li.naam {
+  margin-right:100px;
+}
+
+#agenda .agendaLijst .item .punten .open {
+  cursor:pointer;
+  cursor: hand;
+  background: #FF5E5E;
+  position: absolute;
+  right: -30px;
+  padding: 23px;
+  top: 0px;
+  color: #FFF;
+  width: 100px;
+  text-align: center;
+  -webkit-transition: background .3s;
+  -moz-transition: background .3s;
+  -ms-transition: background .3s;
+  -o-transition: background .3s;
+  transition: background .3s;
+}
+
+#agenda .agendaLijst .item .punten .open:hover {
+  background:green;
+}
