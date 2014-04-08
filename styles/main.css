@@ -195,6 +195,8 @@ max-width: 160px;
   width: 137px;
   font-size:16px;
   text-align: center;
+  cursor:pointer;
+  cursor:hand;
 
 }
 
@@ -204,12 +206,15 @@ max-width: 160px;
 }
 
 #welcome .btn.loguit {
+  cursor:pointer;
   background: #ff3636;
 }
 
 #fbContainer .loguit {
   position: absolute;
   bottom: 0;
+  cursor:pointer;
+  cursor:hand;
   left: 0;
   right: 0;
   text-align: center;
@@ -282,6 +287,8 @@ font-size: 14px;
   text-align: right;
   line-height: 620%;
   color: #FFF;
+  cursor:pointer;
+  cursor:hand;
   font-size: 18px;
   font-weight: 200;
 }
@@ -794,4 +801,68 @@ body > div > google-map > div > div.angular-google-map-container > div > div:nth
 body > div > google-map > div > div.angular-google-map-container > div > div:nth-child(1) > div > div:nth-child(3) > div:nth-child(3) > div > div:nth-child(3) {
   top: 10px !important;
   right: 0px !important;
+}
+
+#agenda {
+  width:1000px;
+  background: #FFF;
+}
+
+#agenda .agendaLijst {
+  list-style: none;
+  overflow: hidden;
+
+}
+
+#agenda .agendaLijst .item {
+  list-style: none;
+  overflow: hidden;
+  position: relative;
+  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 1px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.3);
+}
+#agenda .agendaLijst .item .lijntje {
+  float: left;
+  width: 10px;
+  height: 66px;
+  background: #000;
+  margin-right: 20px;
+}
+
+#agenda .agendaLijst .item .punten {
+  list-style: none;
+  padding: 23px;
+  overflow: hidden;
+}
+#agenda .agendaLijst .item .punten li {
+  float:left;
+  font-size:15px;
+  margin-right:2em;
+}
+
+#agenda .agendaLijst .item .punten li.naam {
+  margin-right:100px;
+}
+
+#agenda .agendaLijst .item .punten .open {
+  cursor:pointer;
+  cursor: hand;
+  background: #FF5E5E;
+  position: absolute;
+  right: -30px;
+  padding: 23px;
+  top: 0px;
+  color: #FFF;
+  width: 100px;
+  text-align: center;
+  -webkit-transition: background .3s;
+  -moz-transition: background .3s;
+  -ms-transition: background .3s;
+  -o-transition: background .3s;
+  transition: background .3s;
+}
+
+#agenda .agendaLijst .item .punten .open:hover {
+  background:green;
 }
