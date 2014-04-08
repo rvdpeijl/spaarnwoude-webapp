@@ -90,8 +90,10 @@ a:hover {
 .notLoggedIn p {
   color: white;
   font-size: 13px;
-  max-width: 138px;
-  margin: 10px;
+  max-width: 225px;
+  margin-top: 10px;
+  font-style: italic;
+  text-shadow: 1px 1px 1px #222;
 }
 
 .loguit {
@@ -134,7 +136,7 @@ a:hover {
   width: 199px;
   height: 190px;
   position: absolute;
-  top: -27px;
+  top: -57px;
   left: -60px;
   box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
@@ -155,7 +157,7 @@ color: #FFF;
 text-shadow: 1px 1px 1px #000;
 position: absolute;
 left: 87px;
-top: 30px;
+top: 0;
 font-size: 13px;
 text-align: left;
 max-width: 160px;
@@ -169,7 +171,7 @@ max-width: 160px;
   float: left;
   width: 25%;
   height: 155px;
-  margin-top: -155px;
+  margin-top: -200px;
 
   text-align: left;
   font-style: italic;
@@ -186,10 +188,10 @@ max-width: 160px;
 }
 
 #welcome .btn {
-  padding: 10px 25px 10px 25px;
+  padding: 5px 25px 5px 25px;
   background: #4aaa49;
   display: block;
-  margin-top: 15px;
+  margin-top: 5px;
   width: 137px;
   font-size:16px;
   text-align: center;
