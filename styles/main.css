@@ -193,6 +193,8 @@ max-width: 160px;
   width: 137px;
   font-size:16px;
   text-align: center;
+  cursor:pointer;
+  cursor:hand;
 
 }
 
@@ -202,12 +204,15 @@ max-width: 160px;
 }
 
 #welcome .btn.loguit {
+  cursor:pointer;
   background: #ff3636;
 }
 
 #fbContainer .loguit {
   position: absolute;
   bottom: 0;
+  cursor:pointer;
+  cursor:hand;
   left: 0;
   right: 0;
   text-align: center;
@@ -280,6 +285,8 @@ font-size: 14px;
   text-align: right;
   line-height: 620%;
   color: #FFF;
+  cursor:pointer;
+  cursor:hand;
   font-size: 18px;
   font-weight: 200;
 }
