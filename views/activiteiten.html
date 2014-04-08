@@ -6,7 +6,7 @@
         </div>
         <div class="right">
             <h1 class="titel">{{activiteit.naam}}</h1>
-            <p class="organisatie">{{activiteit.organisatie}}<br> <a id="openKaart" ng-click="closeOnClick()" href="#/kaart">Bekijk op de kaart</a> </p>
+            <p class="organisatie">{{activiteit.organisatie}}<br> <a id="openKaart" ng-click="closeOnClick()" href="#/kaart/{{activiteit.naam}}">Bekijk op de kaart</a> </p>
             <p class="categorie">Categorie:<br>{{activiteit.categorie}}</p>
 
             <h2 class="over">Over deze activiteit</h2>
@@ -18,8 +18,8 @@
     </div>
 </div>
 
-<div class="filter"> 
-	<p>Zoeken:</p> 
+<div class="filter">
+	<p>Zoeken:</p>
 	<input ng-model="actFilter" placeholder="Bijvoorbeeld: Fietsen">
 </div>
 

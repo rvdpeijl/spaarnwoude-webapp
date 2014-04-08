@@ -826,7 +826,7 @@ body > div > google-map > div > div.angular-google-map-container > div > div:nth
   float: left;
   width: 10px;
   height: 66px;
-  background: #000;
+/*  background: #000;*/
   margin-right: 20px;
 }
 
@@ -849,7 +849,7 @@ body > div > google-map > div > div.angular-google-map-container > div > div:nth
 #agenda .agendaLijst .item .punten .open {
   cursor:pointer;
   cursor: hand;
-  background: #FF5E5E;
+/*  background: #FF5E5E;*/
   position: absolute;
   right: -30px;
   padding: 23px;
