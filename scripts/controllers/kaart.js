@@ -14,8 +14,6 @@ app.controller('KaartCtrl', function ($scope, $rootScope, $window, $routeParams,
 
 	$scope.currentActiviteit = null;
 	$scope.kaartActiviteit = null;
-	
-	// $('.filter').clearSearch({ callback: function() { console.log("cleared"); } } );
 
 	$(document).on('click', '.infoWindowLink', function(event){
 		var id = $window.getActiviteit();
@@ -127,10 +125,19 @@ app.controller('KaartCtrl', function ($scope, $rootScope, $window, $routeParams,
                         categorie: item.categorie,
                         organisatie: item.organisatie,
                         images: {
-                            big: item.big_image1
+                            big: item.big_image1,
+                            big2: item.big_image2,
+                            big3: item.big_image3,
+                            big4: item.big_image4
                         },
-                        long_desc: item.long_desc
-
+                        long_desc: item.long_desc,
+                        straatnaam: item.straatnaam,
+                        postcode: item.postcode,
+                        plaats: item.plaats,
+                        telefoon: item.telefoon,
+                        website: item.website,
+                        facebookUrl: item.facebook_url,
+                        twitterUrl: item.twitter_url
                     };
                 }
             });
@@ -140,7 +147,16 @@ app.controller('KaartCtrl', function ($scope, $rootScope, $window, $routeParams,
 			if(evt.target.id == "single" || evt.target.className == "close") {
 				$rootScope.singleHidden = true;
 			}
-		}
+		},
+		swap: function(el, image) {
+	        var bigImage = $('.bigImage > img')[0];
+	        var newImage = 'http://spaarnwoude.creadiv.nl/files/' + image;
+	        var element = el.toElement.src
+	    
+	        element = bigImage.src;
+	        bigImage.src = newImage;
+	       
+        }
     };
 
 

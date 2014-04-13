@@ -580,6 +580,10 @@ activiteit button:active {
 }
 #single .left .smallWrap {
   overflow: hidden;
+  margin-top:20px;
+  margin-left: 16px;
+  margin-bottom: 10px;
+
 }
 #single .left .smallImage {
   float:left;
@@ -600,6 +604,46 @@ activiteit button:active {
   -webkit-transform: scale(1.2);
   width: 100%;
 
+}
+#single .left .naw {
+  background-color:#f7f7f7;
+  padding: 15px;
+  max-width: 322px;
+  height: auto;
+  margin-left: 20px;
+}
+#single .left .social {
+  margin-left: 20px;
+}
+
+#single .left .social .website {
+  float:left;
+  background-image:url(../images/social_icons_single.png);
+  background-position: 0 0;
+  width:40px;
+  height:40px;
+  margin-right:20px;
+  margin-top:15px;
+}
+
+#single .left .social .twitter{
+  float:left;
+  background-image:url(../images/social_icons_single.png);
+  background-position: 94px 0;
+  width:40px;
+  height:40px;
+  margin-right:20px;
+  margin-top:15px;
+}
+
+#single .left .social .facebook {
+  float:left;
+  background-image:url(../images/social_icons_single.png);
+  background-position: 41px 0;
+  width:40px;
+  height:40px;
+  margin-right:20px;
+  margin-top:15px;
 }
 
 #single .wrapper .right p.categorie {

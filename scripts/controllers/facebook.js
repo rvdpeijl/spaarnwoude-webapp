@@ -42,9 +42,9 @@ app.factory('facebook', function($http, $rootScope, $q) {
 			$('.notLoggedIn').hide();
 			$('.loader').fadeIn();
 			$('.loggedIn').show();
-			console.log('Welcome!  Fetching your information.... ');
+			
 			FB.api('/me', function(response) {
-				console.log(response)
+				
 				$rootScope.facebookUserInfo = {
 					voornaam : response.first_name,
 					achternaam : response.last_name,
@@ -58,7 +58,7 @@ app.factory('facebook', function($http, $rootScope, $q) {
 		}
 		
 		function hideLogin() {
-			console.log('yo')
+			
 			$('.notLoggedIn').show();
 			$('.loggedIn').hide();
 		}

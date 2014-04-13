@@ -3,11 +3,34 @@
         <div class="close" ng-click="singleHandler.closeSingle($event)"></div>
         <div class="left">
             <div class="bigImage"><img src="{{$root.config.url}}/{{activiteit.images.big}}" alt="" class="src"></div>
+            <div class="smallWrap">
+            <div class="smallImage" ng-click="singleHandler.swap($event, activiteit.images.big)">
+                    <img src="{{$root.config.url}}/{{activiteit.images.big}}" alt="" class="src">
+                </div>
+                <div class="smallImage" ng-click="singleHandler.swap($event, activiteit.images.big2)">
+                    <img src="{{$root.config.url}}/{{activiteit.images.big2}}" alt="" class="src">
+                </div>
+                <div class="smallImage" ng-click="singleHandler.swap($event, activiteit.images.big3)" >
+                    <img src="{{$root.config.url}}/{{activiteit.images.big3}}" alt="" class="src">
+                </div>
+                <div class="smallImage" ng-click="singleHandler.swap($event, activiteit.images.big4)">
+                    <img src="{{$root.config.url}}/{{activiteit.images.big4}}" alt="" class="src">
+                </div>
+            </div>
+            <div class="naw">
+                <p>{{activiteit.straatnaam}}</p>
+                <p>{{activiteit.plaats}}</p>
+                <p>{{activiteit.postcode}}</p>
+                <a href="{{activiteit.website}}">website</a>
+                <a href="{{activiteit.facebookUrl}}">facebook</a>
+                <a href="{{activiteit.twitterUrl}}">twitter</a>
+
+            </div>
         </div>
         <div class="right">
             <h1 class="titel">{{activiteit.naam}}</h1>
-            <p class="organisatie">{{activiteit.organisatie}}<br></p>
-            <p class="categorie">Categorie(en)<br>{{activiteit.categorie}}</p>
+            <p class="organisatie">{{activiteit.organisatie}}<br> <a id="openKaart" ng-click="closeOnClick()" href="#/kaart/{{ activiteit.naam }}">Bekijk op de kaart</a>   </p>
+            <p class="categorie">Categorie:<br>{{activiteit.categorie}}</p>
 
             <h2 class="over">Over deze activiteit</h2>
             <p class="over">{{activiteit.long_desc}}</p>
@@ -17,7 +40,6 @@
         </div>
     </div>
 </div>
-
 <div class="filterContainer">
 	<input type="text" class="filter" ng-model="filtertje" placeholder="Zoeken">
 

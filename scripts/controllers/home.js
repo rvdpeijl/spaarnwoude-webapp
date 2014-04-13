@@ -138,7 +138,14 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
                             big3: item.big_image3,
                             big4: item.big_image4
                         },
-                        long_desc: item.long_desc
+                        long_desc: item.long_desc,
+                        straatnaam: item.straatnaam,
+                        postcode: item.postcode,
+                        plaats: item.plaats,
+                        telefoon: item.telefoon,
+                        website: item.website,
+                        facebookUrl: item.facebook_url,
+                        twitterUrl: item.twitter_url
                     };
                 }
             });
@@ -161,9 +168,9 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
             
             element = bigImage.src;
             bigImage.src = newImage;
-            console.log('element ' + element)
-            console.log('newImage ' + newImage)
-            console.log('bigImage ' + bigImage.src)
+           
+           
+           
         }
     };
 
