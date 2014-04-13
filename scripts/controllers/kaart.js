@@ -49,9 +49,9 @@ app.controller('KaartCtrl', function ($scope, $rootScope, $window, $routeParams,
 			'<p class="infowindow_naam" style="margin-bottom: 5px;">' + activiteit.naam + '</p>' +
 			'<p>' + activiteit.short_desc + '</p>' +
 			'<div class="images">' +
-			'<div class="image1"></div>' +
-			'<div class="image2"></div>' +
-			'<div class="image3"></div>' +
+			'<div class="image1"><img src="' + $rootScope.config.url + activiteit.big_image2 + '"></div>' +
+			'<div class="image2"><img src="' + $rootScope.config.url + activiteit.big_image3 + '"></div>' +
+			'<div class="image3"><img src="' + $rootScope.config.url + activiteit.big_image4 + '"></div>' +
 			'</div>' +
 			'<a class="infoWindowLink" style="color:' + colors[activiteit.categorie].hex + ';" onclick="setActiviteit(' + activiteit.aID + ')">Bekijk deze activiteit</a>' +
 			'<div class="lijntje" style="position: absolute; bottom: 0px; left: 0; right: 0; height: 5px; background-color:' + colors[activiteit.categorie].hex + ';"></div>' +
