@@ -21,9 +21,11 @@
                 <p>{{activiteit.straatnaam}}</p>
                 <p>{{activiteit.plaats}}</p>
                 <p>{{activiteit.postcode}}</p>
-                <a href="{{activiteit.website}}">website</a>
-                <a href="{{activiteit.facebookUrl}}">facebook</a>
-                <a href="{{activiteit.twitterUrl}}">twitter</a>
+            </div>
+            <div class="social">                
+                <a class="website" href="{{activiteit.website}}"></a>
+                <a class="facebook" href="{{activiteit.facebookUrl}}"></a>
+                <a class="twitter" href="{{activiteit.twitterUrl}}"></a>
 
             </div>
         </div>
@@ -40,6 +42,7 @@
         </div>
     </div>
 </div>
+
 <div class="filterContainer">
 	<input type="text" class="filter" ng-model="filtertje" placeholder="Zoeken">
 
