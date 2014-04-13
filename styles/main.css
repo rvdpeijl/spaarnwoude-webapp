@@ -749,6 +749,11 @@ activiteit button:active {
 
 .infoContainer .images div {
   float: left;
+  overflow: hidden;
+}
+
+.infoContainer .images div img {
+  height: 100%;
 }
 
 .infoContainer .images .image1 {
