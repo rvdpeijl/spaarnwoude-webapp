@@ -576,6 +576,7 @@ activiteit button:active {
 }
 #single .left .bigImage {
   overflow:hidden;
+  height:300px;
 }
 #single .left .smallWrap {
   overflow: hidden;
@@ -587,6 +588,10 @@ activiteit button:active {
   width:80px;
   height:80px;
 
+}
+
+#single .left .smallImage img {
+  height:100%;
 }
 
 #single .left .bigImage img {
