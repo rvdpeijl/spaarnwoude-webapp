@@ -42,7 +42,6 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
     $scope.directionDag = 'right'
     $scope.currentDagIndex = 0;
 
-
     $scope.setCurrentSlideIndex = function (index) {
         $scope.direction = (index > $scope.currentIndex) ? 'left' : 'right';
         $scope.currentIndex = index;
@@ -61,8 +60,6 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
         $scope.direction = 'right';
         $scope.currentIndex = ($scope.currentIndex > 0) ? --$scope.currentIndex : $scope.activiteiten.length - 1;
     };
-
-
 
     $scope.setCurrentDagIndex = function (index) {
 
@@ -136,7 +133,10 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
                         categorie: item.categorie,
                         organisatie: item.organisatie,
                         images: {
-                            big: item.big_image1
+                            big: item.big_image1,
+                            big2: item.big_image2,
+                            big3: item.big_image3,
+                            big4: item.big_image4
                         },
                         long_desc: item.long_desc
                     };
@@ -148,6 +148,22 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
             if(evt.target.id == "single" || evt.target.className == "close" || evt.target.id == "openKaart") {
                 $rootScope.singleHidden = true;
             }
+        },
+
+        swap: function(el, image) {
+            var bigImage = $('.bigImage > img')[0];
+
+            var newImage = 'http://spaarnwoude.creadiv.nl/files/' + image;
+            
+            var element = el.toElement.src
+            // $scope.$apply(element == bigImage.src);
+            // $scope.$apply(bigImage.src == newImage);
+            
+            element = bigImage.src;
+            bigImage.src = newImage;
+            console.log('element ' + element)
+            console.log('newImage ' + newImage)
+            console.log('bigImage ' + bigImage.src)
         }
     };
 

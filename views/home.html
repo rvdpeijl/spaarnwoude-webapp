@@ -3,6 +3,21 @@
     	<div class="close" ng-click="singleHandler.closeSingle($event)"></div>
     	<div class="left">
     		<div class="bigImage"><img src="{{$root.config.url}}/{{activiteit.images.big}}" alt="" class="src"></div>
+    		<div class="smallWrap">
+			<div class="smallImage" ng-click="singleHandler.swap($event, activiteit.images.big)">
+    				<img src="{{$root.config.url}}/{{activiteit.images.big}}" alt="" class="src">
+    			</div>
+    			<div class="smallImage" ng-click="singleHandler.swap($event, activiteit.images.big2)">
+    				<img src="{{$root.config.url}}/{{activiteit.images.big2}}" alt="" class="src">
+    			</div>
+    			<div class="smallImage" ng-click="singleHandler.swap($event, activiteit.images.big3)" >
+    				<img src="{{$root.config.url}}/{{activiteit.images.big3}}" alt="" class="src">
+    			</div>
+    			<div class="smallImage" ng-click="singleHandler.swap($event, activiteit.images.big4)">
+    				<img src="{{$root.config.url}}/{{activiteit.images.big4}}" alt="" class="src">
+    			</div>
+    		</div>
+    		
     	</div>
     	<div class="right">
     		<h1 class="titel">{{activiteit.naam}}</h1>
