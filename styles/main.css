@@ -431,7 +431,8 @@ font-size: 14px;
   color: #FFF;
   font-size: 14px;
   margin: 0.6em auto;
-  width: 151px;
+  text-align: center;
+  margin-top: 1em;
 }
 
 #weatherWidget .wrapper .slider .windkracht {
@@ -439,7 +440,7 @@ font-size: 14px;
   font-size: 13px;
 
   margin: auto;
-width: 100px;
+  text-align: center;
 }
 
 .filter {
@@ -575,6 +576,7 @@ activiteit button:active {
   display: block;
   margin: auto;
   -webkit-transform: scale(1.2);
+  width: 100%;
 }
 
 #single .wrapper .right {
@@ -847,6 +849,7 @@ body > div > google-map > div > div.angular-google-map-container > div > div:nth
 }
 
 #agenda .agendaLijst .item .punten .open {
+  display: none;
   cursor:pointer;
   cursor: hand;
 /*  background: #FF5E5E;*/

@@ -9,11 +9,15 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
         { niks:'1'},
         { niks:'2'}
     ];
-    
+
     weerData.success(function(data) {
         $scope.getWeather(data);
-        
+
     });
+
+    $scope.roundUp = function(temp) {
+      return Math.round(temp);
+    }
 
     $scope.interval = null;
     $('.prev').hide()
@@ -34,7 +38,7 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
 
     $scope.direction = 'left';
     $scope.currentIndex = 0;
-    
+
     $scope.directionDag = 'right'
     $scope.currentDagIndex = 0;
 
@@ -61,7 +65,7 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
 
 
     $scope.setCurrentDagIndex = function (index) {
-        
+
         $scope.directionDag = (index > $scope.currentDagIndex) ? 'left' : 'right';
         $scope.currentDagIndex = index;
     };
@@ -71,7 +75,7 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
     };
 
     $scope.nextDag = function () {
-        
+
         $scope.currentDagIndex = ($scope.currentDagIndex < $scope.weerIterator.length - 1) ? ++$scope.currentDagIndex : 0;
         if ($scope.currentDagIndex > 0) {
             $('.prev').show()
@@ -82,7 +86,7 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
         if ($scope.currentDagIndex == 2) {
             $('.next').hide()
         }
-        
+
     };
 
     $scope.prevDag = function () {
