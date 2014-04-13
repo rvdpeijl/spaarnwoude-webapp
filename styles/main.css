@@ -546,6 +546,7 @@ activiteit button:active {
   min-height: 600px;
   margin: 5% auto;
   position: relative;
+  z-index:99999;
 }
 
 #single .wrapper .close {
@@ -570,6 +571,22 @@ activiteit button:active {
   overflow:hidden;
   height:100%;
   min-height:600px;
+  background:white;
+
+}
+#single .left .bigImage {
+  overflow:hidden;
+}
+#single .left .smallWrap {
+  overflow: hidden;
+}
+#single .left .smallImage {
+  float:left;
+  margin:5px;
+  overflow:hidden;
+  width:80px;
+  height:80px;
+
 }
 
 #single .left .bigImage img {
@@ -577,10 +594,7 @@ activiteit button:active {
   margin: auto;
   -webkit-transform: scale(1.2);
   width: 100%;
-}
 
-#single .wrapper .right {
-    background:white;
 }
 
 #single .wrapper .right p.categorie {
@@ -614,6 +628,8 @@ activiteit button:active {
   color:#555;
   line-height: 155%;
   margin-left:23px;
+  margin-right:23px;
+
 }
 
 #single .wrapper .right h1.titel {
