@@ -135,7 +135,7 @@ app.controller('KaartCtrl', function ($scope, $rootScope, $window, $routeParams,
                         postcode: item.postcode,
                         plaats: item.plaats,
                         telefoon: item.telefoon,
-                        website: item.website,
+                        website: item.website_url,
                         facebookUrl: item.facebook_url,
                         twitterUrl: item.twitter_url
                     };
