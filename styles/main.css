@@ -14,17 +14,67 @@ html {
   font-family: 'Open Sans';
 }
 
+body {
+  position: relative;
+}
+
 nav {
   height: 80px;
   background: #fff;
-
   -webkit-box-shadow: 0px 2px 0px rgba(2,2,2, 0.4);
   -moz-box-shadow: 0px 2px 0px rgba(2,2,2, 0.4);
   box-shadow: 0px 2px 0px rgba(2,2,2, 0.4);
 }
+
 nav .wrap {
   width:1000px;
   margin: 0 auto;
+  position:relative;
+}
+
+body ul.social {
+  position: absolute;
+  right: 0;
+  list-style:none;
+  top: 0;
+  height:80px;
+}
+
+body ul.social li {
+  float: left;
+  width: 80px;
+  height: 100%;
+  border-right: 1px solid #D8D8D8;
+  opacity: 0.9;
+}
+
+body ul.social li a{
+  display: block;
+  margin:2em auto;
+  height: 100%;
+  width: 15px;
+  height: 15px;
+
+}
+
+body ul.social li a.twitter {
+  background-image: url(../images/social_icons_nav.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+body ul.social li a.facebook {
+  background-image: url(../images/social_icons_nav.png);
+  background-position: -29px 0;
+  background-repeat: no-repeat;
+  width: 8px;
+}
+
+body ul.social li a.email {
+  background-image: url(../images/social_icons_nav.png);
+  background-position: -17px 0;
+  background-repeat: no-repeat;
+  width:12px;
 }
 
 nav .wrap .logo {
