@@ -62,10 +62,11 @@ app.controller('KaartCtrl', function ($scope, $rootScope, $window, $routeParams,
 	
 	$scope.map = {
 		center: {
-			latitude: 52.433826,
-			longitude: 4.694815
+			// 52.429207, 4.681234
+			latitude: 52.429207,
+			longitude: 4.681234
 		},
-		zoom: 14,
+		zoom: 12,
 		bounds: {
 			northeast: "84.451090, -28.588320",
 			southwest: "-72.147047, -172.377385"

@@ -486,7 +486,7 @@ activiteit:nth-child(odd) {
 }
 
 activiteit .fotoWrapper {
-  height: 200px;
+  height: 250px;
 }
 
 activiteit .foto {
@@ -584,7 +584,7 @@ activiteit button:active {
 }
 #single .left .smallWrap {
   overflow: hidden;
-  margin-top:20px;
+  margin-top:14px;
   margin-left: 16px;
   margin-bottom: 10px;
 
@@ -899,19 +899,21 @@ body > div > google-map > div > div.angular-google-map-container > div > div:nth
   -moz-box-shadow: 0 1px 0 rgba(0,0,0,0.3);
   box-shadow: 0 1px 0 rgba(0,0,0,0.3);
 }
+
 #agenda .agendaLijst .item .lijntje {
-  float: left;
   width: 10px;
-  height: 66px;
-/*  background: #000;*/
-  margin-right: 20px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
 }
 
 #agenda .agendaLijst .item .punten {
   list-style: none;
-  padding: 23px;
+  padding: 23px 23px 23px 43px;
   overflow: hidden;
 }
+
 #agenda .agendaLijst .item .punten li {
   float:left;
   font-size:15px;
