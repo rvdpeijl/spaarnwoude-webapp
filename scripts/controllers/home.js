@@ -36,6 +36,10 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
         $scope.weer.overmorgen.dag = 'Overmorgen';
     };
 
+    activiteiten.success(function(data) {
+        $scope.activiteiten = _.shuffle(data);
+    });
+
     $scope.direction = 'left';
     $scope.currentIndex = 0;
 
