@@ -225,7 +225,7 @@ max-width: 160px;
   float: left;
   width: 25%;
   height: 155px;
-  margin-top: -200px;
+  margin-top: -178px;
 
   text-align: left;
   font-style: italic;
@@ -1014,4 +1014,41 @@ body > div > google-map > div > div.angular-google-map-container > div > div:nth
 .fade.ng-leave,
 .fade.ng-enter.ng-enter-active {
   opacity:1;
+}
+
+#overPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(2, 2, 2, 0.6);
+  z-index: 5;
+}
+
+#overPopup .wrapper {
+  width: 880px;
+  margin: 5% auto;
+  position: relative;
+  z-index: 99999;
+  background: #FFF;
+  padding: 60px;
+  line-height: 185%;
+  font-size: 18px;
+  height: auto;
+}
+
+#overPopup .wrapper .close {
+  padding: 5px;
+  float: right;
+  color: #FFF;
+  cursor: pointer;
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  cursor: hand;
+  background: url(../images/close_icon_single.png);
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
 }

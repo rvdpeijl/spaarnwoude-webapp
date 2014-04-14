@@ -4,6 +4,8 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
     $scope.weer = {};
     $rootScope.kaartLoaded = 0;
     $scope.Facebook = facebook;
+    $scope.overPopupHidden = true;
+
     $scope.weerIterator = [
         { niks:'0'},
         { niks:'1'},
@@ -118,6 +120,15 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
     $scope.activiteit = {
         naam: ''
     };
+    $scope.overHandler = {
+        showPopup: function() {
+            $scope.overPopupHidden = false;
+        },
+
+        close: function() {
+            $scope.overPopupHidden = true;
+        }
+    }
 
     $scope.singleHandler = {
         showSingle: function(id) {
