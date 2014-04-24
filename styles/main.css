@@ -650,6 +650,7 @@ activiteit button:active {
 
 #single .wrapper .close {
   padding: 5px;
+  z-index:1;
   float: right;
   color: #FFF;
   cursor: pointer;
