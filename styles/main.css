@@ -1051,3 +1051,9 @@ body > div > google-map > div > div.angular-google-map-container > div > div:nth
   height: 24px;
   background-repeat: no-repeat;
 }
+
+@media only screen and (device-width: 768px) {
+  body {
+    -webkit-transform: scale(0.90);
+  }
+}
