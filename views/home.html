@@ -23,13 +23,15 @@
                 <p>{{activiteit.telefoon}}</p>
                 <p>{{activiteit.postcode}}</p>
             </div>
-            <div class="social">                
+            <div class="social">            
                 <a target="_blank" class="website" href="{{activiteit.website}}"></a>
                 <a target="_blank" class="facebook" href="{{activiteit.facebookUrl}}"></a>
                 <a target="_blank" class="twitter" href="{{activiteit.twitterUrl}}"></a>
+
             </div>
         </div>
         <div class="right">
+            <a class="link" target="_blank" href="{{activiteit.website}}"><img class="logo" src="{{$root.config.url}}/{{activiteit.images.logo}}"/></a>
             <h1 class="titel">{{activiteit.naam}}</h1>
             <p class="organisatie">{{activiteit.organisatie}}<br> <a id="openKaart" ng-click="closeOnClick()" href="#/kaart/{{ activiteit.naam }}">Bekijk op de kaart</a>   </p>
             <p class="categorie">Categorie:<br>{{activiteit.categorie}}</p>
@@ -42,6 +44,7 @@
         </div>
     </div>
 </div>
+
 <div id="overPopup" class="fade" ng-hide="overPopupHidden">
 	<div class="wrapper">
 		<div ng-click="overHandler.close()" class="close"></div>

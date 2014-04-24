@@ -32,7 +32,8 @@ app.controller('ActiviteitenCtrl', function ($scope, $rootScope, $routeParams) {
                             big: item.big_image1,
                             big2: item.big_image2,
                             big3: item.big_image3,
-                            big4: item.big_image4
+                            big4: item.big_image4,
+                            logo: item.logo
                         },
                         long_desc: item.long_desc,
                         straatnaam: item.straatnaam,
