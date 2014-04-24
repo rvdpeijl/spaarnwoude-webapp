@@ -2,7 +2,6 @@
 
 app.controller('AgendaCtrl', function ($scope, $rootScope, $routeParams) {
     $rootScope.kaartLoaded = 0;
-
     $scope.getAgendaColor = function(categorie) {
       var colors = {
               beleven: {
@@ -18,7 +17,6 @@ app.controller('AgendaCtrl', function ($scope, $rootScope, $routeParams) {
                   hex: '#dbdb00'
               }
           };
-
       return colors[categorie].hex;
     }
 });
