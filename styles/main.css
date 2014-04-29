@@ -377,7 +377,7 @@ font-size: 14px;
 }
 
 #buttons .btn {
-  width: 245px;
+  width: 250px;
   cursor: pointer;
   height: 100px;
   float: left;
@@ -1257,5 +1257,8 @@ body > div > google-map > div > div.angular-google-map-container > div > div:nth
   #fbContainer .foto {
     left:-50px;
   }
-
+  
+  #buttons .btn {
+    width: 245px;
+  }
 }
