@@ -134,6 +134,7 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
         showSingle: function(id) {
             $rootScope.$apply($rootScope.singleHidden = false);
             this.getActivity(id);
+            $('body').css('overflow','hidden');
         },
         getActivity: function(id) {
             $scope.$apply($scope.activiteit = this.filter(id));
@@ -168,6 +169,7 @@ app.controller('HomeCtrl', function ($scope, $rootScope, facebook, $interval, we
             return activiteit;
         },
         closeSingle: function(evt) {
+            $('body').css('overflow','none');
             if(evt.target.id == "single" || evt.target.className == "close" || evt.target.id == "openKaart") {
                 $rootScope.singleHidden = true;
             }

@@ -1,4 +1,4 @@
-    app.factory('facebook', function($http) { 
+    app.factory('facebook', function($http, $rootScope) { 
         window.fbAsyncInit = function() {
             $('.notLoggedIn').show();
             $('.loggedIn').hide();

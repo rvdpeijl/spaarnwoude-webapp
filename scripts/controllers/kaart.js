@@ -112,6 +112,8 @@ app.controller('KaartCtrl', function ($scope, $rootScope, $window, $routeParams,
         showSingle: function(id) {
             $rootScope.$apply($rootScope.singleHidden = false);
             this.getActivity(id);
+            $('body').css('overflow','hidden');
+
         },
         getActivity: function(id) {
             $scope.$apply($scope.activiteit = this.filter(id));
@@ -129,7 +131,8 @@ app.controller('KaartCtrl', function ($scope, $rootScope, $window, $routeParams,
                             big: item.big_image1,
                             big2: item.big_image2,
                             big3: item.big_image3,
-                            big4: item.big_image4
+                            big4: item.big_image4,
+                            logo: item.logo
                         },
                         long_desc: item.long_desc,
                         straatnaam: item.straatnaam,
@@ -145,18 +148,21 @@ app.controller('KaartCtrl', function ($scope, $rootScope, $window, $routeParams,
             return activiteit;
         },
         closeSingle: function(evt) {
-			if(evt.target.id == "single" || evt.target.className == "close") {
+			if(evt.target.id == "single" || evt.target.className == "close" || evt.target.id == "openKaart") {
 				$rootScope.singleHidden = true;
+                $('body').css('overflow','none');
+                
 			}
 		},
-		swap: function(el, image) {
-	        var bigImage = $('.bigImage > img')[0];
-	        var newImage = 'http://spaarnwoude.creadiv.nl/files/' + image;
-	        var element = el.toElement.src
-	    
-	        element = bigImage.src;
-	        bigImage.src = newImage;
-	       
+
+        swap: function(el, image) {
+            var bigImage = $('.bigImage > img')[0];
+            var newImage = 'http://spaarnwoude.creadiv.nl/files/' + image;
+            var element = el.toElement.src
+        
+            element = bigImage.src;
+            bigImage.src = newImage;
+           
         }
     };
 

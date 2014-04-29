@@ -15,6 +15,8 @@ app.controller('ActiviteitenCtrl', function ($scope, $rootScope, $routeParams) {
         showSingle: function(id) {
             $rootScope.$apply($rootScope.singleHidden = false);
             this.getActivity(id);
+            $('body').css('overflow','hidden');
+
         },
         getActivity: function(id) {
             $scope.$apply($scope.activiteit = this.filter(id));
@@ -51,6 +53,8 @@ app.controller('ActiviteitenCtrl', function ($scope, $rootScope, $routeParams) {
         closeSingle: function(evt) {
 			if(evt.target.id == "single" || evt.target.className == "close" || evt.target.id == "openKaart") {
 				$rootScope.singleHidden = true;
+                $('body').css('overflow','none');
+                
 			}
 		},
 
