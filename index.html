@@ -3,13 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Spaarnwoude</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
 
 	<link rel="stylesheet" href="styles/main.css">
 
 	<script type="text/javascript" charset="utf-8">
-	// 	if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-	// 	 window.location.href = 'mobile.html'
-	// 	}
+	if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)){ //test for MSIE x.x;
+        var ieversion=new Number(RegExp.$1) // capture x.x portion and store as a number
+        if (ieversion<11) {
+            window.location.href = 'ie.html';
+        }
+    }
 	</script>
 </head>
 <body ng-app="spaarnwoudeApp" ng-controller="AppCtrl">
