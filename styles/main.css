@@ -1,7 +1,4 @@
-@font-face {
-    font-family: 'Open Sans'; /*a name to be used later*/
-    src: url('../fonts/Open_Sans/OpenSans-Regular.ttf'); /*URL to font*/
-}
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 * {
   margin: 0;
@@ -11,7 +8,7 @@
 html {
   min-height: 100%;
   min-width: 700px;
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', 'sans-serif';
 }
 
 body {
@@ -113,7 +110,7 @@ nav ul li {
 
 /* Space out content a bit */
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', 'sans-serif';
   background: url(../images/bg.jpg);
   background-size: cover;
   background-attachment:fixed;
@@ -126,6 +123,19 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.iecontainer {
+  background: #eee;
+  padding: 20px;
+
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.iecontainer p {
+  margin-top: 15px;
 }
 
 .container {
