@@ -44,22 +44,23 @@
         </div>
     </div>
 </div>
+<div id="kaartWrapper">
+    <div class="filterContainer">
+    	<input type="text" class="filter" ng-model="filtertje" placeholder="Zoeken">
 
-<div class="filterContainer">
-	<input type="text" class="filter" ng-model="filtertje" placeholder="Zoeken">
+    	<ul>
+    		<li class="filterbtn doen" ng-click="filter('Doen')"><div class="icon"></div>Doen</li>
+    		<li class="filterbtn verblijven" ng-click="filter('Verblijven')"><div class="icon"></div>Verblijven</li>
+    		<li class="filterbtn genieten" ng-click="filter('Genieten')"><div class="icon"></div>Genieten</li>
+    		<li class="filterbtn beleven" ng-click="filter('Beleven')"><div class="icon"></div>Beleven</li>
+    	</ul>
+    </div>
 
-	<ul>
-		<li class="filterbtn doen" ng-click="filter('Doen')"><div class="icon"></div>Doen</li>
-		<li class="filterbtn verblijven" ng-click="filter('Verblijven')"><div class="icon"></div>Verblijven</li>
-		<li class="filterbtn genieten" ng-click="filter('Genieten')"><div class="icon"></div>Genieten</li>
-		<li class="filterbtn beleven" ng-click="filter('Beleven')"><div class="icon"></div>Beleven</li>
-	</ul>
+    <google-map ng-controller="KaartCtrl" center="map.center" zoom="map.zoom" draggable="true" bounds="map.bounds" events="map.events">
+    	<markers>
+            <marker ng-repeat="activiteit in activiteiten | filter:filtertje" coords="{ latitude: activiteit.latitude, longitude: activiteit.longitude }" icon="icons[activiteit.categorie].icon" click="openWindow(activiteit.aID)">
+            	<window coords='{ latitude: activiteit.latitude, longitude: activiteit.longitude }' show='isCurrentActiviteit(activiteit.aID)' options='{ content: infoWindow(activiteit), maxWidth: 200, disableDefaultUI: true }'></window>
+            </marker>
+        </markers>
+    </google-map>
 </div>
-
-<google-map ng-controller="KaartCtrl" center="map.center" zoom="map.zoom" draggable="true" bounds="map.bounds" events="map.events">
-	<markers>
-        <marker ng-repeat="activiteit in activiteiten | filter:filtertje" coords="{ latitude: activiteit.latitude, longitude: activiteit.longitude }" icon="icons[activiteit.categorie].icon" click="openWindow(activiteit.aID)">
-        	<window coords='{ latitude: activiteit.latitude, longitude: activiteit.longitude }' show='isCurrentActiviteit(activiteit.aID)' options='{ content: infoWindow(activiteit), maxWidth: 200, disableDefaultUI: true }'></window>
-        </marker>
-    </markers>
-</google-map>

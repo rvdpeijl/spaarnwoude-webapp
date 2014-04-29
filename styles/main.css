@@ -16,6 +16,7 @@ html {
 
 body {
   position: relative;
+  overflow: auto;
 }
 
 nav {
@@ -27,9 +28,11 @@ nav {
 }
 
 nav .wrap {
-  width:1000px;
+  width: 1000px;
   margin: 0 auto;
-  position:relative;
+  position: relative;
+  z-index: 11;
+  height: 100%;
 }
 
 body ul.social {
@@ -38,6 +41,7 @@ body ul.social {
   list-style:none;
   top: 0;
   height:80px;
+  z-index:10;
 }
 
 body ul.social li {
@@ -93,6 +97,9 @@ nav .wrap .logo img {
 nav ul {
   list-style-type: none;
   overflow: auto;
+  float:left;
+  height:100%;
+  background:white;
 }
 
 nav ul li {
@@ -122,6 +129,7 @@ a:hover {
 }
 
 .container {
+  overflow: auto;
   width: 1000px;
   margin: 50px auto;
   position: relative;
@@ -359,7 +367,7 @@ font-size: 14px;
 }
 
 #buttons .btn {
-  width: 250px;
+  width: 245px;
   cursor: pointer;
   height: 100px;
   float: left;
@@ -541,6 +549,7 @@ font-size: 14px;
   padding: 10px;
   outline: none;
   border: none;
+  border-radius:0;
   font-size: 14px;
 }
 
@@ -636,7 +645,7 @@ activiteit button:active {
   right: 0;
   bottom: 0;
   background-color: rgba(2,2,2, 0.6);
-  z-index: 5;
+  z-index: 999;
 }
 
 #single .wrapper {
@@ -1078,7 +1087,7 @@ body > div > google-map > div > div.angular-google-map-container > div > div:nth
   right: 0;
   bottom: 0;
   background-color: rgba(2, 2, 2, 0.6);
-  z-index: 5;
+  z-index: 500;
 }
 
 #overPopup .wrapper {
@@ -1109,7 +1118,134 @@ body > div > google-map > div > div.angular-google-map-container > div > div:nth
 }
 
 @media only screen and (device-width: 768px) {
-  body {
-    -webkit-transform: scale(0.90);
+  nav {
+    margin-bottom:50px;
   }
+  ul.social {
+    display:none;
+  }
+  nav .wrap .logo {
+    margin-top: 15px;
+    margin-left:100px
+  }
+  nav .wrap {
+    width:100%;
+  }
+  .container {
+    width:100%;
+    margin:0;
+  }
+
+  #weatherWidget {
+    width:230px;
+    border-bottom:2px solid rgba(0,0,0,0.7);
+  }
+
+  #mapsWidget {
+    width:230px;
+  }
+
+  .filter {
+    width:100%;
+    padding-left:10px;
+    -webkit-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+
+  }
+
+  .filter input {
+    border-radius:0;
+  }
+
+  .activiteitenContainer {
+    width:100%;
+    padding:10px;
+    -webkit-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+  }
+  
+  .activiteitenContainer activiteit {
+    width:472px;
+  }
+
+  #fbContainer {
+    padding:10px;
+    -webkit-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+  }
+
+  #welcome {
+    padding:10px;
+    -webkit-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+  }
+  #overPopup{
+    width:100%;
+    padding:10px;
+    -webkit-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;  
+  }
+  #overPopup .wrapper {
+    width:100%;
+    -webkit-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;  
+  }
+
+  #kaartWrapper {
+    padding:10px;
+    position:relative;
+  }
+
+  #kaartWrapper .filterContainer {
+    left:10px;
+    bottom:10px;
+    right:10px;
+    top:10px;
+  }
+
+  #single {
+    padding:10px;
+  }
+
+  #agenda {
+    padding:10px;
+    width:100%;
+    background:none;
+    -webkit-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box; 
+  }
+  #single {
+    padding:10px;
+    -webkit-box-sizing:border-box;
+    -ms-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box; 
+  }
+
+  #single .wrapper {
+    margin:0;
+    margin-top:10px;
+    width:100%;
+  }
+  #agenda .agendaLijst .item {
+    background:white;
+  } 
+  #fbContainer .foto {
+    left:-50px;
+  }
+
 }
