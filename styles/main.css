@@ -1200,6 +1200,7 @@ body > div > google-map > div > div.angular-google-map-container > div > div:nth
   .activiteitenContainer {
     width:100%;
     padding:10px;
+    overflow: hidden;
     -webkit-box-sizing:border-box;
     -ms-box-sizing:border-box;
     -moz-box-sizing:border-box;
