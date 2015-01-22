@@ -13,5 +13,15 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('index');
+});
+
+Route::group(array('prefix' => 'api'), function()
+{
+    Route::resource('activities', 'ActivitiesController');
+});
+
+App::missing(function($exception)
+{
+	return View::make('index');
 });
