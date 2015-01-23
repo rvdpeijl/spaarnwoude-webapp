@@ -3,11 +3,13 @@
 
     angular
         .module('app')
-        .config(routes);
+        .config(config);
 
-    routes.$inject = ['$stateProvider', '$urlRouterProvider'];
+    config.$inject = ['$stateProvider', '$urlRouterProvider', 'FacebookProvider'];
 
-    function routes($stateProvider, $urlRouterProvider) {
+    function config($stateProvider, $urlRouterProvider, FacebookProvider) {
+        FacebookProvider.init('299004140247778');
+
     	$urlRouterProvider.otherwise("/dashboard");
 
     	$stateProvider

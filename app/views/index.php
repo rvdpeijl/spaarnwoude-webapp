@@ -5,6 +5,7 @@
 	<title>Spaarnwoude App</title>
 	<script type="text/javascript" src="/js/lib/jquery/jquery.js"></script>
 	<script type="text/javascript" src="/js/lib/angular/angular.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-facebook/lib/angular-facebook.js"></script>
 	<link rel="stylesheet" href="/styles/css/main.css">
 
 	<script src='/bower_components/ngprogress/build/ngProgress.js'></script>

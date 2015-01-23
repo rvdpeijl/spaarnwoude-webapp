@@ -3,6 +3,7 @@
 
     angular
         .module('app', [
+        	'facebook',
         	'ngProgress',
         	'btford.modal',
         	'ngResource',

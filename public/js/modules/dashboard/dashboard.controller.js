@@ -6,9 +6,9 @@
         .controller('Dashboard', Dashboard);
 
     /* @ngInject */
-    Dashboard.$inject = ['activityService', '$rootScope', 'weatherService', 'ngProgress']; // activities come from resolve
+    Dashboard.$inject = ['activityService', '$rootScope', 'weatherService', 'ngProgress', 'Facebook']; // activities come from resolve
 
-    function Dashboard(activityService, $rootScope, weatherService, ngProgress) {
+    function Dashboard(activityService, $rootScope, weatherService, ngProgress, Facebook) {
         /*jshint validthis: true */
         ngProgress.color('#59ABE3');
         var vm = this;
@@ -16,12 +16,15 @@
         vm.activities = null;
         vm.forecast = null;
         vm.currentWeather = null;
+        vm.loggedIn = false;
+        vm.user = null;
 
         activate();
 
         function activate() {
+            getLoginStatus();
             ngProgress.start();
-            
+
             return activityService.getActivities().then(function(data) {
 
                 ngProgress.set(50);
@@ -39,5 +42,29 @@
 
             });
         }
+
+        function getLoginStatus() {
+            Facebook.getLoginStatus(function(response) {
+                if(response.status === 'connected') {
+                    vm.me();
+                    vm.loggedIn = true;
+                } else {
+                    vm.loggedIn = false;
+                }
+            });
+        };
+
+        vm.login = function() {
+            Facebook.login(function(response) {
+                vm.me();
+            });
+        }
+
+        vm.me = function() {
+            Facebook.api('/me', function(response) {
+                vm.user = response;
+                console.log(vm.user);
+            });
+        };
     }
 })();
