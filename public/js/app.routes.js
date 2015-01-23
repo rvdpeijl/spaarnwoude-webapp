@@ -3,11 +3,11 @@
 
     angular
         .module('app')
-        .config(config);
+        .config(routes);
 
-    config.$inject = ['$stateProvider', '$urlRouterProvider'];
+    routes.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-    function config($stateProvider, $urlRouterProvider) {
+    function routes($stateProvider, $urlRouterProvider) {
     	$urlRouterProvider.otherwise("/dashboard");
 
     	$stateProvider
@@ -31,6 +31,17 @@
                 	activities: function(activityService) {
                 		return activityService.getActivities();
                 	}
+                }
+            })
+            .state('map', {
+                url: '/kaart',
+                templateUrl: 'js/modules/map/views/index.html',
+                controller: 'Map',
+                controllerAs: 'vm',
+                resolve: {
+                    activities: function(activityService) {
+                        return activityService.getActivities();
+                    }
                 }
             })
     }

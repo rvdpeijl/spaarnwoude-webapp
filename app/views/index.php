@@ -3,15 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Spaarnwoude App</title>
+	<script type="text/javascript" src="/js/lib/jquery/jquery.js"></script>
 	<script type="text/javascript" src="/js/lib/angular/angular.js"></script>
 	<link rel="stylesheet" href="/styles/css/main.css">
 </head>
 <body ng-app="app">
 
-	<ul>
-		<li><a ui-sref="dashboard">Dashboard</a></li>
-		<li><a ui-sref="activities">Activiteiten</a></li>
-	</ul>
+	<nav>
+		<ul>
+			<li ng-repeat="menuItem in $root.config.menuItems"><a ui-sref="{{menuItem.slug}}">{{menuItem.name}}</a></li>
+		</ul>
+
+		<div class="social">
+			<div ng-repeat="platform in $root.config.social">
+				<a href="{{platform.url}}" target="_blank">{{platform.name}}</a>
+			</div>
+		</div>
+	</nav>
 
 	<div ui-view></div>
 	
@@ -21,12 +29,17 @@
 	<!-- Main Components -->
 	<script type="text/javascript" src="/js/app.module.js"></script>
 	<script type="text/javascript" src="/js/app.routes.js"></script>
+	<script type="text/javascript" src="/js/app.config.js"></script>
 
 	<!-- Activities -->
 	<script type="text/javascript" src="/js/modules/activities/activities.controller.js"></script>
 	<script type="text/javascript" src="/js/modules/activities/activities.service.js"></script>
+	<script type="text/javascript" src="/js/modules/activities/activities.directive.js"></script>
 
 	<!-- Dashboard -->
 	<script type="text/javascript" src="/js/modules/dashboard/dashboard.controller.js"></script>
+
+	<!-- Map -->
+	<script type="text/javascript" src="/js/modules/map/map.controller.js"></script>
 </body>
 </html>

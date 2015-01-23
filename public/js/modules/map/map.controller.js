@@ -3,20 +3,20 @@
 
     angular
         .module('app')
-        .controller('Dashboard', Dashboard);
+        .controller('Map', Map);
 
     /* @ngInject */
-    Dashboard.$inject = ['activities']; // activities come from resolve
+    Map.$inject = ['activities']; // activities come from resolve
 
-    function Dashboard(activities) {
+    function Map(activities) {
         /*jshint validthis: true */
         var vm = this;
-        vm.title = 'Dashboard';
+        vm.title = 'Map';
         vm.activities = activities;
 
         activate();
 
-        function activate() {        	
+        function activate() {
         }
     }
 })();
