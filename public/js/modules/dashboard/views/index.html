@@ -1,4 +1,18 @@
 <h2>Dashboard</h2>
-<ul>
-	<li ng-repeat="activity in vm.activities">- {{activity.name}}</li>
-</ul>
+
+<table>
+	<thead>
+		<th>Naam</th>
+		<th>Categorien</th>
+	</thead>
+	<tbody>
+		<tr ng-repeat="activity in vm.activities">
+			<td>{{activity.name}}</td>
+			<td>
+				<ul>
+					<li ng-repeat="category in activity.categories">- {{category}}</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>

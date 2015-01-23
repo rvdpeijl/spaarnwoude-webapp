@@ -9,7 +9,20 @@ class ActivitiesController extends \BaseController {
 	 */
 	public function index()
 	{
-		return Response::json(Activity::all());
+		$activities = [];
+		foreach (Activity::all() as $activity) {
+			$activity->categories = [];
+			$activityCategories = ActivityCategory::where('activity_id', '=', $activity->id)->get();
+			
+			foreach ($activityCategories as $item) {
+				$categories = [];
+				$category = Category::find($item->category_id);
+				array_push($categories, $category->name);
+				$activity->categories = $categories;
+			}
+			array_push($activities, $activity);
+		}
+		return Response::json($activities, 200);
 	}
 
 
@@ -43,7 +56,26 @@ class ActivitiesController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return Response::json(Activity::find($id));
+		$activity = Activity::findOrFail($id); 
+
+		/**
+		
+			TODO:
+			- ModelNotFoundException Errorhandling
+		
+		**/
+		
+		$activity->categories = [];
+		$activityCategories = ActivityCategory::where('activity_id', '=', $activity->id)->get();
+		
+		foreach ($activityCategories as $item) {
+			$categories = [];
+			$category = Category::find($item->category_id);
+			array_push($categories, $category->name);
+			$activity->categories = $categories;
+		}
+
+		return Response::json($activity, 200);
 	}
 
 
@@ -80,19 +112,6 @@ class ActivitiesController extends \BaseController {
 	public function destroy($id)
 	{
 		//
-	}
-
-	public function getCategories($id)
-	{
-		$categories = [];
-		$activityCategories = ActivityCategory::where('activity_id', '=', $id)->get();
-		
-		foreach ($activityCategories as $key => $item) {
-			$category = Category::find($item->category_id);
-			array_push($categories, $category->slug);
-		}
-
-		return $categories;
 	}
 
 
