@@ -5,6 +5,7 @@
         .module('app')
         .run(config);
 
+        config.$inject = ['$rootScope'];
         function config($rootScope) {
         	$rootScope.config = {
         		menuItems: [

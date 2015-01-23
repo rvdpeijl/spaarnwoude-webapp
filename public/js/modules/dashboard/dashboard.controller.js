@@ -6,9 +6,9 @@
         .controller('Dashboard', Dashboard);
 
     /* @ngInject */
-    Dashboard.$inject = ['activities']; // activities come from resolve
+    Dashboard.$inject = ['activities', '$rootScope']; // activities come from resolve
 
-    function Dashboard(activities) {
+    function Dashboard(activities, $rootScope) {
         /*jshint validthis: true */
         var vm = this;
         vm.title = 'Dashboard';

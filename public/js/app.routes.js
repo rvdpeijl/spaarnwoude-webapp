@@ -24,8 +24,8 @@
             })
             .state('activities', {
                 url: '/activiteiten',
-                templateUrl: 'js/modules/activities/views/index.html',
-                controller: 'Activities',
+                templateUrl: 'js/modules/activity/views/index.html',
+                controller: 'Activity',
                 controllerAs: 'vm',
                 resolve: {
                 	activities: function(activityService) {

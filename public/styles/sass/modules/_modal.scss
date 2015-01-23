@@ -1,0 +1,21 @@
+modal {
+  position: fixed;
+  left: 0; right: 0; top: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .panel {
+    position: fixed;
+    background-color: $lightgray;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    max-width: 960px;
+    min-width: 330px;
+    height: auto;
+    z-index: 2000;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+}

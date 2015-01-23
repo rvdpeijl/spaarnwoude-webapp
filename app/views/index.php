@@ -7,7 +7,9 @@
 	<script type="text/javascript" src="/js/lib/angular/angular.js"></script>
 	<link rel="stylesheet" href="/styles/css/main.css">
 </head>
-<body ng-app="app">
+<body ng-app="app" ng-controller="App">
+
+	<modal ng-if="$root.activity" activity="$root.activity"></modal>
 
 	<nav>
 		<ul>
@@ -23,6 +25,7 @@
 
 	<div ui-view></div>
 	
+	<script type="text/javascript" src="/js/lib/angular/angular-modal.js"></script>
 	<script type="text/javascript" src="/js/lib/angular/angular-ui-router.js"></script>
 	<script type="text/javascript" src="/js/lib/angular/angular-resource.js"></script>
 
@@ -30,16 +33,20 @@
 	<script type="text/javascript" src="/js/app.module.js"></script>
 	<script type="text/javascript" src="/js/app.routes.js"></script>
 	<script type="text/javascript" src="/js/app.config.js"></script>
+	<script type="text/javascript" src="/js/app.controller.js"></script>
 
 	<!-- Activities -->
-	<script type="text/javascript" src="/js/modules/activities/activities.controller.js"></script>
-	<script type="text/javascript" src="/js/modules/activities/activities.service.js"></script>
-	<script type="text/javascript" src="/js/modules/activities/activities.directive.js"></script>
+	<script type="text/javascript" src="/js/modules/activity/activity.controller.js"></script>
+	<script type="text/javascript" src="/js/modules/activity/activity.service.js"></script>
+	<script type="text/javascript" src="/js/modules/activity/activity.directive.js"></script>
 
 	<!-- Dashboard -->
 	<script type="text/javascript" src="/js/modules/dashboard/dashboard.controller.js"></script>
 
 	<!-- Map -->
 	<script type="text/javascript" src="/js/modules/map/map.controller.js"></script>
+
+	<!-- Modal -->
+	<script type="text/javascript" src="/js/modules/modal/modal.directive.js"></script>
 </body>
 </html>

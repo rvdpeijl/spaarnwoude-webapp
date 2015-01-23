@@ -1,3 +1,6 @@
 @import '../lib/bourbon/bourbon/bourbon';
 @import '../lib/bourbon/bitters/base/base';
 @import '../lib/bourbon/neat/neat';
+
+@import 'colors';
+@import 'modules/modal';
