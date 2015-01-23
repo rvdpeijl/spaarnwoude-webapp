@@ -19,6 +19,7 @@ Route::get('/', function()
 Route::group(array('prefix' => 'api'), function()
 {
     Route::resource('activities', 'ActivitiesController');
+    Route::get('activitycategories/{id}', 'ActivitiesController@getCategories');
 });
 
 App::missing(function($exception)

@@ -82,5 +82,18 @@ class ActivitiesController extends \BaseController {
 		//
 	}
 
+	public function getCategories($id)
+	{
+		$categories = [];
+		$activityCategories = ActivityCategory::where('activity_id', '=', $id)->get();
+		
+		foreach ($activityCategories as $key => $item) {
+			$category = Category::find($item->category_id);
+			array_push($categories, $category->slug);
+		}
+
+		return $categories;
+	}
+
 
 }
