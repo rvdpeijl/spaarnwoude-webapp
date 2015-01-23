@@ -6,6 +6,10 @@
 	<script type="text/javascript" src="/js/lib/jquery/jquery.js"></script>
 	<script type="text/javascript" src="/js/lib/angular/angular.js"></script>
 	<link rel="stylesheet" href="/styles/css/main.css">
+
+	<script src='/bower_components/ngprogress/build/ngProgress.js'></script>
+	<link rel='stylesheet' href='/bower_components/ngprogress/ngProgress.css'/>
+
 </head>
 <body ng-app="app" ng-controller="App">
 
@@ -28,6 +32,7 @@
 	<script type="text/javascript" src="/js/lib/angular/angular-modal.js"></script>
 	<script type="text/javascript" src="/js/lib/angular/angular-ui-router.js"></script>
 	<script type="text/javascript" src="/js/lib/angular/angular-resource.js"></script>
+	<script type="text/javascript" src="/js/lib/angular/angular-progress.js"></script>
 
 	<!-- Main Components -->
 	<script type="text/javascript" src="/js/app.module.js"></script>
@@ -48,5 +53,9 @@
 
 	<!-- Modal -->
 	<script type="text/javascript" src="/js/modules/modal/modal.directive.js"></script>
+
+	<!-- Weather -->
+	<script type="text/javascript" src="/js/modules/weather/weather.service.js"></script>
+	<script type="text/javascript" src="/js/modules/weather/weather.directive.js"></script>
 </body>
 </html>

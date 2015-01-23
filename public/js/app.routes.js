@@ -15,12 +15,7 @@
                 url: '/',
                 templateUrl: 'js/modules/dashboard/views/index.html',
                 controller: 'Dashboard',
-                controllerAs: 'vm',
-                resolve: {
-                	activities: function(activityService) {
-                		return activityService.getActivities();
-                	}
-                }
+                controllerAs: 'vm'
             })
             .state('activities', {
                 url: '/activiteiten',

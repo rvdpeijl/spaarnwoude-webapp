@@ -1,0 +1,17 @@
+<h3>Weersverwachting</h3>
+
+<p>Op dit moment:</p>
+<p>Temperatuur: {{currentWeather.main.temp}}</p>
+<p>{{currentWeather.weather[0].description}}</p>
+
+<p>Morgen:</p>
+<p>
+	Overdag: {{forecast.list[0].temp.day}} C <br>
+	's Nachts: {{forecast.list[0].temp.night}} C <br>
+</p>
+
+<p>Overmorgen:</p>
+<p>
+	Overdag: {{forecast.list[1].temp.day}} C <br>
+	's Nachts: {{forecast.list[1].temp.night}} C <br>
+</p>

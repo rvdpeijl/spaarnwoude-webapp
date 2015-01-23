@@ -1,3 +1,9 @@
 <h2>Dashboard</h2>
 
 <activity ng-repeat="activity in vm.activities" activity="activity"></activity>
+
+<hr>
+
+<weather ng-if="vm.forecast" forecast="vm.forecast" current-weather="vm.currentWeather"></weather>
+
+<hr>
