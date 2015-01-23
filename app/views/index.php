@@ -10,7 +10,7 @@
 
 	<ul>
 		<li><a ui-sref="dashboard">Dashboard</a></li>
-		<li><a ui-sref="activities">Activities</a></li>
+		<li><a ui-sref="activities">Activiteiten</a></li>
 	</ul>
 
 	<div ui-view></div>
@@ -21,5 +21,12 @@
 	<!-- Main Components -->
 	<script type="text/javascript" src="/js/app.module.js"></script>
 	<script type="text/javascript" src="/js/app.routes.js"></script>
+
+	<!-- Activities -->
+	<script type="text/javascript" src="/js/modules/activities/activities.controller.js"></script>
+	<script type="text/javascript" src="/js/modules/activities/activities.service.js"></script>
+
+	<!-- Dashboard -->
+	<script type="text/javascript" src="/js/modules/dashboard/dashboard.controller.js"></script>
 </body>
 </html>

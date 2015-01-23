@@ -13,11 +13,25 @@
     	$stateProvider
             .state('dashboard', {
                 url: '/',
-                templateUrl: 'js/modules/dashboard/views/index.html'
+                templateUrl: 'js/modules/dashboard/views/index.html',
+                controller: 'Dashboard',
+                controllerAs: 'vm',
+                resolve: {
+                	activities: function(activityService) {
+                		return activityService.getActivities();
+                	}
+                }
             })
             .state('activities', {
                 url: '/activiteiten',
-                templateUrl: 'js/modules/activities/views/index.html'
+                templateUrl: 'js/modules/activities/views/index.html',
+                controller: 'Activities',
+                controllerAs: 'vm',
+                resolve: {
+                	activities: function(activityService) {
+                		return activityService.getActivities();
+                	}
+                }
             })
     }
 })();
