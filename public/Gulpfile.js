@@ -9,7 +9,7 @@ var gulp        = require('gulp'),
 // });
 
 gulp.task('sass', function() {
-    return sass('styles/sass/', { sourcemap: true })
+    return sass('styles/sass/main.scss', { sourcemap: true })
     .on('error', function (err) {
       console.error('Error', err.message);
    })
