@@ -1,7 +1,15 @@
 <h2>Kaart</h2>
 
+<div id="tooltip">Dit is een tooltip</div>
+<div id="infoWindow" ng-show="vm.infoWindowVisible">
+	<p class="closeButton" ng-click="vm.infoWindowVisible = false">x</p>
+	<h4 id="infoWindowName">Dit is de naam</h4>
+	<div id="infoWindowDescription">Dit is de description</div>
+	<button ng-click="$root.showModal(vm.currentActivity)">Bekijk</button>
+</div>
+
 <div id="map_canvas">
-	<ui-gmap-google-map center="vm.map.center" zoom="vm.map.zoom">
+	<ui-gmap-google-map center="vm.map.center" zoom="vm.map.zoom" events="vm.map.events">
 		<ui-gmap-marker 
 			idKey="1" 
 			coords="vm.marker.coords"
@@ -9,10 +17,6 @@
 			events="vm.marker.events"
 			options="vm.marker.options"
 			>
-
-			<ui-gmap-window show="vm.marker.show" options="vm.marker.options" closeClick="closeClick()">
-                <div><p>{{vm.marker.options.name}}</p></div>
-            </ui-gmap-window>
 		</ui-gmap-window>
 		</ui-gmap-marker>
 	</ui-gmap-google-map>

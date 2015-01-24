@@ -1,5 +1,32 @@
 .angular-google-map-container { min-height: 500px; }
 
-#test { 
-color: #eeeeee;
+#tooltip { 
+	color: #eeeeee;
+	position: absolute;
+	z-index: 9999;
+	background-color: #1BBC9B;
+	opacity: 0;
+	padding: 5px 10px;
+
+	@include transition(all, 0.2s, ease-in-out);
+}
+
+#infoWindow {
+	color: #eeeeee;
+	min-width: 200px;
+	max-width: 350px;
+	position: absolute;
+	z-index: 9999;
+	background-color: #F4B350;
+	opacity: 0;
+	padding: 5px 10px;
+
+	@include transition(all, 0.2s, ease-in-out);
+
+	.closeButton {
+		text-align: right;
+		display: inline-block;
+		float: right;
+		cursor: pointer;
+	}
 }
