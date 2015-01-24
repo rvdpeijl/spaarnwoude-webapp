@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* Bitters 0.10.0
  * http://bitters.bourbon.io
- * Copyright 2013ΓÇô2014 thoughtbot, inc.
+ * Copyright 2013–2014 thoughtbot, inc.
  * MIT License */
 button,
 input[type="submit"] {
@@ -2046,7 +2046,9 @@ modal {
 .angular-google-map-container {
   min-height: 500px; }
 
-<<<<<<< HEAD
+#test {
+  color: #eeeeee; }
+
 body {
   width: 960px;
   margin: auto; }
@@ -2082,4 +2084,6 @@ nav .social div {
 .activitiy-content {
   cursor: pointer; }
 
-/*# sourceMappingURL=main.css.map */
+
+
+/*# sourceMappingURL=maps/main.css.map */

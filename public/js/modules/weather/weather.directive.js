@@ -17,6 +17,7 @@
             scope: { forecast: '=', currentWeather: '=' },
             templateUrl: '/js/modules/weather/views/weather.html'
         };
+
         return directive;
 
         function link(scope, element, attrs) {	

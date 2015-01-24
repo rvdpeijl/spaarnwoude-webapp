@@ -21,6 +21,12 @@
         		.catch(failed);
 
         	function complete(response) {
+                var main = response.data.list[0].weather[0].main
+                switch(main) {
+                    case 'Clear':
+                        console.log('weather is clear')
+                        break;
+                }
         		return response.data;
         	}
 
