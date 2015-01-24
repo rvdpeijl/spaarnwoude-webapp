@@ -3,3 +3,4 @@ dist
 .tmp
 .sass-cache
 app/config/database.php
+public/Gulpfile.js
