@@ -3,13 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Spaarnwoude App</title>
-	<script type="text/javascript" src="/js/lib/jquery/jquery.js"></script>
-	<script type="text/javascript" src="/js/lib/angular/angular.js"></script>
-	<script type="text/javascript" src="/bower_components/angular-facebook/lib/angular-facebook.js"></script>
+	<script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="/bower_components/angular/angular.js"></script>
 	<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
 	<link rel="stylesheet" href="/styles/css/main.css">
-
-	<script src='/bower_components/ngprogress/build/ngProgress.js'></script>
 	<link rel='stylesheet' href='/bower_components/ngprogress/ngProgress.css'/>
 
 </head>
@@ -30,13 +27,14 @@
 	</nav>
 
 	<div ui-view></div>
-	
-	<script type="text/javascript" src="/js/lib/angular/angular-modal.js"></script>
-	<script type="text/javascript" src="/js/lib/angular/angular-ui-router.js"></script>
-	<script type="text/javascript" src="/js/lib/angular/angular-resource.js"></script>
-	<script type="text/javascript" src="/js/lib/angular/angular-progress.js"></script>
+
+	<!-- Bower Components -->
+	<script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-resource/angular-resource.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-facebook/lib/angular-facebook.js"></script>
 	<script type="text/javascript" src="/bower_components/lodash/dist/lodash.js"></script>
 	<script type="text/javascript" src="/bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+	<script type="text/javascript" src='/bower_components/ngprogress/build/ngProgress.js'></script>
 
 	<!-- Main Components -->
 	<script type="text/javascript" src="/js/app.module.js"></script>
