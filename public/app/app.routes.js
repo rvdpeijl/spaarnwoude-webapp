@@ -15,13 +15,13 @@
     	$stateProvider
             .state('dashboard', {
                 url: '/',
-                templateUrl: 'js/modules/dashboard/views/index.html',
+                templateUrl: 'app/modules/dashboard/views/index.html',
                 controller: 'Dashboard',
                 controllerAs: 'vm'
             })
             .state('activities', {
                 url: '/activiteiten',
-                templateUrl: 'js/modules/activity/views/index.html',
+                templateUrl: 'app/modules/activity/views/index.html',
                 controller: 'Activity',
                 controllerAs: 'vm',
                 resolve: {
@@ -32,7 +32,7 @@
             })
             .state('map', {
                 url: '/kaart',
-                templateUrl: 'js/modules/map/views/index.html',
+                templateUrl: 'app/modules/map/views/index.html',
                 controller: 'Map',
                 controllerAs: 'vm',
                 resolve: {

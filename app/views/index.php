@@ -38,30 +38,30 @@
 	<script type="text/javascript" src="/lib/ngprogress/ngProgress.js"></script>
 
 	<!-- Main Components -->
-	<script type="text/javascript" src="/js/app.module.js"></script>
-	<script type="text/javascript" src="/js/app.routes.js"></script>
-	<script type="text/javascript" src="/js/app.config.js"></script>
-	<script type="text/javascript" src="/js/app.controller.js"></script>
+	<script type="text/javascript" src="/app/app.module.js"></script>
+	<script type="text/javascript" src="/app/app.routes.js"></script>
+	<script type="text/javascript" src="/app/app.config.js"></script>
+	<script type="text/javascript" src="/app/app.controller.js"></script>
 
 	<!-- Activities -->
-	<script type="text/javascript" src="/js/modules/activity/activity.controller.js"></script>
-	<script type="text/javascript" src="/js/modules/activity/activity.service.js"></script>
-	<script type="text/javascript" src="/js/modules/activity/activity.directive.js"></script>
+	<script type="text/javascript" src="/app/modules/activity/activity.controller.js"></script>
+	<script type="text/javascript" src="/app/modules/activity/activity.service.js"></script>
+	<script type="text/javascript" src="/app/modules/activity/activity.directive.js"></script>
 
 	<!-- Dashboard -->
-	<script type="text/javascript" src="/js/modules/dashboard/dashboard.controller.js"></script>
+	<script type="text/javascript" src="/app/modules/dashboard/dashboard.controller.js"></script>
 
 	<!-- Map -->
-	<script type="text/javascript" src="/js/modules/map/map.controller.js"></script>
+	<script type="text/javascript" src="/app/modules/map/map.controller.js"></script>
 
 	<!-- Modal -->
-	<script type="text/javascript" src="/js/modules/modal/modal.directive.js"></script>
+	<script type="text/javascript" src="/app/modules/modal/modal.directive.js"></script>
 
 	<!-- Weather -->
-	<script type="text/javascript" src="/js/modules/weather/weather.service.js"></script>
-	<script type="text/javascript" src="/js/modules/weather/weather.directive.js"></script>
+	<script type="text/javascript" src="/app/modules/weather/weather.service.js"></script>
+	<script type="text/javascript" src="/app/modules/weather/weather.directive.js"></script>
 	
 	<!-- FacebookProfiler -->
-	<script type="text/javascript" src="/js/modules/facebookprofiler/facebookprofiler.service.js"></script>
+	<script type="text/javascript" src="/app/modules/facebookprofiler/facebookprofiler.service.js"></script>
 </body>
 </html>

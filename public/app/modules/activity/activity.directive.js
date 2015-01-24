@@ -15,7 +15,7 @@
             link: link,
             restrict: 'E',
             scope: { activity: '=' },
-            templateUrl: '/js/modules/activity/views/activity.html'
+            templateUrl: '/app/modules/activity/views/activity.html'
         };
         return directive;
 
