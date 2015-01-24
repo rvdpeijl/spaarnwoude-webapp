@@ -13,6 +13,28 @@
         var vm = this;
         vm.title = 'Map';
         vm.activities = activities;
+        vm.map = { 
+            center: { latitude: 52.413307, longitude: 4.680558 }, 
+            zoom: 13 
+        };
+
+        vm.marker = {
+            coords: {
+                latitude: 52.413307,
+                longitude: 4.680558
+            },
+            icon: '/img/icons/blue_location.png',
+            options: { name: 'Marky Marker' },
+            events:  { 
+                mouseover: function(gMarker, eventName, model) {
+                    vm.marker.show = true;
+                },
+                mouseout: function(gMarker, eventName, model) {
+                    vm.marker.show = false;
+                }
+            },
+            show: false
+        };
 
         activate();
 

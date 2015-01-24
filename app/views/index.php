@@ -6,6 +6,7 @@
 	<script type="text/javascript" src="/js/lib/jquery/jquery.js"></script>
 	<script type="text/javascript" src="/js/lib/angular/angular.js"></script>
 	<script type="text/javascript" src="/bower_components/angular-facebook/lib/angular-facebook.js"></script>
+	<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
 	<link rel="stylesheet" href="/styles/css/main.css">
 
 	<script src='/bower_components/ngprogress/build/ngProgress.js'></script>
@@ -34,6 +35,8 @@
 	<script type="text/javascript" src="/js/lib/angular/angular-ui-router.js"></script>
 	<script type="text/javascript" src="/js/lib/angular/angular-resource.js"></script>
 	<script type="text/javascript" src="/js/lib/angular/angular-progress.js"></script>
+	<script type="text/javascript" src="/bower_components/lodash/dist/lodash.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
 
 	<!-- Main Components -->
 	<script type="text/javascript" src="/js/app.module.js"></script>
@@ -58,5 +61,7 @@
 	<!-- Weather -->
 	<script type="text/javascript" src="/js/modules/weather/weather.service.js"></script>
 	<script type="text/javascript" src="/js/modules/weather/weather.directive.js"></script>
+	<!-- FacebookProfiler -->
+	<script type="text/javascript" src="/js/modules/facebookprofiler/facebookprofiler.service.js"></script>
 </body>
 </html>

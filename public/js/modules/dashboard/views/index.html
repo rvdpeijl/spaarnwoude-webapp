@@ -15,3 +15,4 @@
 
 <p ng-show="vm.user">U bent ingelogd als {{vm.user.first_name}} {{vm.user.last_name}}</p>
 <button ng-hide="vm.user" ng-click="vm.login()">Login Met Facebook</button>
+<button ng-show="vm.user" ng-click="vm.logout()">Logout</button>

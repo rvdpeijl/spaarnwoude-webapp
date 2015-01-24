@@ -62,9 +62,17 @@
 
         vm.me = function() {
             Facebook.api('/me', function(response) {
-                vm.user = response;
-                console.log(vm.user);
+                activityService.getActivitiesByFbProfile(response).then(function(activities) {
+                    vm.activities = activities;
+                });
             });
         };
+
+        vm.logout = function() {
+            Facebook.logout(function() {
+                vm.user = null;
+                console.log('logged out');
+            })
+        }
     }
 })();

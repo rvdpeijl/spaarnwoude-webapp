@@ -7,6 +7,7 @@
         	'ngProgress',
         	'btford.modal',
         	'ngResource',
-            'ui.router'
+            'ui.router',
+            'uiGmapgoogle-maps'
         ]);
 })();

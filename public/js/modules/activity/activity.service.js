@@ -6,9 +6,11 @@
         .factory('activityService', activityService);
 
     /* @ngInject */
-    function activityService($http) {
+    activityService.$inject = ['$http', 'FacebookProfiler']
+    function activityService($http, FacebookProfiler) {
         var service = {
-            getActivities: getActivities
+            getActivities: getActivities,
+            getActivitiesByFbProfile: getActivitiesByFbProfile
         };
         return service;
 
@@ -26,6 +28,20 @@
         	function failed(response) {
         		return response.data;
         	}
+        }
+
+        function getActivitiesByFbProfile(user) {
+            return $http.get('/api/activities')
+                .then(complete)
+                .catch(failed);
+
+            function complete(response) {
+                return FacebookProfiler.recommend(response.data, user);
+            }
+
+            function failed(response) {
+                return response.data;
+            }
         }
     }
 })();
