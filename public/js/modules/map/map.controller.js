@@ -28,6 +28,7 @@
             events:  { 
                 mouseover: function(gMarker, eventName, model) {
                     vm.marker.show = true;
+                    console.log(eventName);
                 },
                 mouseout: function(gMarker, eventName, model) {
                     vm.marker.show = false;

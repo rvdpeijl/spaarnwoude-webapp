@@ -3,12 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Spaarnwoude App</title>
-	<script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
-	<script type="text/javascript" src="/bower_components/angular/angular.js"></script>
-	<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
-	<link rel="stylesheet" href="/styles/css/main.css">
-	<link rel='stylesheet' href='/bower_components/ngprogress/ngProgress.css'/>
+	<script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/lib/angular/angular.js"></script>
 
+	<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+
+	<link rel="stylesheet" href="/styles/css/main.css">
+	<link rel='stylesheet' href='/lib/ngprogress/ngProgress.css'/>
 </head>
 <body ng-app="app" ng-controller="App">
 
@@ -28,13 +29,13 @@
 
 	<div ui-view></div>
 
-	<!-- Bower Components -->
-	<script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-	<script type="text/javascript" src="/bower_components/angular-resource/angular-resource.js"></script>
-	<script type="text/javascript" src="/bower_components/angular-facebook/lib/angular-facebook.js"></script>
-	<script type="text/javascript" src="/bower_components/lodash/dist/lodash.js"></script>
-	<script type="text/javascript" src="/bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
-	<script type="text/javascript" src='/bower_components/ngprogress/build/ngProgress.js'></script>
+	<!-- Lib Files -->
+	<script type="text/javascript" src="/lib/angular-facebook/angular-facebook.js"></script>
+	<script type="text/javascript" src="/lib/angular-google-maps/angular-google-maps.js"></script>
+	<script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+	<script type="text/javascript" src="/lib/angular-ui-router/angular-ui-router.js"></script>
+	<script type="text/javascript" src="/lib/lodash/lodash.min.js"></script>
+	<script type="text/javascript" src="/lib/ngprogress/ngProgress.js"></script>
 
 	<!-- Main Components -->
 	<script type="text/javascript" src="/js/app.module.js"></script>
@@ -59,6 +60,7 @@
 	<!-- Weather -->
 	<script type="text/javascript" src="/js/modules/weather/weather.service.js"></script>
 	<script type="text/javascript" src="/js/modules/weather/weather.directive.js"></script>
+	
 	<!-- FacebookProfiler -->
 	<script type="text/javascript" src="/js/modules/facebookprofiler/facebookprofiler.service.js"></script>
 </body>
