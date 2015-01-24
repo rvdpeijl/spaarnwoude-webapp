@@ -1,0 +1,21 @@
+{
+  "name": "spaarnwoude",
+  "version": "0.0.0",
+  "homepage": "https://github.com/rvdpeijl/spaarnwoude-webapp",
+  "authors": [
+    "Robbin van der Peijl <robbin@rvdpeijl.nl>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-google-maps": "~2.0.12",
+    "ngprogress": "~1.0.7",
+    "angular-facebook": "~0.2.3"
+  }
+}
