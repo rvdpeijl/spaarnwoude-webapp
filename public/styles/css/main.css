@@ -2046,6 +2046,41 @@ modal {
 .angular-google-map-container {
   min-height: 500px; }
 
+body {
+  width: 960px;
+  margin: auto; }
+
+nav {
+  min-height: 80px;
+  border-bottom: 1px solid black;
+  display: block;
+  margin-bottom: 20px; }
+
+nav ul {
+  display: inline-block; }
+
+nav ul li {
+  display: inline-block;
+  padding: 25px; }
+
+nav .social {
+  float: right; }
+
+nav .social div {
+  display: inline-block;
+  padding: 25px; }
+
+.activities {
+  width: 65%;
+  float: left; }
+
+.weatherWidget {
+  width: 35%;
+  float: left; }
+
+.activitiy-content {
+  cursor: pointer; }
+
 
 
 /*# sourceMappingURL=maps/main.css.map */

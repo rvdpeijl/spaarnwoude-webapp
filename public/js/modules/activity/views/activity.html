@@ -1,3 +1,7 @@
-<div class="name">{{activity.name}}</div>
-<div class="image"><img ng-src="/img/activities/{{activity.id}}/medium/medium_image1.jpg" alt=""></div>
-<button ng-click="$root.showModal(activity)">Bekijk</button>
+<div  ng-click="$root.showModal(activity)" class="activitiy-content">
+	<div class="name">{{activity.name}}</div>
+	<div class="image"><img ng-src="/img/activities/{{activity.id}}/medium/medium_image1.jpg" alt=""></div>
+</div>
+
+
+<!-- <button ng-click="$root.showModal(activity)">Bekijk</button> -->
