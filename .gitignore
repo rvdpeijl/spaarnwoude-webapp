@@ -2,4 +2,4 @@ public/node_modules
 dist
 .tmp
 .sass-cache
-database.php
+app/config/database.php

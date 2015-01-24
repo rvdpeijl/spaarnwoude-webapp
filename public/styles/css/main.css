@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* Bitters 0.10.0
  * http://bitters.bourbon.io
- * Copyright 2013–2014 thoughtbot, inc.
+ * Copyright 2013ΓÇô2014 thoughtbot, inc.
  * MIT License */
 button,
 input[type="submit"] {
@@ -2030,7 +2030,7 @@ modal {
   background-color: rgba(0, 0, 0, 0.5); }
   modal .panel {
     position: fixed;
-    background-color: #eaeaea;
+    background-color: #eeeeee;
     top: 50%;
     left: 50%;
     width: 90%;
@@ -2046,6 +2046,7 @@ modal {
 .angular-google-map-container {
   min-height: 500px; }
 
+<<<<<<< HEAD
 body {
   width: 960px;
   margin: auto; }
@@ -2081,6 +2082,4 @@ nav .social div {
 .activitiy-content {
   cursor: pointer; }
 
-
-
-/*# sourceMappingURL=maps/main.css.map */
+/*# sourceMappingURL=main.css.map */
