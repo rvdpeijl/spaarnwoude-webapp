@@ -11,15 +11,14 @@ class ActivitiesController extends \BaseController {
 	{
 		$activities = [];
 		foreach (Activity::all() as $activity) {
+			$categories = [];
 			$activity->categories = [];
 			$activityCategories = ActivityCategory::where('activity_id', '=', $activity->id)->get();
-			
 			foreach ($activityCategories as $item) {
-				$categories = [];
 				$category = Category::find($item->category_id);
 				array_push($categories, $category->name);
-				$activity->categories = $categories;
 			}
+			$activity->categories = $categories;
 			array_push($activities, $activity);
 		}
 		return Response::json($activities, 200);

@@ -7,7 +7,8 @@
 	<script type="text/javascript" src="/lib/angular/angular.js"></script>
 
 	<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
-
+	
+	<link rel="stylesheet" href="/styles/css/font-awesome.css">
 	<link rel="stylesheet" href="/styles/css/main.css">
 	<link rel='stylesheet' href='/lib/ngprogress/ngProgress.css'/>
 </head>

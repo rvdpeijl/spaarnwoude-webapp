@@ -16,6 +16,8 @@
         vm.infoWindowVisible = false;
 
         var tooltip = document.getElementById('tooltip');
+        var tooltipName = document.getElementById('tooltipName');
+        var tooltipCategories = document.getElementById('tooltipCategories');
         var infoWindow = document.getElementById('infoWindow');
         var infoWindowName = document.getElementById('infoWindowName');
         var infoWindowDescription = document.getElementById('infoWindowDescription');
@@ -39,17 +41,21 @@
                 latitude: 52.413307,
                 longitude: 4.680558
             },
-            icon: '/img/icons/blue_location.png',
-            options: { name: 'Marky Markskizzle', description: 'Dit is descripzur' },
+            icon: '/img/icons/location_purple.png',
             events:  { 
                 mouseover: function(gMarker, eventName, model) {
                     if (!vm.infoWindowVisible) {
-                        var left = ($window.event.clientX) + 'px';
+                        var left = ($window.event.clientX+50) + 'px';
                         var top = ($window.event.clientY-50) + 'px';
                         tooltip.style.opacity = 100;
                         tooltip.style.left = left;
                         tooltip.style.top = top;
-                        tooltip.innerHTML = gMarker.name;
+                        tooltipName.innerHTML = gMarker.name;
+                        tooltipCategories.innerHTML = '';
+                        
+                        angular.forEach(gMarker.categories, function(val, key) {
+                            $('<div class="category"><img src="/img/icons/'+val+'_white.png"><span>'+val+'</span></div>').appendTo($(tooltipCategories));
+                        });
                     };
                 },
                 mouseout: function(gMarker, eventName, model) {
@@ -57,15 +63,17 @@
                     tooltip.style.opacity = 0;
                 },
                 click: function(gMarker, eventName, model) {
-                    var left = ($window.event.clientX) + 'px';
+                    var left = ($window.event.clientX+50) + 'px';
                     var top = ($window.event.clientY-50) + 'px';
+
+                    vm.currentActivity = gMarker;
 
                     vm.infoWindowVisible = true;
                     tooltip.style.opacity = 0;
                     infoWindow.style.opacity = 100;
                     infoWindow.style.left = left;
                     infoWindow.style.top = top;
-                    infoWindowDescription.innerHTML = gMarker.description
+                    infoWindowDescription.innerHTML = gMarker.short_desc
                     infoWindowName.innerHTML = gMarker.name;
                 }
             },

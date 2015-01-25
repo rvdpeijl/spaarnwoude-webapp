@@ -1,6 +1,9 @@
 <h2>Kaart</h2>
 
-<div id="tooltip">Dit is een tooltip</div>
+<div id="tooltip">
+	<p id="tooltipName">Dit is een tooltip</p>
+	<div id="tooltipCategories"></div>
+</div>
 <div id="infoWindow" ng-show="vm.infoWindowVisible">
 	<p class="closeButton" ng-click="vm.infoWindowVisible = false">x</p>
 	<h4 id="infoWindowName">Dit is de naam</h4>
@@ -10,12 +13,13 @@
 
 <div id="map_canvas">
 	<ui-gmap-google-map center="vm.map.center" zoom="vm.map.zoom" events="vm.map.events">
-		<ui-gmap-marker 
+		<ui-gmap-marker
+			ng-repeat="activity in vm.activities" 
 			idKey="1" 
-			coords="vm.marker.coords"
+			coords="{ latitude: activity.latitude, longitude: activity.longitude }"
 			icon="vm.marker.icon"
 			events="vm.marker.events"
-			options="vm.marker.options"
+			options="activity"
 			>
 		</ui-gmap-window>
 		</ui-gmap-marker>

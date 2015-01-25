@@ -24,8 +24,19 @@ class ActivityTableSeeder extends Seeder {
 		DB::table('activities')->delete();
 
 		Activity::create(array(
-			'name' => 'Vakantiehuis huren bij Droomparken', 
-			'organization' => 'Droomparken'
+			'name' => 'Huur een Droomparken bungalow!', 
+			'organization' => 'Droomparken',
+			'latitude' => 52.413307,
+			'longitude' => 4.680558,
+			'short_desc' => 'Korte beschrijving',
+			'long_desc' => 'Lange beschrijving',
+			'street_name' => 'Jansstraat 5',
+			'zipcode' => '2012XX',
+			'city' => 'Haarlem',
+			'phone' => '023-5252525',
+			'website_url' => 'http://www.example.com/',
+			'facebook_url' => 'http://www.facebook.com/spaarnwoude',
+			'twitter_url' => 'http://www.twitter.com/spaarnwoude'
 		));
 	}
 
@@ -69,6 +80,11 @@ class ActivityCategoryTableSeeder extends Seeder {
 		ActivityCategory::create(array(
 			'activity_id' => 1,
 			'category_id' => 1
+		));
+
+		ActivityCategory::create(array(
+			'activity_id' => 1,
+			'category_id' => 2
 		));
 	}
 
