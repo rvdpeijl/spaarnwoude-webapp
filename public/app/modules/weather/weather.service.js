@@ -21,7 +21,7 @@
         		.catch(failed);
 
         	function complete(response) {
-        		return response;
+        		return response.data;
         	}
 
         	function failed(response) {

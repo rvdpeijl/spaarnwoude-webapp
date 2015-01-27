@@ -7,6 +7,9 @@
         	'ngProgress',
         	'ngResource',
             'ui.router',
-            'uiGmapgoogle-maps'
+            'uiGmapgoogle-maps',
+            'ngTouch',
+            'angular-carousel'
+            
         ]);
 })();

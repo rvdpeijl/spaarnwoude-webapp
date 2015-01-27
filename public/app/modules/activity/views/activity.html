@@ -1,6 +1,19 @@
-<div ng-click="$root.showModal(activity)" class="activitiy-content">
-	<div class="name">{{activity.name}}</div>
-	<div class="image"><img ng-src="/img/activities/{{activity.id}}/medium/medium_image1.jpg" alt=""></div>
+<div class="activity-content">
+	<div class="wrapper">
+		<div class="image">
+			<img ng-src="/img/activities/{{activity.id}}/medium/medium_image1.jpg" alt="">
+		</div>
+		<div class="logo">
+			<a target="_blank" href="{{activity.website_url}}"><img src="/img/activities/{{activity.id}}/logo/logo.png" alt=""></a>
+		</div>	
+	</div>
+	<div class="infoBar">		
+			<p>{{activity.name}}</p>
+		<div ng-click="$root.showModal(activity)" class="bekijk {{ activity.categories[0].toLowerCase()}}">
+			BEKIJK
+		</div>
+	</div>
+	
 </div>
 
 

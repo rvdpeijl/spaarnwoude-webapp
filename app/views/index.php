@@ -5,9 +5,10 @@
 	<title>Spaarnwoude App</title>
 	<script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="/lib/angular/angular.js"></script>
-
+	<script src="/node_modules/angular-touch/angular-touch.js"></script>
 	<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
-	
+	<link href="/lib/ng-carousel/angular-carousel.css" rel="stylesheet" type="text/css" />
+
 	<link rel="stylesheet" href="/styles/css/font-awesome.css">
 	<link rel="stylesheet" href="/styles/css/main.css">
 	<link rel='stylesheet' href='/lib/ngprogress/ngProgress.css'/>
@@ -15,9 +16,14 @@
 <body ng-app="app" ng-controller="App">
 
 	<modal ng-if="$root.activity" activity="$root.activity"></modal>
-
 	<nav>
+	<div class="outer-container">
 		<ul>
+			<li class="logo">
+				<a href="/">
+					<img width="260" src="img/logo.png" alt="">
+				</a>
+			</li>
 			<li ng-repeat="menuItem in $root.config.menuItems"><a ui-sref="{{menuItem.slug}}">{{menuItem.name}}</a></li>
 		</ul>
 
@@ -26,10 +32,12 @@
 				<a href="{{platform.url}}" target="_blank">{{platform.name}}</a>
 			</div>
 		</div>
+		</div>
 	</nav>
 
-	<div ui-view></div>
-
+	<div class="outer-container">
+		<div ui-view></div>
+	</div>
 	<!-- Lib Files -->
 	<script type="text/javascript" src="/lib/angular-facebook/angular-facebook.js"></script>
 	<script type="text/javascript" src="/lib/angular-google-maps/angular-google-maps.js"></script>
@@ -37,6 +45,7 @@
 	<script type="text/javascript" src="/lib/angular-ui-router/angular-ui-router.js"></script>
 	<script type="text/javascript" src="/lib/lodash/lodash.min.js"></script>
 	<script type="text/javascript" src="/lib/ngprogress/ngProgress.js"></script>
+	<script type="text/javascript" src="/lib/ng-carousel/angular-carousel.js"></script>
 
 	<!-- Main Components -->
 	<script type="text/javascript" src="/app/app.module.js"></script>

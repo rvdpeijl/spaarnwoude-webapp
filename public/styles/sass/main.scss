@@ -9,8 +9,10 @@
 @import 'modules/map';
 
 body {
-	width:960px;
 	margin:auto;
+	background-image: url("../../img/bg.jpg");
+	background-size: cover;
+	background-attachment: fixed;
 }
 
 nav {
@@ -18,38 +20,212 @@ nav {
 	border-bottom:1px solid black;
 	display: block;
 	margin-bottom:20px;
-
+	background:white;
 }
 
 nav ul {
 	display: inline-block;
+	padding:25px;
 }
 
 nav ul li {
 	display: inline-block;
-	padding:25px;
+	margin:0px 30px 0px 0px;
+	vertical-align: middle;
 }
 
 nav .social {
 	float:right;
+	padding:40px;
 }
 
 nav .social div {
 	display: inline-block;
-
-	padding:25px;
+	margin:0px 30px 0px 0px;
+	vertical-align: middle;
 }
 
 .activities {
-	width:65%;
-	float:left;
+	@include span-columns(7);
+	margin:0;
 }
 
 .weatherWidget {
-	width:35%;
-	float:left;
+	@include fill-parent();
+	height:213px;
+	margin:0;
+	background: #32aadf;
+	background: #33abda;
+	background: -moz-linear-gradient(top, #33abda 1%, #1984ad 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#33abda), color-stop(100%,#1984ad));
+	background: -webkit-linear-gradient(top, #33abda 1%,#1984ad 100%);
+	background: -o-linear-gradient(top, #33abda 1%,#1984ad 100%);
+	background: -ms-linear-gradient(top, #33abda 1%,#1984ad 100%);
+	background: linear-gradient(to bottom, #33abda 1%,#1984ad 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33abda', endColorstr='#1984ad',GradientType=0 );
+	
+	ul {
+		height:209px;
+	}
+	h5,p {
+		color:white;
+		text-align: center;
+	}
+	img {
+		margin:1em auto;
+		display: block;
+		max-width:60px;
+	}
+	.day {
+		font-weight: bold;
+		padding-top: 19px;
+	}
+	.rn-carousel-controls {
+		span {
+			color:white
+		}
+	}
+// @include row(table);
 }
 
-.activitiy-content {
-	cursor: pointer;
+.miniMap {
+	@include fill-parent();
+	margin:0;
+	height: 150px;
+	position: relative;
+	background-image: url(../../img/minimap.jpg);
+	background-size: cover;
+// @include row(table);
+
+	a {
+		p{
+			position: absolute;
+			top: 50%;
+			margin-top: -20px;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			text-align: center;
+			width: 100%;
+			background-color: #ff9405;
+			font-size: 15px;
+			font-weight: bold;
+			-webkit-font-smoothing: antialiased;
+			color: #fff;
+		}
+	}
+}
+
+.facebook {
+	@include span-columns(2);	
+	margin:0;
+}
+.outer-container {
+	max-width: 1000px;
+	min-width: 1000px;
+	margin:auto;
+	overflow: hidden;
+}
+.widgets {
+	@include span-columns(3);		
+	margin:0;
+	width:27.23176%;
+}
+.activity-content {
+	max-width: 100%;
+	p {
+		color:white;
+	}
+	margin:0;
+	.infoBar {
+		background: white;
+		position: relative;
+		height: 75px;
+		margin-top: -4px;
+		padding: 21px;
+		p {
+			margin: 0;
+			float: left;
+			vertical-align: middle;
+			height: 100%;
+			font-size:20px;
+			max-width: 80%;
+			clear: right;
+			color:#555;		
+		}
+
+		.bekijk {
+			position: absolute;
+			right:0;
+			top:0;
+			bottom:0;
+			line-height: 460%;
+			cursor: pointer;
+			width:20%;
+			vertical-align: middle;
+			color:white;
+			text-align: center;
+		}
+		.bekijk.beleven {
+			background: #F18A01;
+		}
+
+		.bekijk.doen {
+			background: #B7037E;
+		}
+
+		.bekijk.genieten {
+			background: #32AADF;
+		}
+
+		.bekijk.verblijven {
+			background: #DBDB00;
+		}
+
+	}
+}
+
+.activities-list {
+	width:100%;
+	
+	.activity-content {
+		max-width: 477px;
+		display: inline-block;
+		margin: 10px;
+	}
+
+	ul {
+		width:100%;
+		height:340px;
+	}
+
+	.wrapper {
+		position:relative;
+
+		.logo {
+			position:absolute;
+			bottom:10px;
+			left:10px;
+			max-width:140px;
+		}
+	}
+}
+
+.activities {
+	ul {
+		width:100%;
+		height:381px;
+	}
+
+	ul li .wrapper {
+		position:relative;
+
+		.logo {
+			position:absolute;
+			bottom:10px;
+			left:10px;
+			max-width:140px;
+		}
+	}
+	
+
 }
