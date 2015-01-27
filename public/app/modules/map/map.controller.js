@@ -24,6 +24,8 @@
         var infoWindowName = document.getElementById('infoWindowName');
         var infoWindowDescription = document.getElementById('infoWindowDescription');
 
+        console.log(activities);
+
         vm.map = { 
             center: { latitude: 52.413307, longitude: 4.680558 }, 
             zoom: 13,
