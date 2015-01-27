@@ -7,6 +7,7 @@
 @import 'modules/colors';
 @import 'modules/modal';
 @import 'modules/map';
+@import 'modules/admin';
 
 body {
 	width:960px;
@@ -38,6 +39,12 @@ nav .social div {
 	display: inline-block;
 
 	padding:25px;
+}
+
+table {
+	form {
+		float: left;
+	}
 }
 
 .activities {

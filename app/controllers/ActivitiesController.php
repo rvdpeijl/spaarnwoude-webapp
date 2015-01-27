@@ -32,7 +32,7 @@ class ActivitiesController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('admin.activities.create');
 	}
 
 
@@ -86,7 +86,8 @@ class ActivitiesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$activity = Activity::find($id);
+		return View::make('admin.activities.edit')->withActivity($activity);
 	}
 
 
@@ -110,7 +111,11 @@ class ActivitiesController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$activity = Activity::find($id);
+        $activity->delete();
+
+        return Redirect::to('/admin/activities/')
+        ->with('message', 'Activiteit verwijderd.');
 	}
 
 

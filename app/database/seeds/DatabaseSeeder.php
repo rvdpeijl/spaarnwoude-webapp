@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('ActivityTableSeeder');
 		$this->call('CategoryTableSeeder');
 		$this->call('ActivityCategoryTableSeeder');
+		$this->call('UserTableSeeder');
 	}
 }
 
@@ -166,4 +167,16 @@ class ActivityCategoryTableSeeder extends Seeder {
 		));
 	}
 
+}
+
+class UserTableSeeder extends Seeder {
+	public function run()
+	{
+		User::create(array(
+			'firstname' => 'Admin',
+			'lastname' => 'Admin',
+			'username' => 'admin',
+			'password' => Hash::make('password')
+		));
+	}
 }

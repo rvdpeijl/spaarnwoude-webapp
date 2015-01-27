@@ -16,9 +16,29 @@ Route::get('/', function()
 	return View::make('index');
 });
 
+// Authentication
+Route::get('login', 'AuthController@getLogin');
+Route::post('login', 'AuthController@postLogin');
+Route::get('logout', 'AuthController@logout');
+
+// API
 Route::group(array('prefix' => 'api'), function()
 {
     Route::resource('activities', 'ActivitiesController');
+});
+
+Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
+{
+    Route::get('/', function()
+    {
+        return View::make('admin.index');
+    });
+
+    Route::get('activities', function()
+    {
+        return View::make('admin.activities.index');
+    });
+
 });
 
 App::missing(function($exception)
