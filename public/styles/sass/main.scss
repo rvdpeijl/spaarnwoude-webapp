@@ -53,22 +53,3 @@ nav .social div {
 .activitiy-content {
 	cursor: pointer;
 }
-
-#tooltipCategories {
-
-	.category {
-		position: relative;
-		width: 50%;
-		float: left;
-
-		img {
-			height: 30px;
-		}
-
-		span {
-			position: absolute;
-			top: 5px;
-			left: 40px;
-		}
-	}
-}

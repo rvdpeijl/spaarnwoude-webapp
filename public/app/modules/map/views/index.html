@@ -1,20 +1,23 @@
 <h2>Kaart</h2>
 
-<div id="tooltip">
-	<p id="tooltipName">Dit is een tooltip</p>
-	<div id="tooltipCategories"></div>
-</div>
-<div id="infoWindow" ng-show="vm.infoWindowVisible">
-	<p class="closeButton" ng-click="vm.infoWindowVisible = false">x</p>
-	<h4 id="infoWindowName">Dit is de naam</h4>
-	<div id="infoWindowDescription">Dit is de description</div>
-	<button ng-click="$root.showModal(vm.currentActivity)">Bekijk</button>
-</div>
-
 <div id="map_canvas">
+	<div>
+		<input type="text" ng-model="vm.filterQuery">
+	</div>
+	<div id="tooltip">
+		<p id="tooltipName"></p>
+		<div id="tooltipCategories"></div>
+	</div>
+	<div id="infoWindow" ng-show="vm.infoWindowVisible">
+		<p class="closeButton" ng-click="vm.closeInfoWindow()">x</p>
+		<h4 id="infoWindowName"></h4>
+		<div id="infoWindowDescription"></div>
+		<button ng-click="$root.showModal(vm.currentActivity)">Bekijk</button>
+	</div>
+
 	<ui-gmap-google-map center="vm.map.center" zoom="vm.map.zoom" events="vm.map.events">
 		<ui-gmap-marker
-			ng-repeat="activity in vm.activities" 
+			ng-repeat="activity in vm.activities | filter:vm.filterQuery.name"
 			idKey="1" 
 			coords="{ latitude: activity.latitude, longitude: activity.longitude }"
 			icon="vm.marker.icon"

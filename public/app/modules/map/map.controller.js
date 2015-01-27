@@ -14,6 +14,8 @@
         vm.title = 'Map';
         vm.activities = activities;
         vm.infoWindowVisible = false;
+        vm.currentActivity = null;
+        vm.filterQuery = '';
 
         var tooltip = document.getElementById('tooltip');
         var tooltipName = document.getElementById('tooltipName');
@@ -30,8 +32,8 @@
             },
             events: {
                 dragstart: function() {
-                    infoWindow.style.opacity = 0;
-                    vm.infoWindowVisible = false;
+                    // infoWindow.style.display = 'none';
+                    // vm.infoWindowVisible = false;
                 }
             }
         };
@@ -47,7 +49,7 @@
                     if (!vm.infoWindowVisible) {
                         var left = ($window.event.clientX+50) + 'px';
                         var top = ($window.event.clientY-50) + 'px';
-                        tooltip.style.opacity = 100;
+                        tooltip.style.display = 'block';
                         tooltip.style.left = left;
                         tooltip.style.top = top;
                         tooltipName.innerHTML = gMarker.name;
@@ -60,7 +62,7 @@
                 },
                 mouseout: function(gMarker, eventName, model) {
                     var tooltip = document.getElementById('tooltip');
-                    tooltip.style.opacity = 0;
+                    tooltip.style.display = 'none';
                 },
                 click: function(gMarker, eventName, model) {
                     var left = ($window.event.clientX+50) + 'px';
@@ -69,10 +71,8 @@
                     vm.currentActivity = gMarker;
 
                     vm.infoWindowVisible = true;
-                    tooltip.style.opacity = 0;
-                    infoWindow.style.opacity = 100;
-                    infoWindow.style.left = left;
-                    infoWindow.style.top = top;
+                    tooltip.style.display = 'none';
+                    infoWindow.style.display = 'block';
                     infoWindowDescription.innerHTML = gMarker.short_desc
                     infoWindowName.innerHTML = gMarker.name;
                 }
@@ -83,6 +83,11 @@
         activate();
 
         function activate() {
+        }
+
+        vm.closeInfoWindow = function() {
+            vm.infoWindowVisible = false;
+            vm.currentActivity = null;
         }
     }
 })();

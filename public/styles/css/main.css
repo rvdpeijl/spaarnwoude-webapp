@@ -2046,27 +2046,42 @@ modal {
 .angular-google-map-container {
   min-height: 500px; }
 
+#map_canvas {
+  position: relative; }
+
 #tooltip {
   color: #eeeeee;
-  position: absolute;
+  position: fixed;
   z-index: 9999;
   background-color: #1BBC9B;
-  opacity: 0;
   padding: 5px 10px;
+  display: none;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
 
+#tooltipCategories .category {
+  position: relative;
+  width: 50%;
+  float: left; }
+  #tooltipCategories .category img {
+    height: 30px; }
+  #tooltipCategories .category span {
+    position: absolute;
+    top: 5px;
+    left: 40px; }
+
 #infoWindow {
-  color: #eeeeee;
-  min-width: 200px;
+  color: #eee;
+  min-width: 450px;
   max-width: 350px;
   position: absolute;
+  bottom: 0;
+  right: 0;
   z-index: 9999;
   background-color: #F4B350;
-  opacity: 0;
   padding: 5px 10px;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -2113,17 +2128,6 @@ nav .social div {
 
 .activitiy-content {
   cursor: pointer; }
-
-#tooltipCategories .category {
-  position: relative;
-  width: 50%;
-  float: left; }
-  #tooltipCategories .category img {
-    height: 30px; }
-  #tooltipCategories .category span {
-    position: absolute;
-    top: 5px;
-    left: 40px; }
 
 
 

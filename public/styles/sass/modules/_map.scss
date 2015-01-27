@@ -1,24 +1,47 @@
-.angular-google-map-container { min-height: 500px; }
+.angular-google-map-container { min-height: 500px;}
+
+#map_canvas {
+	position: relative; 
+}
 
 #tooltip { 
 	color: #eeeeee;
-	position: absolute;
+	position: fixed;
 	z-index: 9999;
 	background-color: #1BBC9B;
-	opacity: 0;
 	padding: 5px 10px;
+	display: none;
 
 	@include transition(all, 0.2s, ease-in-out);
 }
 
+#tooltipCategories {
+
+	.category {
+		position: relative;
+		width: 50%;
+		float: left;
+
+		img {
+			height: 30px;
+		}
+
+		span {
+			position: absolute;
+			top: 5px;
+			left: 40px;
+		}
+	}
+}
+
 #infoWindow {
-	color: #eeeeee;
-	min-width: 200px;
+	color: #eee;
+	min-width: 450px;
 	max-width: 350px;
 	position: absolute;
+	bottom: 0; right: 0;
 	z-index: 9999;
 	background-color: #F4B350;
-	opacity: 0;
 	padding: 5px 10px;
 
 	@include transition(all, 0.2s, ease-in-out);
