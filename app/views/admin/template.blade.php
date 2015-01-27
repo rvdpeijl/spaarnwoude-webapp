@@ -5,8 +5,9 @@
 	<title>Spaarnwoude Admin Panel</title>
 	<link rel="stylesheet" href="/styles/css/main.css">
 </head>
-<body>
+<body class="admin">
 	<footer class="footer-2" role="contentinfo">
+	<div class="outer-container">
 	  <div class="footer-logo">
 	    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo image">
 	  </div>
@@ -24,14 +25,13 @@
 	        @endif
 	      </ul>
 	    </div>
-
+	</div>
 	</footer>
-
+	<br><br>
 	@if(Session::has('message'))
 	    <p class="alert">{{ Session::get('message') }}</p>
 	@endif
-
-	<div class="content">
+	<div class="content outer-container">
         @yield('content')
     </div>
 </body>

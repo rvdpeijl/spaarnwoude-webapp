@@ -2094,6 +2094,9 @@ modal {
     float: right;
     cursor: pointer; }
 
+body.admin {
+  background: #eee; }
+
 .footer-2 {
   background: #40526b;
   padding: 1.5em;
