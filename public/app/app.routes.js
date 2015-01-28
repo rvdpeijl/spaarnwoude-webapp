@@ -10,11 +10,11 @@
     function config($stateProvider, $urlRouterProvider, FacebookProvider) {
         FacebookProvider.init('299004140247778');
 
-    	$urlRouterProvider.otherwise("/dashboard");
+    	$urlRouterProvider.otherwise('dashboard');
 
     	$stateProvider
             .state('dashboard', {
-                url: '/',
+                url: '/dashboard',
                 templateUrl: 'app/modules/dashboard/views/index.html',
                 controller: 'Dashboard',
                 controllerAs: 'vm'

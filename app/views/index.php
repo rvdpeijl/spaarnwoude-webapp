@@ -20,7 +20,7 @@
 	<div class="outer-container">
 		<ul>
 			<li class="logo">
-				<a href="/">
+				<a href="#/">
 					<img width="260" src="img/logo.png" alt="">
 				</a>
 			</li>

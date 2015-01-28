@@ -43,7 +43,83 @@ class ActivitiesController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$doen = Input::get('doen');
+		$beleven = Input::get('beleven');
+		$genieten = Input::get('genieten');
+		$verblijven = Input::get('verblijven');
+
+		$files = Input::file('files');
+		$logo = Input::file('logo');
+
+		$validator = Validator::make(Input::all(), Activity::$rules);
+
+		if ($validator->passes()) {
+		    $activity = Activity::create(Input::all());
+
+		    if ($beleven !== 'on' && $doen !== 'on' && $genieten !== 'on' && $verblijven !== 'on') {
+				return Redirect::to('api/activities/create')->with(array('input' => Input::all(), 'error' => 'Selecteer een categorie'));
+			}
+
+			if ($files[0] === null) {
+				return Redirect::to('api/activities/create')->with(array('input' => Input::all(), 'error' => 'Selecteer op zijn minst één afbeelding'));
+			}
+
+		    if ($beleven === 'on') {
+				ActivityCategory::create(array(
+					'activity_id' => $activity->id,
+					'category_id' => 1
+				));
+			}
+
+			if ($doen === 'on') {
+				ActivityCategory::create(array(
+					'activity_id' => $activity->id,
+					'category_id' => 2
+				));
+			}
+
+			if ($genieten === 'on') {
+				ActivityCategory::create(array(
+					'activity_id' => $activity->id,
+					'category_id' => 3
+				));
+			}
+
+			if ($verblijven === 'on') {
+				ActivityCategory::create(array(
+					'activity_id' => $activity->id,
+					'category_id' => 4
+				));
+			}
+
+		    if ($logo) {
+		    	$destinationPath = public_path().'/img/activities/'.$activity->id.'/logo/';
+		    	$filename = $logo->getClientOriginalName();
+		    	$upload_success = $logo->move($destinationPath, $filename);
+		    	$activity->logo = $filename;
+		    	$activity->save();
+		    }
+
+		    foreach($files as $key => $file) {
+		    	if ($key < 5) {
+		    		$destinationPath = public_path().'/img/activities/'.$activity->id.'/medium/';
+	                $filename = $file->getClientOriginalName();
+			        $upload_success = $file->move($destinationPath, $filename);
+			        $column = 'img'.($key+1);
+			        $activity->$column = $filename;
+			        $activity->save();
+		    	}
+		    }
+
+			if( $upload_success ) {			 
+			    return Redirect::to('admin/activities')->with(array('message' => 'Activiteit gecreeërd'));
+			} else {
+				return Redirect::to('api/activities/create')->with(array('input' => Input::all(), 'error' => 'Er is iets mis gegaan met het opslaan van de afbeelding.'));
+			}
+
+		} else {
+		    return Redirect::to('api/activities/create')->with('error', 'Er zijn een aantal dingen fout gegaan')->withErrors($validator)->withInput();
+		}
 	}
 
 
@@ -87,7 +163,15 @@ class ActivitiesController extends \BaseController {
 	public function edit($id)
 	{
 		$activity = Activity::find($id);
-		return View::make('admin.activities.edit')->withActivity($activity);
+
+		$catids = array();
+		$activitycategories = ActivityCategory::where('activity_id', '=', $activity->id)->get();
+		foreach ($activitycategories as $key => $value) {
+			array_push($catids, $value['category_id']);
+		}
+
+
+		return View::make('admin.activities.edit')->with(array('activity' => $activity, 'catids' => $catids));
 	}
 
 
@@ -99,7 +183,123 @@ class ActivitiesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$updated = Input::all();
+		$activity = Activity::find($id);
+		$images = [];
+
+		$currentImages = Input::get('currentImages');
+		$deletedImages = Input::get('deletedImages');
+		$imagesToUpload = Input::file('files');
+		$currentImages = json_decode($currentImages, true);
+		$deletedImages = json_decode($deletedImages, true);
+		$logo = Input::file('logo');
+
+		foreach ($deletedImages as $key => $image) {
+			$activity = $this->removeImage($activity, $image['name']);
+		}
+
+		$doen = Input::get('doen');
+		$beleven = Input::get('beleven');
+		$genieten = Input::get('genieten');
+		$verblijven = Input::get('verblijven');
+
+		$validator = Validator::make($updated, Activity::$rules);
+
+		if ($validator->passes()) {
+
+			if ($beleven !== 'on' && $doen !== 'on' && $genieten !== 'on' && $verblijven !== 'on') {
+				return Redirect::action('ActivitiesController@edit', array($id))->with(array('input' => Input::all(), 'error' => 'Selecteer een categorie'));
+			}
+
+			$massDelete = ActivityCategory::where('activity_id', '=', $activity->id)->delete();
+
+			if ($beleven === 'on') {
+				ActivityCategory::create(array(
+					'activity_id' => $activity->id,
+					'category_id' => 1
+				));
+			}
+
+			if ($doen === 'on') {
+				ActivityCategory::create(array(
+					'activity_id' => $activity->id,
+					'category_id' => 2
+				));
+			}
+
+			if ($genieten === 'on') {
+				ActivityCategory::create(array(
+					'activity_id' => $activity->id,
+					'category_id' => 3
+				));
+			}
+
+			if ($verblijven === 'on') {
+				ActivityCategory::create(array(
+					'activity_id' => $activity->id,
+					'category_id' => 4
+				));
+			}
+
+			if ($logo) {
+		    	$destinationPath = public_path().'/img/activities/'.$activity->id.'/logo/';
+		    	$filename = $logo->getClientOriginalName();
+		    	$upload_success = $logo->move($destinationPath, $filename);
+		    	$activity->logo = $filename;
+		    	$activity->save();
+		    }
+
+		    if ($currentImages[0] !== null) {
+
+		    	foreach ($currentImages as $key => $value) {
+					if ($value['img'] !== null) {
+						$column = 'img'.($key+1);
+						$activity->$column = $value['img'];
+						array_push($images, $value['img']);
+					}
+				}
+		    }
+
+			if ($imagesToUpload[0] !== null) {
+				foreach($imagesToUpload as $key => $file) {
+			    	if (count($images) < 5) {
+			    		$destinationPath = public_path().'/img/activities/'.$activity->id.'/medium/';
+		                $filename = $file->getClientOriginalName();
+				        $upload_success = $file->move($destinationPath, $filename);
+				        array_push($images, $filename);
+			    	}
+			    }
+			}
+
+			if (count($images) > 0) {
+				foreach ($images as $key => $value) {
+					$column = 'img'.($key+1);
+			        $activity->$column = $value;
+			        $activity->save();
+				}
+			} else {
+				return Redirect::action('ActivitiesController@edit', array($id))->with(array('input' => Input::all(), 'error' => 'Selecteer minimaal één afbeelding'));
+			}
+
+			$activity->name 			= $updated['name'];
+			$activity->organization 	= $updated['organization'];
+			$activity->latitude			= $updated['latitude'];
+			$activity->longitude		= $updated['longitude'];
+			$activity->short_desc		= $updated['short_desc'];
+			$activity->long_desc		= $updated['long_desc'];
+			$activity->address 			= $updated['address'];
+			$activity->zipcode 			= $updated['zipcode'];
+			$activity->city 			= $updated['city'];
+			$activity->phone			= $updated['phone'];
+			$activity->website_url		= $updated['website_url'];
+			$activity->facebook_url		= $updated['facebook_url'];
+			$activity->twitter_url		= $updated['twitter_url'];
+
+			$activity->save();
+			return Redirect::to('admin/activities')->with(array('message' => 'Activiteit opgeslagen'));
+		} else {
+		    return Redirect::to('api/activities/create')->with('error', 'Er zijn een aantal dingen fout gegaan')->withErrors($validator)->withInput();
+		}
 	}
 
 
@@ -113,10 +313,47 @@ class ActivitiesController extends \BaseController {
 	{
 		$activity = Activity::find($id);
         $activity->delete();
+        $dir = public_path().'/img/activities/'.$activity->id;
+        $success = File::deleteDirectory($dir);
+
+        $massDelete = ActivityCategory::where('activity_id', '=', $id)->delete();
 
         return Redirect::to('/admin/activities/')
-        ->with('message', 'Activiteit verwijderd.');
+        	->with('message', 'Activiteit verwijderd.');
 	}
 
+	private function removeImage($activity, $image)
+	{
+		$delete = File::delete(public_path().'/img/activities/'.$activity->id.'/medium/'.$activity->$image);
+		$activity->$image = null;
+		$activity = $this->reassign($activity);
+		return $activity;
+	}
 
+	private function reassign($activity)
+	{
+		$input = array(
+			$activity->img1,
+			$activity->img2,
+			$activity->img3,
+			$activity->img4,
+			$activity->img5
+		);
+
+		$activity->img1 = null;
+		$activity->img2 = null;
+		$activity->img3 = null;
+		$activity->img4 = null;
+		$activity->img5 = null;
+
+		$output = array_filter($input);
+		$output = array_values($output);
+
+		foreach ($output as $key => $value) {
+			$column = 'img'.($key+1);
+			$activity->$column = $value;
+		}
+
+		return $activity;
+	}
 }

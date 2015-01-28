@@ -31,13 +31,19 @@ class ActivityTableSeeder extends Seeder {
 			'longitude' => 4.673864,
 			'short_desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 			'long_desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quaerat, voluptatibus ipsa numquam commodi, vero, fugit quibusdam quo excepturi odit error ea enim praesentium necessitatibus nemo, aliquid veniam iure ullam.',
-			'street_name' => 'Jansstraat 5',
+			'address' => 'Jansstraat 5',
 			'zipcode' => '2012XX',
 			'city' => 'Haarlem',
 			'phone' => '023-5252525',
 			'website_url' => 'http://www.example.com/',
 			'facebook_url' => 'http://www.facebook.com/spaarnwoude',
-			'twitter_url' => 'http://www.twitter.com/spaarnwoude'
+			'twitter_url' => 'http://www.twitter.com/spaarnwoude',
+			'logo' => 'logo.png',
+			'img1' => 'medium_image1.jpg',
+			'img2' => 'medium_image1.jpg',
+			'img3' => 'medium_image1.jpg',
+			'img4' => 'medium_image1.jpg',
+			'img5' => 'medium_image1.jpg'
 		));
 
 		Activity::create(array(
@@ -47,13 +53,19 @@ class ActivityTableSeeder extends Seeder {
 			'longitude' => 4.680558,
 			'short_desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 			'long_desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quaerat, voluptatibus ipsa numquam commodi, vero, fugit quibusdam quo excepturi odit error ea enim praesentium necessitatibus nemo, aliquid veniam iure ullam.',
-			'street_name' => 'Jansstraat 5',
+			'address' => 'Jansstraat 5',
 			'zipcode' => '2012XX',
 			'city' => 'Haarlem',
 			'phone' => '023-5252525',
 			'website_url' => 'http://www.example.com/',
 			'facebook_url' => 'http://www.facebook.com/spaarnwoude',
-			'twitter_url' => 'http://www.twitter.com/spaarnwoude'
+			'twitter_url' => 'http://www.twitter.com/spaarnwoude',
+			'logo' => 'logo.png',
+			'img1' => 'medium_image1.jpg',
+			'img2' => 'medium_image1.jpg',
+			'img3' => 'medium_image1.jpg',
+			'img4' => 'medium_image1.jpg',
+			'img5' => 'medium_image1.jpg'
 		));
 
 		Activity::create(array(
@@ -63,13 +75,19 @@ class ActivityTableSeeder extends Seeder {
 			'longitude' => 4.689656,
 			'short_desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 			'long_desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quaerat, voluptatibus ipsa numquam commodi, vero, fugit quibusdam quo excepturi odit error ea enim praesentium necessitatibus nemo, aliquid veniam iure ullam.',
-			'street_name' => 'Jansstraat 5',
+			'address' => 'Jansstraat 5',
 			'zipcode' => '2012XX',
 			'city' => 'Haarlem',
 			'phone' => '023-5252525',
 			'website_url' => 'http://www.example.com/',
 			'facebook_url' => 'http://www.facebook.com/spaarnwoude',
-			'twitter_url' => 'http://www.twitter.com/spaarnwoude'
+			'twitter_url' => 'http://www.twitter.com/spaarnwoude',
+			'logo' => 'logo.png',
+			'img1' => 'medium_image1.jpg',
+			'img2' => 'medium_image1.jpg',
+			'img3' => 'medium_image1.jpg',
+			'img4' => 'medium_image1.jpg',
+			'img5' => 'medium_image1.jpg'
 		));
 
 		Activity::create(array(
@@ -79,13 +97,19 @@ class ActivityTableSeeder extends Seeder {
 			'longitude' => 4.685537,
 			'short_desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 			'long_desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quaerat, voluptatibus ipsa numquam commodi, vero, fugit quibusdam quo excepturi odit error ea enim praesentium necessitatibus nemo, aliquid veniam iure ullam.',
-			'street_name' => 'Jansstraat 5',
+			'address' => 'Jansstraat 5',
 			'zipcode' => '2012XX',
 			'city' => 'Haarlem',
 			'phone' => '023-5252525',
 			'website_url' => 'http://www.example.com/',
 			'facebook_url' => 'http://www.facebook.com/spaarnwoude',
-			'twitter_url' => 'http://www.twitter.com/spaarnwoude'
+			'twitter_url' => 'http://www.twitter.com/spaarnwoude',
+			'logo' => 'logo.png',
+			'img1' => 'medium_image1.jpg',
+			'img2' => 'medium_image1.jpg',
+			'img3' => 'medium_image1.jpg',
+			'img4' => 'medium_image1.jpg',
+			'img5' => 'medium_image1.jpg'
 		));
 	}
 

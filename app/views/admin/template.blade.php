@@ -4,8 +4,12 @@
 	<meta charset="UTF-8">
 	<title>Spaarnwoude Admin Panel</title>
 	<link rel="stylesheet" href="/styles/css/main.css">
+	<script type="text/javascript" src="/lib/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/js/activityfiller.js"></script>
+	<script type="text/javascript" src="/lib/angular/angular.js"></script>
+	<script type="text/javascript" src="/js/admin.module.js"></script>
 </head>
-<body class="admin">
+<body class="admin" ng-app="app">
 	<footer class="footer-2" role="contentinfo">
 	<div class="outer-container">
 	  <div class="footer-logo">
@@ -21,6 +25,7 @@
 	    <div class="footer-secondary-links">
 	      <ul>
 	        @if(Auth::check())
+	        <li><a href="/" target="_blank">Naar de website</a></li>
 	        <li><a href="/logout">Uitloggen</a></li>
 	        @endif
 	      </ul>
@@ -28,10 +33,23 @@
 	</div>
 	</footer>
 	<br><br>
-	@if(Session::has('message'))
-	    <p class="alert">{{ Session::get('message') }}</p>
-	@endif
 	<div class="content outer-container">
+		@if(Session::has('message'))
+		    <div class="flash-success">
+				<span>{{ Session::get('message') }}</span>
+			</div>
+		@endif
+		@if(Session::has('error'))
+		    <div class="flash-error">
+				<span>{{ Session::get('error') }}</span>
+				<ul>
+			        @foreach($errors->all() as $error)
+			            <li>{{ $error }}</li>
+			        @endforeach
+			    </ul>
+			</div>
+		@endif
+
         @yield('content')
     </div>
 </body>

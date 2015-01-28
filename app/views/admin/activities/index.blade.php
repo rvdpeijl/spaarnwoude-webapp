@@ -12,6 +12,7 @@
 	      <th>Naam</th>
 	      <th>Organisatie</th>
 	      <th>Locatie</th>
+	      <th>Categorie</th>
 	      <th></th>
 	    </tr>
 	  </thead>
@@ -24,12 +25,20 @@
 	    			<a href="http://maps.google.com/maps?q={{$activity->latitude}},{{$activity->longitude}}&ll={{$activity->latitude}},{{$activity->longitude}}&z=13" target="_blank">Bekijk op Google maps</a>
 	    		</td>
 	    		<td>
+	    			<ul>
+		    			@foreach (ActivityCategory::where('activity_id', '=', $activity->id)->get() as $activitycategory)
+							<li>- {{ Category::find($activitycategory->category_id)->name }}</li>
+						@endforeach
+					</ul>
+	    		</td>
+	    		<td>
 	    			<form action="/api/activities/{{$activity->id}}/edit" method="get">
 					    <button>Bewerk</button>
 					</form>
-					<form action="/api/activities/{{$activity->id}}/destroy" method="get">
-					    <button onClick="return confirm('Wilt u deze activiteit verwijderen?')">Verwijder</button>
-					</form>
+
+					{{ Form::open(array('action' => array('ActivitiesController@destroy', $activity->id), 'method' => 'delete')) }}
+				        <button onClick="return confirm('Wilt u deze activiteit verwijderen?')">Verwijder</button>
+				    {{ Form::close() }}
 	    		</td>
 	    	</tr>
 	    @endforeach
