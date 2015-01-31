@@ -9,7 +9,8 @@
             'ui.router',
             'uiGmapgoogle-maps',
             'ngTouch',
-            'angular-carousel'
-            
+            'angular-carousel',
+            'ngSanitize'
+
         ]);
 })();

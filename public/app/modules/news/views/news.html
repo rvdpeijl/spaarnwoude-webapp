@@ -1,8 +1,17 @@
-<div>
+<!-- <div>
 	<ul>
-		<li>{{news.title}}</li>
-		<li>{{news.subtitle}}</li>
-		<li>{{news.content}}</li>
-		<li>{{news.featured_image}}</li>
+		<h1>{{news.title}}</h1>
+		<h3>{{news.subtitle}}</h3>
+		<div ng-bind-html="news.content"></div>
+		<img ng-src="/img/news/{{news.id}}/featured_image/{{news.featured_image}}" alt="">
 	</ul>
-</div>
+</div> -->
+
+<article class="type-system-geometric">
+	<p class="type">Article Type</p>
+	<h1>{{news.title}}</h1>
+	<h2>{{news.subtitle}}</h2>
+	<p class="date">{{news.created_at}}</p>
+	<img ng-src="/img/news/{{news.id}}/featured_image/{{news.featured_image}}" alt="">
+	<div ng-bind-html="news.content"></div>
+</article>

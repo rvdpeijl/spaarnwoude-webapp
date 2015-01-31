@@ -1,12 +1,7 @@
 <div class="filter">
-	<input ng-model="searchAct" type="text" placeholder="Bijvoorbeeld: Fietsen">
-	<ul class="categories">
-		<li ng-click="searchAct='beleven'" class="beleven">Beleven</li>
-		<li ng-click="searchAct='doen'" class="doen">Doen</li>
-		<li ng-click="searchAct='genieten'" class="genieten">Genieten</li>
-		<li ng-click="searchAct='verblijven'" class="verblijven">Verblijven</li>
-	</ul>
+	<div class="zoeken">Zoeken:</div>
+	<input ng-model="vm.searchAct" type="text" placeholder="Bijvoorbeeld: Fietsen">
 </div>
 <div class="activities-list">
-	<activity ng-repeat="activity in vm.activities | filter:searchAct" activity="activity"></activity>
+	<activity ng-repeat="activity in vm.activities | filter:vm.searchAct" activity="activity"></activity>
 </div>

@@ -54,7 +54,7 @@
 	<script type="text/javascript" src="/lib/lodash/lodash.min.js"></script>
 	<script type="text/javascript" src="/lib/ngprogress/ngProgress.js"></script>
 	<script type="text/javascript" src="/lib/ng-carousel/angular-carousel.js"></script>
-
+	<script type="text/javascript" src="/lib/angular-sanitize/angular-sanitize.js"></script>
 	<!-- Main Components -->
 	<script type="text/javascript" src="/app/app.module.js"></script>
 	<script type="text/javascript" src="/app/app.routes.js"></script>
@@ -94,5 +94,9 @@
 	<script type="text/javascript" src="/app/modules/news/news.service.js"></script>
 	<script type="text/javascript" src="/app/modules/news/news.controller.js"></script>
 	<script type="text/javascript" src="/app/modules/news/news.directive.js"></script>
+
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Sanchez:400italic,400' rel='stylesheet' type='text/css'>
 </body>
 </html>

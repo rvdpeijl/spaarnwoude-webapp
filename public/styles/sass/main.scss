@@ -8,6 +8,7 @@
 @import 'modules/modal';
 @import 'modules/map';
 @import 'modules/admin';
+@import 'modules/news';
 
 body {
 	margin:auto;
@@ -49,7 +50,7 @@ nav ul li {
 			&:after {
 				width:100%;
 			}
-			
+
 		}
 
 	}
@@ -236,6 +237,33 @@ table {
 			background: #DBDB00;
 		}
 
+	}
+}
+.filter {
+	.zoeken {
+		background:#222;
+		color:white;
+		padding:10px;
+		max-width: 250px;
+		margin-left: 9px;
+	}
+
+	input {
+		max-width: 250px;
+		margin-left: 9px;
+		border-radius: 0;
+		border: 0;
+		padding: 15px;
+	}
+
+	&.map {
+		margin-left: 0px;
+		.zoeken {
+			margin-left: 0px;
+		}
+		input {
+			margin-left:0;
+		}
 	}
 }
 
