@@ -1,24 +1,12 @@
-<ul class="accordion">
-  <li>
-    <a href="javascript:void(0)" class="js-accordion-trigger">Accordion Item</a>
-    <ul class="submenu">
-      <li>
-        <a href="javascript:void(0)">Sub Item 1</a>
-      </li>
-      <li>
-        <a href="javascript:void(0)">Sub Item 2</a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <a href="javascript:void(0)" class="js-accordion-trigger">Another Item</a>
-    <ul class="submenu">
-      <li>
-        <a href="javascript:void(0)">Sub Item 1</a>
-      </li>
-      <li>
-        <a href="javascript:void(0)">Sub Item 2</a>
-      </li>
-    </ul>
-  </li>
-</ul>
+<div class="grid-items-lines">
+  <a ng-repeat="item in vm.agenda" href="javascript:void(0)" class="grid-item">
+    <div class="">
+      <img ng-repeat="category in item.categories" ng-src="/img/icons/{{category}}_colored.png" alt="">
+    </div>
+    
+    <h2>{{item.name}}</h2>
+    <p>{{item.description}}</p>
+  </a>
+  <!-- <div class="right-cover"></div> -->
+  <!-- <div class="bottom-cover"></div> -->
+</div>

@@ -1,26 +1,18 @@
-.accordion {
+@mixin grid-item-columns($columns) {
+  width: (100% / 12) * $columns;
+}
+
+.grid-items-lines {
   ///////////////////////////////////////////////////////////////////////////////////
-  $base-border-color: gainsboro !default;
-  $base-line-height: 1.5em !default;
-  $base-spacing: 1.5em !default;
+  $base-background-color: white !default;
   $dark-gray: #333 !default;
+  $light-gray: #DDD !default;
+  $medium-screen: em(640) !default;
+  $large-screen: em(860) !default;
   $base-font-color: $dark-gray !default;
 
-  margin: 0;
-  padding: 0;
-
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  li {
-    list-style: none;
-  }
-
   p {
-    color: $base-font-color;
-    line-height: $base-line-height;
+    line-height: 1.5em;
   }
 
   a {
@@ -28,59 +20,88 @@
   }
   //////////////////////////////////////////////////////////////////////////////////
 
-  $accordion-menu-border-color: $base-border-color;
-  $accordion-menu-color: $base-font-color;
-  $accordion-menu-border: 1px solid $accordion-menu-border-color;
-  $accordion-menu-background: lighten($accordion-menu-border-color, 10%);
-  $accordion-menu-hover: lighten($accordion-menu-background, 2%);
-  $accordion-menu-sub-background: darken($accordion-menu-background, 5%);
-  $accordion-menu-sub-inset: darken($accordion-menu-sub-background, 6%);
-  $accordion-menu-sub-hover: lighten($accordion-menu-sub-background, 2%);
-  $accordion-menu-list-padding: ($base-spacing / 2) $gutter;
+  $grid-items-background: $base-background-color;
+  $grid-item-background: $base-background-color;
+  $grid-item-border: 1px solid transparentize($base-font-color, 0.8);
+  $grid-item-columns: 4;
+  $grid-item-big-columns: 8;
+  $grid-item-color: $base-font-color;
+  $grid-item-height: 283px;
 
-  background-color: $accordion-menu-background;
-  border: $accordion-menu-border;
-  margin-bottom: $base-spacing;
+  @include clearfix;
+  position: relative;
 
-  li {
-    border-bottom: $accordion-menu-border;
+  .grid-item {
+    @include transition (all 0.2s ease-in-out);
+    background: $grid-item-background;
+    border-bottom: $grid-item-border;
+    border-right: $grid-item-border;
+    cursor: pointer;
+    float: left;
+    height: $grid-item-height;
+    overflow: hidden;
+    outline: none;
+    padding: 1em;
+    width: 100%;
 
-    > a {
-      color: $accordion-menu-color;
-      display: block;
-      padding: $accordion-menu-list-padding;
-    }
-
-    &:last-child {
-      border: none;
+    @include media($large-screen) {
+      @include grid-item-columns($grid-item-columns);
     }
 
     &:focus,
     &:hover {
-      background-color: $accordion-menu-hover;
+      box-shadow:inset 0px 0px 16px -5px rgba(0, 0, 0, 0.35);
     }
   }
 
-  ul.submenu {
-    display: none;
+  .grid-item img {
+      display: block;
+      height: 1.5em;
+      margin-bottom: 1.2em;
+      margin-right:1.2em;
+      opacity: 0.5;
+      display:inline-block;
+    }
 
-    li {
-      background-color: $accordion-menu-sub-background;
+  .grid-item h2 {
+      color: $grid-item-color;
+      font-size: 1.1em;
+      margin-bottom: 0.4em;
+    }
 
-      &:first-child {
-        border-top: $accordion-menu-border;
-        box-shadow: inset 0 1px 1px $accordion-menu-sub-inset;
+  .grid-item p {
+      color: transparentize($grid-item-color, 0.4);
+
+      @include media($medium-screen) {
+        max-width: 70%;
       }
+    }
 
-      &:focus,
-      &:hover {
-        background-color: $accordion-menu-sub-hover;
+  .grid-item-big {
+    @include media($large-screen) {
+      @include grid-item-columns($grid-item-big-columns);
+    }
+    p {
+      @include media($medium-screen) {
+        max-width: 60%;
       }
     }
   }
 
-  .is-expanded {
-    display: block;
-    padding-bottom: 0;
+  // this, below, might not be the most beautiful solution but it removes the outer borders by using the background color.
+  .bottom-cover {
+    background: $grid-items-background;
+    bottom: 0px;
+    height: 3px;
+    position: absolute;
+    width: 100%;
+  }
+
+  .right-cover {
+    background: $grid-items-background;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    width: 4px;
   }
 }
