@@ -132,6 +132,7 @@ class ActivitiesController extends \BaseController {
 	public function show($id)
 	{
 		$activity = Activity::findOrFail($id); 
+		$categories = [];
 
 		/**
 		
@@ -144,11 +145,11 @@ class ActivitiesController extends \BaseController {
 		$activityCategories = ActivityCategory::where('activity_id', '=', $activity->id)->get();
 		
 		foreach ($activityCategories as $item) {
-			$categories = [];
 			$category = Category::find($item->category_id);
 			array_push($categories, $category->name);
-			$activity->categories = $categories;
 		}
+
+		$activity->categories = $categories;
 
 		return Response::json($activity, 200);
 	}

@@ -5,6 +5,8 @@
 	<title>Spaarnwoude Admin Panel</title>
 	<link rel="stylesheet" href="/styles/css/main.css">
 	<script type="text/javascript" src="/lib/jquery/jquery.js"></script>
+	<script src="//cdn.ckeditor.com/4.4.7/full/ckeditor.js"></script>
+
 	<script type="text/javascript" src="/js/activityfiller.js"></script>
 	<script type="text/javascript" src="/lib/angular/angular.js"></script>
 	<script type="text/javascript" src="/js/admin.module.js"></script>
@@ -19,6 +21,8 @@
 	      	@if(Auth::check())
 				<li><a href="/admin">Admin Dashboard</a></li>
 				<li><a href="/admin/activities">Activiteiten</a></li>
+				<li><a href="/admin/agenda">Agenda</a></li>
+				<li><a href="/admin/news">Nieuws</a></li>
 	        @endif
 	    </ul>
 

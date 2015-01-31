@@ -41,5 +41,35 @@
                     }
                 }
             })
+            .state('agenda', {
+                url: '/agenda',
+                templateUrl: 'app/modules/agenda/views/index.html',
+                controller: 'Agenda',
+                controllerAs: 'vm',
+                resolve: {
+                    agenda: function(agendaService) {
+                        return agendaService.getAgenda();
+                    }
+                }
+            })
+
+            .state('news', {
+                url: '/nieuws',
+                templateUrl: 'app/modules/news/views/index.html',
+                controller: 'News',
+                controllerAs: 'vm',
+                resolve: {
+                    news: function(newsService) {
+                        return newsService.getNews();
+                    }
+                }
+            })
+
+            .state('about', {
+                url: '/over-ons',
+                templateUrl: 'app/modules/about/views/index.html',
+                controller: 'About',
+                controllerAs: 'vm'
+            })
     }
 })();

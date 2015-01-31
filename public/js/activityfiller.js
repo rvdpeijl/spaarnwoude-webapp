@@ -2,7 +2,7 @@ $(function() {
 	$('.footer-logo').click(function() {
 		$('input[name=doen').prop('checked', true);
 		$('input[name=beleven').prop('checked', true);
-		$('input[name=name]').val('Activiteit');
+		$('input[name=name]').val('Item');
 		$('input[name=organization]').val('Organisatie');
 		$('input[name=phone]').val('0612345678');
 		$('textarea[name=short_desc]').val('Lorem ipsum dolor sit amet, consectetur adipisicing elit.');
@@ -15,6 +15,10 @@ $(function() {
 		$('input[name=website_url]').val('http://www.example.com/');
 		$('input[name=facebook_url]').val('http://www.facebook.com/');
 		$('input[name=twitter_url]').val('http://www.twitter.com/');
+
+		$('textarea[name=description]').val('Lorem ipsum dolor sit amet, consectetur adipisicing elit.');
+		$('input[name=start]').val('2015-10-31 13:00:00');
+		$('input[name=end]').val('2015-10-31 15:00:00');
 	})
 
     $(".saveactivity").click(function(){
@@ -23,5 +27,5 @@ $(function() {
          	alert("U kunt maximaal 5 afbeeldingen uploaden");
          	return false;
         }
-    });    
+    });
 })

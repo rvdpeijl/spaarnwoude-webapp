@@ -25,6 +25,8 @@ Route::get('logout', 'AuthController@logout');
 Route::group(array('prefix' => 'api'), function()
 {
     Route::resource('activities', 'ActivitiesController');
+    Route::resource('agenda', 'AgendaController');
+    Route::resource('news', 'NewsController');
 });
 
 Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
@@ -37,6 +39,16 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
     Route::get('activities', function()
     {
         return View::make('admin.activities.index');
+    });
+
+    Route::get('agenda', function()
+    {
+        return View::make('admin.agenda.index');
+    });
+
+    Route::get('news', function()
+    {
+        return View::make('admin.news.index');
     });
 
 });

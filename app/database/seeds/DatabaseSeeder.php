@@ -15,6 +15,9 @@ class DatabaseSeeder extends Seeder {
 		$this->call('CategoryTableSeeder');
 		$this->call('ActivityCategoryTableSeeder');
 		$this->call('UserTableSeeder');
+		$this->call('AgendaTableSeeder');
+		$this->call('AgendaCategoryTableSeeder');
+		$this->call('NewsTableSeeder');
 	}
 }
 
@@ -201,6 +204,63 @@ class UserTableSeeder extends Seeder {
 			'lastname' => 'Admin',
 			'username' => 'admin',
 			'password' => Hash::make('password')
+		));
+	}
+}
+
+class AgendaTableSeeder extends Seeder {
+	public function run()
+	{
+		Agenda::create(array(
+			'name' => 'Agenda Item 1',
+			'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+			'start' => Carbon\Carbon::now(),
+			'end' => Carbon\Carbon::tomorrow()
+		));
+
+		Agenda::create(array(
+			'name' => 'Item 2',
+			'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+			'start' => Carbon\Carbon::now(),
+			'end' => Carbon\Carbon::tomorrow()
+		));
+	}
+}
+
+class AgendaCategoryTableSeeder extends Seeder {
+	public function run()
+	{
+		AgendaCategory::create(array(
+			'agenda_id' => 1,
+			'category_id' => 1
+		));
+
+		AgendaCategory::create(array(
+			'agenda_id' => 1,
+			'category_id' => 3
+		));
+
+		AgendaCategory::create(array(
+			'agenda_id' => 2,
+			'category_id' => 2
+		));
+
+		AgendaCategory::create(array(
+			'agenda_id' => 2,
+			'category_id' => 4
+		));
+	}
+}
+
+class NewsTableSeeder extends Seeder {
+	public function run()
+	{
+		News::create(array(
+			'title' => 'Lorem Ipsum',
+			'subtitle' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, necessitatibus tenetur consectetur soluta delectus. Ipsum quidem dignissimos ab consequuntur facere iure accusamus, esse sint ducimus eveniet neque mollitia exercitationem est.',
+			'content' => '<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo nobis placeat voluptate magni, molestias at illum expedita sunt minus quod quaerat accusantium deleniti voluptatibus odit rem consequatur aut, aspernatur esse!</div>
+			<div>Itaque iste quod pariatur nostrum nihil doloremque optio eligendi, mollitia laboriosam aspernatur voluptatibus voluptatum sunt ipsa hic, magni, facilis veniam dolor ratione, sequi commodi ad iusto. Ipsam, odio! Et, nemo!</div>',
+			'featured_image' => 'featured_image.jpg'
 		));
 	}
 }
