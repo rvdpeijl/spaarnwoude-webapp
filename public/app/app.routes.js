@@ -30,6 +30,17 @@
                 	}
                 }
             })
+            .state('category', {
+                url: '/activiteiten/categorie/:category',
+                templateUrl: 'app/modules/activity/views/index.html',
+                controller: 'Activity',
+                controllerAs: 'vm',
+                resolve: {
+                    activities: function(activityService) {
+                        return activityService.getActivities();
+                    }
+                }
+            })
             .state('map', {
                 url: '/kaart',
                 templateUrl: 'app/modules/map/views/index.html',
