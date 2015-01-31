@@ -2065,23 +2065,15 @@ modal {
   background-color: #1BBC9B;
   padding: 5px 10px;
   display: none;
-<<<<<<< HEAD
   min-height: 80px;
   min-width: 250px;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
+  -webkit-transition: all, 0.2s, ease-in-out;
+  -moz-transition: all, 0.2s, ease-in-out;
+  transition: all, 0.2s, ease-in-out; }
   #tooltip #tooltipName {
     font-size: 15px;
     font-weight: bold;
     text-transform: uppercase; }
-=======
-  -webkit-transition: all, 0.2s, ease-in-out;
-  -moz-transition: all, 0.2s, ease-in-out;
-  transition: all, 0.2s, ease-in-out; }
->>>>>>> 56ca198f3fe6d7d47e3543b6bb33e26450f06140
 
 #tooltipCategories .category {
   position: relative;
@@ -2103,30 +2095,19 @@ modal {
   right: 0;
   z-index: 9999;
   background-color: #F4B350;
-<<<<<<< HEAD
   padding: 13px;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
+  -webkit-transition: all, 0.2s, ease-in-out;
+  -moz-transition: all, 0.2s, ease-in-out;
+  transition: all, 0.2s, ease-in-out; }
   #infoWindow button {
     background-color: #B88F50;
-    -webkit-transition: background-color 0.5s ease-in-out;
-    -moz-transition: background-color 0.5s ease-in-out;
-    -ms-transition: background-color 0.5s ease-in-out;
-    -o-transition: background-color 0.5s ease-in-out;
-    transition: background-color 0.5s ease-in-out; }
+    -webkit-transition: background-color, 0.5s, ease-in-out;
+    -moz-transition: background-color, 0.5s, ease-in-out;
+    transition: background-color, 0.5s, ease-in-out; }
   #infoWindow button:hover {
     background-color: #EA9E29; }
   #infoWindow #infoWindowDescription {
     margin-bottom: 13px; }
-=======
-  padding: 5px 10px;
-  -webkit-transition: all, 0.2s, ease-in-out;
-  -moz-transition: all, 0.2s, ease-in-out;
-  transition: all, 0.2s, ease-in-out; }
->>>>>>> 56ca198f3fe6d7d47e3543b6bb33e26450f06140
   #infoWindow .closeButton {
     text-align: right;
     display: inline-block;
@@ -2548,11 +2529,9 @@ nav ul li {
   margin: 0px 30px 0px 0px;
   vertical-align: middle; }
   nav ul li a {
-    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
+    -webkit-transition: all, 0.5s, ease-in-out;
+    -moz-transition: all, 0.5s, ease-in-out;
+    transition: all, 0.5s, ease-in-out;
     color: #333;
     position: relative; }
     nav ul li a:hover {
