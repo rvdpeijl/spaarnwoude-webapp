@@ -1,12 +1,21 @@
-<div class="grid-items-lines">
-  <a ng-repeat="item in vm.agenda" href="javascript:void(0)" class="grid-item">
-    <div class="">
-      <img ng-repeat="category in item.categories" ng-src="/img/icons/{{category}}_colored.png" alt="">
+<div class="agendaLijst">
+<div ng-repeat="item in vm.agenda" class="hover-tile-outer">
+  <div class="hover-tile-container">
+    <div class="hover-tile hover-tile-visible">
+      <h2>{{item.name}}</h2>
+      <small><strong>Vanaf:</strong> {{item.start}}</small> <br/>
+      <small><strong>Tot:</strong> {{item.end}}</small>
+      <div class="categoryWrapper">
+        <img width="20" ng-repeat="category in item.categories" ng-src="/img/icons/{{category}}_colored.png" alt="">
+      </div>
+
+
     </div>
-    
-    <h2>{{item.name}}</h2>
-    <p>{{item.description}}</p>
-  </a>
-  <!-- <div class="right-cover"></div> -->
-  <!-- <div class="bottom-cover"></div> -->
+    <div class="hover-tile hover-tile-hidden">
+      <p>{{item.description}}</p>
+
+
+    </div>
+  </div>
+</div>
 </div>

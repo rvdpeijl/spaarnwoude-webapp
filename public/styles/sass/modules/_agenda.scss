@@ -1,107 +1,89 @@
-@mixin grid-item-columns($columns) {
-  width: (100% / 12) * $columns;
-}
+.agendaLijst {
 
-.grid-items-lines {
-  ///////////////////////////////////////////////////////////////////////////////////
-  $base-background-color: white !default;
-  $dark-gray: #333 !default;
-  $light-gray: #DDD !default;
-  $medium-screen: em(640) !default;
-  $large-screen: em(860) !default;
-  $base-font-color: $dark-gray !default;
-
-  p {
-    line-height: 1.5em;
-  }
-
-  a {
-    text-decoration: none;
-  }
-  //////////////////////////////////////////////////////////////////////////////////
-
-  $grid-items-background: $base-background-color;
-  $grid-item-background: $base-background-color;
-  $grid-item-border: 1px solid transparentize($base-font-color, 0.8);
-  $grid-item-columns: 4;
-  $grid-item-big-columns: 8;
-  $grid-item-color: $base-font-color;
-  $grid-item-height: 283px;
-
-  @include clearfix;
-  position: relative;
-
-  .grid-item {
-    @include transition (all 0.2s ease-in-out);
-    background: $grid-item-background;
-    border-bottom: $grid-item-border;
-    border-right: $grid-item-border;
-    cursor: pointer;
-    float: left;
-    height: $grid-item-height;
-    overflow: hidden;
-    outline: none;
-    padding: 1em;
-    width: 100%;
-
-    @include media($large-screen) {
-      @include grid-item-columns($grid-item-columns);
+  .hover-tile-outer {
+    ///////////////////////////////////////////////////////////////////////////////////
+    $base-border-color: gainsboro !default;
+    $base-line-height: 1.5em !default;
+    $medium-screen: em(640) !default;
+    display:inline-block;
+    position: relative;
+    h4 {
+      margin: 0;
+    }
+    h2 {
+      color:#333;
+      font-size:20px;
     }
 
-    &:focus,
-    &:hover {
-      box-shadow:inset 0px 0px 16px -5px rgba(0, 0, 0, 0.35);
-    }
-  }
-
-  .grid-item img {
-      display: block;
-      height: 1.5em;
-      margin-bottom: 1.2em;
-      margin-right:1.2em;
-      opacity: 0.5;
-      display:inline-block;
-    }
-
-  .grid-item h2 {
-      color: $grid-item-color;
-      font-size: 1.1em;
-      margin-bottom: 0.4em;
-    }
-
-  .grid-item p {
-      color: transparentize($grid-item-color, 0.4);
-
-      @include media($medium-screen) {
-        max-width: 70%;
-      }
-    }
-
-  .grid-item-big {
-    @include media($large-screen) {
-      @include grid-item-columns($grid-item-big-columns);
-    }
     p {
-      @include media($medium-screen) {
-        max-width: 60%;
+      line-height: $base-line-height;
+      color:#666;
+    }
+    small {
+      color:#666;
+      strong {
+        min-width:45px;
+        display:inline-block;
       }
     }
-  }
 
-  // this, below, might not be the most beautiful solution but it removes the outer borders by using the background color.
-  .bottom-cover {
-    background: $grid-items-background;
-    bottom: 0px;
-    height: 3px;
-    position: absolute;
-    width: 100%;
-  }
+    .categoryWrapper {
+      position:absolute;
+      bottom:15px;
+      left:15px;
+      width:100px;
+      img {
+        float:left;
+        margin:10px;
+      }
+    }
 
-  .right-cover {
-    background: $grid-items-background;
-    height: 100%;
-    position: absolute;
-    right: 0px;
-    width: 4px;
+
+    //////////////////////////////////////////////////////////////////////////////////
+
+    $hover-tile-height: 10em;
+
+    /* background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png"); */
+    background-position: top;
+    background-size: cover;
+    background-color: white;
+    border: 1px solid $base-border-color;
+    cursor: pointer;
+    height: $hover-tile-height;
+    margin-bottom: $base-line-height;
+
+    @include media($medium-screen) {
+      width: 500px;
+    }
+
+    .hover-tile-container {
+      height: $hover-tile-height;
+      overflow: hidden;
+    }
+
+    .hover-tile-container:hover > .hover-tile {
+      @include transform(translate(0, -100%));
+    }
+
+    .hover-tile {
+      @include transition(all, 0.2s ease-in-out);
+      background: inherit;
+      color: white;
+      height: inherit;
+      overflow: hidden;
+      padding: $base-spacing;
+    }
+
+    .hover-tile-hidden {
+      background: transparentize(#000, 0.5);
+
+      p {
+        color: transparentize(#fff, 0.3);
+      }
+
+      h4 {
+        margin-bottom: 0.5em;
+      }
+    }
   }
 }

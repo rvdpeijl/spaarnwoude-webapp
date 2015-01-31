@@ -17,8 +17,20 @@
 <body ng-app="app" ng-controller="App">
 
 	<modal ng-if="$root.activity" activity="$root.activity"></modal>
+	<div class="topBar">
+		<div class="social">
+		<ul class="socialList">
+			<li class="facebook"><a href="javascript:void(0)"><span><i class="fa fa-facebook"></i></span></a></li>
+			<li class="twitter"><a href="javascript:void(0)"><span><i class="fa fa-twitter"></i>
+</span></a></li>
+			<li class="email"><a href="javascript:void(0)"><span><i class="fa fa-envelope-o"></i>
+</span></a></li>
+		</ul>
+	</div>
+	</div>
 	<nav>
 	<div class="outer-container">
+
 		<ul>
 			<li class="logo">
 				<a href="#/">
@@ -32,14 +44,6 @@
 			<!-- <div ng-repeat="platform in \$root.config.social">
 				<a href="{{platform.url}}" target="_blank">{{platform.name}}</a>
 			</div> -->
-
-			<ul class="socialList">
-				<li class="facebook"><a href="javascript:void(0)"><span><i class="fa fa-facebook"></i></span></a></li>
-				<li class="twitter"><a href="javascript:void(0)"><span><i class="fa fa-twitter"></i>
-</span></a></li>
-				<li class="email"><a href="javascript:void(0)"><span><i class="fa fa-envelope-o"></i>
-</span></a></li>
-			</ul>
 		</div>
 		</div>
 	</nav>
