@@ -20,7 +20,7 @@ class CreateActivitiesTable extends Migration {
 			$table->double('latitude', 9, 6);
 			$table->double('longitude', 9, 6);
 			$table->text('short_desc', 255);
-			$table->longText('long_desc', 2500);
+			$table->longText('long_desc', 1500);
 			$table->string('address');
 			$table->string('zipcode', 6);
 			$table->string('city');
