@@ -14,6 +14,9 @@
     <label>Subtitel: (Optioneel)</label>
     {{ Form::textarea('subtitle') }}
 
+    <label>URL: (Optioneel)</label>
+    {{ Form::text('url') }}
+
     <label>Afbeelding:</label>
     <div class="currentImage"><img src="/img/news/{{$newsItem->id}}/featured_image/{{$newsItem->featured_image}}" alt=""></div>
     {{ Form::file('featured_image', array('class' => 'activityfiles')) }}

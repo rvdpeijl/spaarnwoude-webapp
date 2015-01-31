@@ -194,6 +194,10 @@ class AgendaController extends \BaseController {
 		$agenda->description	= $updated['description'];
 		$agenda->start 			= $updated['start'];
 		$agenda->end 			= $updated['end'];
+		$agenda->address 		= $updated['address'];
+		$agenda->zipcode 		= $updated['zipcode'];
+		$agenda->city 			= $updated['city'];
+		$agenda->url 			= $updated['url'];
 
 		$agenda->save();
 

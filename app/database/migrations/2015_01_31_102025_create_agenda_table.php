@@ -19,6 +19,10 @@ class CreateAgendaTable extends Migration {
 			$table->text('description', 255);
 			$table->dateTime('start');
 			$table->dateTime('end');
+			$table->string('address');
+			$table->string('zipcode');
+			$table->string('city');
+			$table->string('url')->nullable();
 			$table->timestamps();
 		});
 	}
