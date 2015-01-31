@@ -1,26 +1,32 @@
-<!-- <h2>Dashboard</h2> -->
-<div class="facebook">
+<!-- <div class="facebook">
 	<p ng-show="vm.user">U bent ingelogd als {{vm.user.first_name}} {{vm.user.last_name}}</p>
 	<button ng-hide="vm.user" ng-click="vm.login()">Login Met Facebook</button>
-	<button ng-show="vm.user" ng-click="vm.logout()">Logout</button>	
-</div>
+	<button ng-show="vm.user" ng-click="vm.logout()">Logout</button>
+</div> -->
 <img style="display:none" src="img/kamp1.jpg" alt="">
 <div class="activities">
 		<ul rn-carousel rn-carousel-auto-slide="5" rn-carousel-transition="slide" rn-carousel-easing="easeInOutSine" class="image">
 			<li  ng-repeat="activity in vm.activities" >
-				<activity activity="activity"></activity>	
+				<activity activity="activity"></activity>
 			</li>
-		</ul>	
+		</ul>
 </div>
 
 <div class="widgets">
 	<div class="miniMap">
-		<a href="#/kaart">
+		<!-- <a href="#/kaart">
 			<p>Bekijk de interactieve kaart van Spaarnwoude</p>
-		</a>
+		</a> -->
+		<map></map>
 	</div>
 	<div class="weatherWidget">
-		<weather ng-if="vm.forecast" forecast="vm.forecast" current-weather="vm.currentWeather"></weather>	
+		<weather ng-if="vm.forecast" forecast="vm.forecast" current-weather="vm.currentWeather"></weather>
 	</div>
-	
+</div>
+
+<div id="buttons">
+	<div class="btn genieten"> <div class="categoryImg genieten"></div> <p>Genieten</p></div>
+	<div class="btn verblijven"><div class="categoryImg verblijven"></div><p> Verblijven</p></div>
+	<div class="btn beleven"><div class="categoryImg beleven"></div> <p>Beleven</p></div>
+	<div class="btn doen"><div class="categoryImg doen"></div> <p>Doen</p></div>
 </div>

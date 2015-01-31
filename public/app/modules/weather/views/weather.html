@@ -8,12 +8,12 @@
 		<p class="day">Morgen</p>
 		<p>Temperatuur: {{forecast.list[0].temp.day}} </p>
 		<img ng-src="{{setIcon(forecast.list[0].weather[0].description)}}" alt="">
-		<p>{{translateDesc(forecast.list[0].weather[0].description)}}</p>
+		<!-- <p>{{forecast.list[0].weather[1].description}}</p> -->
 	</li>
 	<li>
 		<p class="day">Overmorgen</p>
 		<p>Temperatuur: {{forecast.list[1].temp.day}} </p>
-		<img ng-src="{{setIcon(forecast.list[1].weather[1].description)}}" alt="">
-		<p>{{translateDesc(forecast.list[0].weather[1].description)}}</p>
+		<img ng-src="{{setIcon(forecast.list[1].weather[0].description)}}" alt="">
+		<!-- <p>{{forecast.list[1].weather[0].description}}</p> -->
 	</li>
 </ul>

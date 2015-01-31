@@ -13,9 +13,20 @@ modal {
     max-width: 960px;
     min-width: 330px;
     height: auto;
+    padding:13px;
     -webkit-transform: translateX(-50%) translateY(-50%);
     -moz-transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
+
+    button {
+      position: absolute;
+      top: 0px;
+      right: 0;
+      border-radius: 0px 0px 0px 10px;
+      background-color: black;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
   }
 }

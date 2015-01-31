@@ -28,9 +28,17 @@
 		</ul>
 
 		<div class="social">
-			<div ng-repeat="platform in $root.config.social">
+			<!-- <div ng-repeat="platform in \$root.config.social">
 				<a href="{{platform.url}}" target="_blank">{{platform.name}}</a>
-			</div>
+			</div> -->
+
+			<ul class="socialList">
+				<li class="facebook"><a href="javascript:void(0)"><span><i class="fa fa-facebook"></i></span></a></li>
+				<li class="twitter"><a href="javascript:void(0)"><span><i class="fa fa-twitter"></i>
+</span></a></li>
+				<li class="email"><a href="javascript:void(0)"><span><i class="fa fa-envelope-o"></i>
+</span></a></li>
+			</ul>
 		</div>
 		</div>
 	</nav>
@@ -70,7 +78,7 @@
 	<!-- Weather -->
 	<script type="text/javascript" src="/app/modules/weather/weather.service.js"></script>
 	<script type="text/javascript" src="/app/modules/weather/weather.directive.js"></script>
-	
+
 	<!-- FacebookProfiler -->
 	<script type="text/javascript" src="/app/modules/facebookprofiler/facebookprofiler.service.js"></script>
 </body>

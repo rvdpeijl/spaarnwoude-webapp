@@ -1,16 +1,24 @@
 .angular-google-map-container { min-height: 500px;}
 
 #map_canvas {
-	position: relative; 
+	position: relative;
 }
 
-#tooltip { 
+#tooltip {
 	color: #eeeeee;
 	position: fixed;
 	z-index: 9999;
 	background-color: #1BBC9B;
 	padding: 5px 10px;
 	display: none;
+	min-height:80px;
+	min-width: 250px;
+
+	#tooltipName {
+		font-size:15px;
+		font-weight:bold;
+		text-transform:uppercase;
+	}
 
 	@include transition(all, 0.2s, ease-in-out);
 }
@@ -23,13 +31,13 @@
 		float: left;
 
 		img {
-			height: 30px;
+			height: 23px;
 		}
 
 		span {
 			position: absolute;
-			top: 5px;
-			left: 40px;
+			top: 1px;
+			left: 30px;
 		}
 	}
 }
@@ -42,8 +50,20 @@
 	bottom: 0; right: 0;
 	z-index: 9999;
 	background-color: #F4B350;
-	padding: 5px 10px;
+	padding:13px;
 
+	button {
+		background-color:#B88F50;
+		@include transition(background-color, 0.5s, ease-in-out);
+	}
+
+	button:hover {
+		background-color:#EA9E29;
+	}
+
+	#infoWindowDescription {
+		margin-bottom:13px;
+	}
 	@include transition(all, 0.2s, ease-in-out);
 
 	.closeButton {
@@ -53,4 +73,3 @@
 		cursor: pointer;
 	}
 }
-

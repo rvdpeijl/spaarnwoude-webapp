@@ -1,5 +1,5 @@
 <div class="filter">
-	<input ng-model="searchAct" type="text" placeholder="Zoek iets mattie">
+	<input ng-model="searchAct" type="text" placeholder="Bijvoorbeeld: Fietsen">
 	<ul class="categories">
 		<li ng-click="searchAct='beleven'" class="beleven">Beleven</li>
 		<li ng-click="searchAct='doen'" class="doen">Doen</li>
@@ -8,5 +8,5 @@
 	</ul>
 </div>
 <div class="activities-list">
-	<activity ng-repeat="activity in vm.activities | filter:searchAct" activity="activity"></activity>	
+	<activity ng-repeat="activity in vm.activities | filter:searchAct" activity="activity"></activity>
 </div>

@@ -24,10 +24,10 @@
         var infoWindowName = document.getElementById('infoWindowName');
         var infoWindowDescription = document.getElementById('infoWindowDescription');
 
-        console.log(activities);
+        // console.log(activities);
 
-        vm.map = { 
-            center: { latitude: 52.413307, longitude: 4.680558 }, 
+        vm.map = {
+            center: { latitude: 52.413307, longitude: 4.680558 },
             zoom: 13,
             options: {
                 scrollwheel: false
@@ -46,7 +46,7 @@
                 longitude: 4.680558
             },
             icon: '/img/icons/location_purple.png',
-            events:  { 
+            events:  {
                 mouseover: function(gMarker, eventName, model) {
                     if (!vm.infoWindowVisible) {
                         var left = ($window.event.clientX+50) + 'px';
@@ -56,7 +56,7 @@
                         tooltip.style.top = top;
                         tooltipName.innerHTML = gMarker.name;
                         tooltipCategories.innerHTML = '';
-                        
+
                         angular.forEach(gMarker.categories, function(val, key) {
                             $('<div class="category"><img src="/img/icons/'+val+'_white.png"><span>'+val+'</span></div>').appendTo($(tooltipCategories));
                         });

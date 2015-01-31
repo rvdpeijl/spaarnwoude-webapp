@@ -20,8 +20,8 @@
 
         return directive;
 
-        function link(scope, element, attrs) {	
-            
+        function link(scope, element, attrs) {
+
             scope.setIcon = function(desc) {
                 switch(desc) {
                     case 'broken clouds':
@@ -63,8 +63,15 @@
                     case 'moderate rain':
                         return '/img/icons/weather-icons/rain.png';
                     break;
-                    
-                    default: 
+
+                    case 'calm':
+                        return '/img/icons/weather-icons/clear-sky.png';
+                    break;
+
+                    case 'light rain':
+                        return '/img/icons/weather-icons/rain.png';
+
+                    default:
                         return null;
                     break;
                 }
@@ -73,15 +80,15 @@
             scope.translateDesc = function(desc) {
                 switch(desc) {
                     case 'broken clouds':
-                        return 'BlaBlaBlaBla';
+                        return 'Zware bewolking';
                     break;
 
                     case 'few clouds':
-                        return 'BlaBlaBlaBla';
+                        return 'Licht bewolkt';
                     break;
 
                     case 'scattered clouds':
-                        return 'BlaBlaBlaBla';
+                        return 'Bewolking';
                     break;
 
                     case 'shower rain':
@@ -111,8 +118,8 @@
                     case 'moderate rain':
                         return 'BlaBlaBlaBla';
                     break;
-                    
-                    default: 
+
+                    default:
                         return null;
                     break;
                 }

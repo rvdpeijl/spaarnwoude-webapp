@@ -2038,10 +2038,19 @@ modal {
     max-width: 960px;
     min-width: 330px;
     height: auto;
+    padding: 13px;
     -webkit-transform: translateX(-50%) translateY(-50%);
     -moz-transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%); }
+    modal .panel button {
+      position: absolute;
+      top: 0px;
+      right: 0;
+      border-radius: 0px 0px 0px 10px;
+      background-color: black;
+      font-weight: bold;
+      text-transform: uppercase; }
 
 .angular-google-map-container {
   min-height: 500px; }
@@ -2056,22 +2065,28 @@ modal {
   background-color: #1BBC9B;
   padding: 5px 10px;
   display: none;
+  min-height: 80px;
+  min-width: 250px;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
+  #tooltip #tooltipName {
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase; }
 
 #tooltipCategories .category {
   position: relative;
   width: 50%;
   float: left; }
   #tooltipCategories .category img {
-    height: 30px; }
+    height: 23px; }
   #tooltipCategories .category span {
     position: absolute;
-    top: 5px;
-    left: 40px; }
+    top: 1px;
+    left: 30px; }
 
 #infoWindow {
   color: #eee;
@@ -2082,12 +2097,23 @@ modal {
   right: 0;
   z-index: 9999;
   background-color: #F4B350;
-  padding: 5px 10px;
+  padding: 13px;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
+  #infoWindow button {
+    background-color: #B88F50;
+    -webkit-transition: background-color 0.5s ease-in-out;
+    -moz-transition: background-color 0.5s ease-in-out;
+    -ms-transition: background-color 0.5s ease-in-out;
+    -o-transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out; }
+  #infoWindow button:hover {
+    background-color: #EA9E29; }
+  #infoWindow #infoWindowDescription {
+    margin-bottom: 13px; }
   #infoWindow .closeButton {
     text-align: right;
     display: inline-block;
@@ -2253,16 +2279,46 @@ nav {
 
 nav ul {
   display: inline-block;
-  padding: 25px; }
+  margin-top: 10px; }
 
 nav ul li {
   display: inline-block;
   margin: 0px 30px 0px 0px;
   vertical-align: middle; }
+  nav ul li a {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    color: #333;
+    position: relative; }
+    nav ul li a:hover {
+      color: #333; }
+    nav ul li a:focus {
+      color: #32AADF; }
+      nav ul li a:focus:after {
+        width: 100%; }
+  nav ul li a:after {
+    content: "";
+    transition: width .5s ease;
+    position: absolute;
+    top: 22px;
+    left: 0;
+    border-bottom: 2px solid #32AADF;
+    width: 0%;
+    height: 2px; }
+  nav ul li a:hover:after {
+    width: 100%; }
 
 nav .social {
   float: right;
-  padding: 40px; }
+  /* padding:20px 20px 20px 20px; */ }
+  nav .social ul.socialList {
+    padding: 0; }
+    nav .social ul.socialList li {
+      margin-top: 17px;
+      vertical-align: middle; }
 
 nav .social div {
   display: inline-block;
@@ -2274,16 +2330,18 @@ table form {
 
 .activities {
   float: left;
+  float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 57.35098%;
-  margin: 0; }
+  width: 65.88078%;
+  margin-right: 0; }
   .activities:last-child {
     margin-right: 0; }
 
 .weatherWidget {
   width: 100%;
-  height: 213px;
+  min-height: 212px;
+  max-height: 212px;
   margin: 0;
   background: #32aadf;
   background: #33abda;
@@ -2295,7 +2353,8 @@ table form {
   background: linear-gradient(to bottom, #33abda 1%, #1984ad 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33abda', endColorstr='#1984ad',GradientType=0 ); }
   .weatherWidget ul {
-    height: 209px; }
+    height: 209px;
+    padding-top: 20px; }
   .weatherWidget h5, .weatherWidget p {
     color: white;
     text-align: center; }
@@ -2330,15 +2389,10 @@ table form {
     -webkit-font-smoothing: antialiased;
     color: #fff; }
 
-.facebook {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 14.70196%;
-  margin: 0; }
-  .facebook:last-child {
-    margin-right: 0; }
-
+/* .facebook {
+	@include span-columns(2);
+	margin:0;
+} */
 .outer-container {
   max-width: 1000px;
   min-width: 1000px;
@@ -2349,9 +2403,9 @@ table form {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 23.23176%;
+  width: 31.76157%;
   margin: 0;
-  width: 27.23176%; }
+  /* width:27.23176%; */ }
   .widgets:last-child {
     margin-right: 0; }
 
@@ -2364,7 +2418,7 @@ table form {
     background: white;
     position: relative;
     height: 75px;
-    margin-top: -4px;
+    margin-top: -3px;
     padding: 21px; }
     .activity-content .infoBar p {
       margin: 0;
@@ -2372,6 +2426,7 @@ table form {
       vertical-align: middle;
       height: 100%;
       font-size: 20px;
+      font-weight: bold;
       max-width: 80%;
       clear: right;
       color: #555; }
@@ -2401,6 +2456,8 @@ table form {
     max-width: 477px;
     display: inline-block;
     margin: 10px; }
+    .activities-list .activity-content .infoBar {
+      margin-top: -5px; }
   .activities-list ul {
     width: 100%;
     height: 340px; }
@@ -2408,7 +2465,7 @@ table form {
     position: relative; }
     .activities-list .wrapper .logo {
       position: absolute;
-      bottom: 10px;
+      bottom: 15px;
       left: 10px;
       max-width: 140px; }
 
@@ -2422,6 +2479,58 @@ table form {
     bottom: 10px;
     left: 10px;
     max-width: 140px; }
+  .activities ul li .wrapper .image img {
+    min-width: 659px;
+    height: 100%;
+    display: block; }
+
+#buttons {
+  float: left;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 20px; }
+  #buttons p {
+    position: absolute;
+    z-index: 200;
+    top: 42px;
+    bottom: 0;
+    left: 40px;
+    font-size: 18px; }
+  #buttons .btn {
+    float: left;
+    color: white;
+    height: 110px;
+    cursor: pointer;
+    width: 24.6%;
+    position: relative; }
+  #buttons .categoryImg {
+    height: 110px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 111px; }
+  #buttons .categoryImg.genieten {
+    background-image: url("../../img/icons/categories/genieten.png");
+    background-size: contain; }
+  #buttons .categoryImg.doen {
+    background-image: url("../../img/icons/categories/doen.png");
+    background-size: contain; }
+  #buttons .categoryImg.verblijven {
+    background-image: url("../../img/icons/categories/verblijven.png");
+    background-size: contain; }
+  #buttons .categoryImg.beleven {
+    background-image: url("../../img/icons/categories/beleven.png");
+    background-size: contain; }
+  #buttons .btn.genieten {
+    background-color: #31A5D8; }
+  #buttons .btn.doen {
+    background-color: #A60072; }
+  #buttons .btn.verblijven {
+    background-color: #D5D500; }
+  #buttons .btn.beleven {
+    background-color: #E58200; }
 
 
 

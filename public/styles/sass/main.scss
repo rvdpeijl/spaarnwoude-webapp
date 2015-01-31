@@ -26,18 +26,62 @@ nav {
 
 nav ul {
 	display: inline-block;
-	padding:25px;
+	margin-top:10px;
 }
 
 nav ul li {
 	display: inline-block;
 	margin:0px 30px 0px 0px;
 	vertical-align: middle;
+
+	a {
+		@include transition(all, .5s, ease-in-out);
+		color:#333;
+		position:relative;
+
+		&:hover {
+			color:#333;
+		}
+
+		&:focus {
+			color:#32AADF;
+
+			&:after {
+				width:100%;
+			}
+			
+		}
+
+	}
+
+	a:after {
+		content: "";
+		transition: width .5s ease;
+		position: absolute;
+		top: 22px;
+		left: 0;
+		border-bottom: 2px solid #32AADF;
+		width: 0%;
+		height: 2px;
+	}
+
+	a:hover:after {
+		width: 100%;
+	}
 }
 
 nav .social {
 	float:right;
-	padding:40px;
+	/* padding:20px 20px 20px 20px; */
+
+	ul.socialList {
+		padding:0;
+
+		li {
+			margin-top:17px;
+			vertical-align:middle;
+		}
+	}
 }
 
 nav .social div {
@@ -53,13 +97,15 @@ table {
 }
 
 .activities {
-	@include span-columns(7);
-	margin:0;
+	float: left;
+	@include span-columns(8);
+	margin-right:0;
 }
 
 .weatherWidget {
 	@include fill-parent();
-	height:213px;
+	min-height: 212px;
+	max-height: 212px;
 	margin:0;
 	background: #32aadf;
 	background: #33abda;
@@ -70,9 +116,10 @@ table {
 	background: -ms-linear-gradient(top, #33abda 1%,#1984ad 100%);
 	background: linear-gradient(to bottom, #33abda 1%,#1984ad 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33abda', endColorstr='#1984ad',GradientType=0 );
-	
+
 	ul {
 		height:209px;
+		padding-top:20px;
 	}
 	h5,p {
 		color:white;
@@ -122,10 +169,10 @@ table {
 	}
 }
 
-.facebook {
-	@include span-columns(2);	
+/* .facebook {
+	@include span-columns(2);
 	margin:0;
-}
+} */
 .outer-container {
 	max-width: 1000px;
 	min-width: 1000px;
@@ -133,9 +180,9 @@ table {
 	overflow: hidden;
 }
 .widgets {
-	@include span-columns(3);		
+	@include span-columns(4);
 	margin:0;
-	width:27.23176%;
+	/* width:27.23176%; */
 }
 .activity-content {
 	max-width: 100%;
@@ -147,7 +194,7 @@ table {
 		background: white;
 		position: relative;
 		height: 75px;
-		margin-top: -4px;
+		margin-top: -3px;
 		padding: 21px;
 		p {
 			margin: 0;
@@ -155,9 +202,10 @@ table {
 			vertical-align: middle;
 			height: 100%;
 			font-size:20px;
+			font-weight:bold;
 			max-width: 80%;
 			clear: right;
-			color:#555;		
+			color:#555;
 		}
 
 		.bekijk {
@@ -193,11 +241,15 @@ table {
 
 .activities-list {
 	width:100%;
-	
+
 	.activity-content {
 		max-width: 477px;
 		display: inline-block;
 		margin: 10px;
+
+		.infoBar {
+			margin-top: -5px;
+		}
 	}
 
 	ul {
@@ -210,7 +262,7 @@ table {
 
 		.logo {
 			position:absolute;
-			bottom:10px;
+			bottom:15px;
 			left:10px;
 			max-width:140px;
 		}
@@ -232,7 +284,89 @@ table {
 			left:10px;
 			max-width:140px;
 		}
-	}
-	
 
+		.image {
+			img {
+				min-width:659px;
+				height:100%;
+				display:block;
+			}
+
+		}
+	}
+
+
+}
+
+#buttons {
+	float: left;
+	overflow: hidden;
+	width: 100%;
+	margin-top:20px;
+
+
+		p {
+			position: absolute;
+			z-index: 200;
+			top: 42px;
+			bottom: 0;
+			left: 40px;
+			font-size: 18px;
+		}
+
+		.btn {
+			float:left;
+			color:white;
+			height:110px;
+			cursor:pointer;
+			width:24.6%;
+			position:relative;
+
+		}
+
+
+		.categoryImg {
+			height: 110px;
+			background-repeat: no-repeat;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 111px;
+		}
+
+		.categoryImg.genieten {
+			background-image: url("../../img/icons/categories/genieten.png");
+			background-size:contain;
+		}
+
+		.categoryImg.doen {
+			background-image: url("../../img/icons/categories/doen.png");
+			background-size:contain;
+		}
+
+		.categoryImg.verblijven {
+			background-image: url("../../img/icons/categories/verblijven.png");
+			background-size:contain;
+		}
+
+		.categoryImg.beleven {
+			background-image: url("../../img/icons/categories/beleven.png");
+			background-size:contain;
+		}
+	.btn.genieten {
+		background-color:#31A5D8;
+	}
+
+	.btn.doen {
+		background-color:#A60072;
+	}
+
+	.btn.verblijven {
+		background-color:#D5D500;
+	}
+
+	.btn.beleven {
+		background-color:#E58200;
+	}
 }
