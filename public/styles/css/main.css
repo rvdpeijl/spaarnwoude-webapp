@@ -812,69 +812,65 @@ article.type-system-geometric {
   article.type-system-geometric p.author {
     font-family: "Questrial", sans-serif; }
 
-.grid-items-lines {
-  position: relative; }
-  .grid-items-lines p {
-    line-height: 1.5em; }
-  .grid-items-lines a {
-    text-decoration: none; }
-  .grid-items-lines::after {
-    clear: both;
-    content: "";
-    display: table; }
-  .grid-items-lines .grid-item {
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    background: white;
-    border-bottom: 1px solid rgba(51, 51, 51, 0.2);
-    border-right: 1px solid rgba(51, 51, 51, 0.2);
-    cursor: pointer;
-    float: left;
-    height: 283px;
-    overflow: hidden;
-    outline: none;
-    padding: 1em;
-    width: 100%; }
-    @media screen and (min-width: 53.75em) {
-      .grid-items-lines .grid-item {
-        width: 33.33333%; } }
-    .grid-items-lines .grid-item:focus, .grid-items-lines .grid-item:hover {
-      box-shadow: inset 0px 0px 16px -5px rgba(0, 0, 0, 0.35); }
-  .grid-items-lines .grid-item img {
-    display: block;
-    height: 1.5em;
-    margin-bottom: 1.2em;
-    margin-right: 1.2em;
-    opacity: 0.5;
-    display: inline-block; }
-  .grid-items-lines .grid-item h2 {
+.agendaLijst .hover-tile-outer {
+  display: inline-block;
+  position: relative;
+  /* background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png"); */
+  background-position: top;
+  background-size: cover;
+  background-color: white;
+  border: 1px solid #DDD;
+  cursor: pointer;
+  height: 10em;
+  margin-bottom: 1.5; }
+  .agendaLijst .hover-tile-outer h4 {
+    margin: 0; }
+  .agendaLijst .hover-tile-outer h2 {
     color: #333;
-    font-size: 1.1em;
-    margin-bottom: 0.4em; }
-  .grid-items-lines .grid-item p {
-    color: rgba(51, 51, 51, 0.6); }
-    @media screen and (min-width: 40em) {
-      .grid-items-lines .grid-item p {
-        max-width: 70%; } }
-  @media screen and (min-width: 53.75em) {
-    .grid-items-lines .grid-item-big {
-      width: 66.66667%; } }
+    font-size: 20px; }
+  .agendaLijst .hover-tile-outer p {
+    line-height: 1.5;
+    color: #666; }
+  .agendaLijst .hover-tile-outer small {
+    color: #666; }
+    .agendaLijst .hover-tile-outer small strong {
+      min-width: 45px;
+      display: inline-block; }
+  .agendaLijst .hover-tile-outer .categoryWrapper {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    width: 100px; }
+    .agendaLijst .hover-tile-outer .categoryWrapper img {
+      float: left;
+      margin: 10px; }
   @media screen and (min-width: 40em) {
-    .grid-items-lines .grid-item-big p {
-      max-width: 60%; } }
-  .grid-items-lines .bottom-cover {
-    background: white;
-    bottom: 0px;
-    height: 3px;
-    position: absolute;
-    width: 100%; }
-  .grid-items-lines .right-cover {
-    background: white;
-    height: 100%;
-    position: absolute;
-    right: 0px;
-    width: 4px; }
+    .agendaLijst .hover-tile-outer {
+      width: 500px; } }
+  .agendaLijst .hover-tile-outer .hover-tile-container {
+    height: 10em;
+    overflow: hidden; }
+  .agendaLijst .hover-tile-outer .hover-tile-container:hover > .hover-tile {
+    -webkit-transform: translate(0, -100%);
+    -moz-transform: translate(0, -100%);
+    -ms-transform: translate(0, -100%);
+    -o-transform: translate(0, -100%);
+    transform: translate(0, -100%); }
+  .agendaLijst .hover-tile-outer .hover-tile {
+    -webkit-transition: all, 0.2s ease-in-out;
+    -moz-transition: all, 0.2s ease-in-out;
+    transition: all, 0.2s ease-in-out;
+    background: inherit;
+    color: white;
+    height: inherit;
+    overflow: hidden;
+    padding: 1.5em; }
+  .agendaLijst .hover-tile-outer .hover-tile-hidden {
+    background: rgba(0, 0, 0, 0.5); }
+    .agendaLijst .hover-tile-outer .hover-tile-hidden p {
+      color: rgba(255, 255, 255, 0.7); }
+    .agendaLijst .hover-tile-outer .hover-tile-hidden h4 {
+      margin-bottom: 0.5em; }
 
 body {
   margin: auto;
@@ -892,6 +888,29 @@ nav {
 nav ul {
   display: inline-block;
   margin-top: 10px; }
+
+.topBar {
+  min-height: 45px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: #f3f3f3; }
+  .topBar .social {
+    float: right;
+    /* padding:20px 20px 20px 20px; */ }
+    .topBar .social div {
+      display: inline-block;
+      /* margin:0px 30px 0px 0px; */
+      vertical-align: middle; }
+    .topBar .social ul.socialList {
+      padding: 0;
+      display: inline-block;
+      /* margin-top:10px; */ }
+      .topBar .social ul.socialList li {
+        /* padding:10px; */
+        display: inline-block;
+        vertical-align: middle;
+        margin: 10px; }
+        .topBar .social ul.socialList li a {
+          color: #666; }
 
 nav ul li {
   display: inline-block;
@@ -920,20 +939,6 @@ nav ul li {
     height: 2px; }
   nav ul li a:hover:after {
     width: 100%; }
-
-nav .social {
-  float: right;
-  /* padding:20px 20px 20px 20px; */ }
-  nav .social ul.socialList {
-    padding: 0; }
-    nav .social ul.socialList li {
-      margin-top: 17px;
-      vertical-align: middle; }
-
-nav .social div {
-  display: inline-block;
-  margin: 0px 30px 0px 0px;
-  vertical-align: middle; }
 
 table form {
   float: left; }
@@ -1065,10 +1070,10 @@ table form {
   color: white;
   padding: 10px;
   max-width: 250px;
-  margin-left: 9px; }
+  /* margin-left: 9px; */ }
 .filter input {
   max-width: 250px;
-  margin-left: 9px;
+  /* margin-left: 9px; */
   border-radius: 0;
   border: 0;
   padding: 15px; }
@@ -1077,16 +1082,23 @@ table form {
   .filter.map .zoeken {
     margin-left: 0px; }
   .filter.map input {
-    margin-left: 0; }
+    margin-left: 0;
+    margin-bottom: 22px; }
 
 .activities-list {
-  width: 100%; }
+  width: 100%;
+  padding-bottom: 20px; }
+  .activities-list activity:nth-child(odd) {
+    margin-right: 10px; }
+  .activities-list activity:nth-child(even) {
+    margin-right: 0; }
   .activities-list .activity-content {
-    max-width: 477px;
+    max-width: 492px;
+    margin-top: 10px;
     display: inline-block;
-    margin: 10px; }
+    /* margin: 10px 10px 10px 10px; */ }
     .activities-list .activity-content .infoBar {
-      margin-top: -5px; }
+      margin-top: -6px; }
   .activities-list ul {
     width: 100%;
     height: 340px; }
@@ -1121,10 +1133,12 @@ table form {
   #buttons p {
     position: absolute;
     z-index: 200;
-    top: 42px;
+    top: 45px;
     bottom: 0;
-    left: 40px;
-    font-size: 18px; }
+    left: 0;
+    font-size: 18px;
+    width: 100%;
+    text-align: center; }
   #buttons .btn {
     float: left;
     color: white;

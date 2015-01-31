@@ -30,6 +30,37 @@ nav ul {
 	margin-top:10px;
 }
 
+.topBar {
+	min-height:45px;
+	border-bottom:1px solid rgba(0,0,0,.1);
+	background:#f3f3f3;
+	.social {
+		float:right;
+		/* padding:20px 20px 20px 20px; */
+		div {
+			display: inline-block;
+			/* margin:0px 30px 0px 0px; */
+			vertical-align: middle;
+		}
+		ul.socialList {
+			padding:0;
+			display: inline-block;
+			/* margin-top:10px; */
+			
+
+			li {
+				/* padding:10px; */
+				display:inline-block;
+				vertical-align:middle;
+				margin:10px;
+				a {
+					color :#666;
+				}
+			}
+		}
+	}
+}
+
 nav ul li {
 	display: inline-block;
 	margin:0px 30px 0px 0px;
@@ -69,26 +100,6 @@ nav ul li {
 	a:hover:after {
 		width: 100%;
 	}
-}
-
-nav .social {
-	float:right;
-	/* padding:20px 20px 20px 20px; */
-
-	ul.socialList {
-		padding:0;
-
-		li {
-			margin-top:17px;
-			vertical-align:middle;
-		}
-	}
-}
-
-nav .social div {
-	display: inline-block;
-	margin:0px 30px 0px 0px;
-	vertical-align: middle;
 }
 
 table {
@@ -145,7 +156,7 @@ table {
 
 .miniMap {
 	@include fill-parent();
-	margin:0;
+		margin:0;
 	height: 150px;
 	position: relative;
 	background-image: url(../../img/minimap.jpg);
@@ -245,12 +256,12 @@ table {
 		color:white;
 		padding:10px;
 		max-width: 250px;
-		margin-left: 9px;
+		/* margin-left: 9px; */
 	}
 
 	input {
 		max-width: 250px;
-		margin-left: 9px;
+		/* margin-left: 9px; */
 		border-radius: 0;
 		border: 0;
 		padding: 15px;
@@ -263,20 +274,31 @@ table {
 		}
 		input {
 			margin-left:0;
+			margin-bottom:22px;
 		}
 	}
 }
 
 .activities-list {
 	width:100%;
+	padding-bottom:20px;
+
+	activity:nth-child(odd) {
+		margin-right:10px;
+	}
+
+	activity:nth-child(even) {
+		margin-right:0;
+	}
 
 	.activity-content {
-		max-width: 477px;
+		max-width:  492px;
+		margin-top:10px;
 		display: inline-block;
-		margin: 10px;
+		/* margin: 10px 10px 10px 10px; */
 
 		.infoBar {
-			margin-top: -5px;
+			margin-top: -6px;
 		}
 	}
 
@@ -336,10 +358,12 @@ table {
 		p {
 			position: absolute;
 			z-index: 200;
-			top: 42px;
+			top: 45px;
 			bottom: 0;
-			left: 40px;
+			left: 0;
 			font-size: 18px;
+			width: 100%;
+			text-align: center;
 		}
 
 		.btn {
