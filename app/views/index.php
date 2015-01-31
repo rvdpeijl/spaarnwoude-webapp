@@ -20,7 +20,7 @@
 	<div class="outer-container">
 		<ul>
 			<li class="logo">
-				<a href="/">
+				<a href="#/">
 					<img width="260" src="img/logo.png" alt="">
 				</a>
 			</li>
@@ -72,6 +72,9 @@
 	<!-- Map -->
 	<script type="text/javascript" src="/app/modules/map/map.controller.js"></script>
 
+	<!-- About -->
+	<script type="text/javascript" src="/app/modules/about/about.controller.js"></script>
+
 	<!-- Modal -->
 	<script type="text/javascript" src="/app/modules/modal/modal.directive.js"></script>
 
@@ -81,5 +84,15 @@
 
 	<!-- FacebookProfiler -->
 	<script type="text/javascript" src="/app/modules/facebookprofiler/facebookprofiler.service.js"></script>
+
+	<!-- Agenda -->
+	<script type="text/javascript" src="/app/modules/agenda/agenda.service.js"></script>
+	<script type="text/javascript" src="/app/modules/agenda/agenda.controller.js"></script>
+	<script type="text/javascript" src="/app/modules/agenda/agenda.directive.js"></script>
+
+	<!-- News -->
+	<script type="text/javascript" src="/app/modules/news/news.service.js"></script>
+	<script type="text/javascript" src="/app/modules/news/news.controller.js"></script>
+	<script type="text/javascript" src="/app/modules/news/news.directive.js"></script>
 </body>
 </html>

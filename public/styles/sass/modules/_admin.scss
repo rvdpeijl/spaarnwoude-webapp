@@ -24,7 +24,113 @@
 //   }
 // }
 body.admin {
-  background: #eee;
+  background: #fff;
+}
+
+.date-timepicker {
+    position: fixed;
+    right: 0;
+    bottom: 0px;
+    width: 355px;
+    height: 49px;
+    @include clearfix;
+    overflow: hidden;
+    background-color: #F1F1F1;
+    border-top-left-radius: 3px;
+    z-index: 99999;
+
+    @include transition(all 0.3s ease);
+    @include transform(translateX(306px));
+
+    &.expand {
+      @include transform(translateX(0));
+    }
+
+    .clock-icon {
+    float: left;
+    width: 49px;
+    height: 49px;
+    border: 1px solid #3484D6;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAcCAYAAACQ0cTtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RkQ5NDY5NzkyNEI1MTFFNDg4MzVEODJGMzJCNDUxODAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RkQ5NDY5N0EyNEI1MTFFNDg4MzVEODJGMzJCNDUxODAiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGRDk0Njk3NzI0QjUxMUU0ODgzNUQ4MkYzMkI0NTE4MCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGRDk0Njk3ODI0QjUxMUU0ODgzNUQ4MkYzMkI0NTE4MCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Po5cv8gAAAGISURBVHjatJYNbcQwDIVzVQGEwRVCGawQymCFUAYrhEIohEHIGBTCHYMMQeZMz5JVpfnp5Sw9nZRL/TlOYufmnFOZpkm9+H0clDYPi0iTZtLu4vYgraQu5i8G8hALZ9+kKeDMBzMCxHNXjGfBNJwzpEusXn634DufiT4F05hosRJ1Qb3w0cdgJjQpoC4xRwbdhWCcgiEj+gWBpdJq5TwZqYMTVQmmELjjLeHBDcdXV4YpHDLvWzW4pJ+kjWRVfVtId9LoYQMGN/Ue20lPz2lQep7ZJeeaGc9pRJ17p3n/Hy327AzWQaHx0lSqNjFpIn2d/PdTANMMs5FIN+Q7ZCUn1/v/bbHEKZLrGvvpYXsD2P3CPpTY8M/BLbcFpapUXLIGWa5sQbkqkeFyJQuxRZetCRpDhZifAe6FphlqosEWI9NZA8igXW5NqOEZAOcXDoTNeRYcV2gyOzcHuooHjy55yo04RfzxDLA+pGsSr7HoFcqJWDo7Mw4menVuBc9vJZ7fx16VZX8CDACm5tfCurriaAAAAABJRU5ErkJggg==);
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-top-left-radius: 3px;
+  }
+  .datetime-wrapper {
+    padding: 5px;
+    border-top: 1px solid #C7C7C7;
+  }
+
+  .datepicker, .timepicker {
+    float: left;
+    height: 38px;
+    padding: 0px 10px;
+    border: 0;
+
+    color: #6B6B6B;
+    font-family: Helvetica, arial, sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+  }
+
+  .datepicker {
+    width: 160px;
+    margin-left: 7px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border: 1px solid #E6E6E6;
+  }
+  .timepicker {
+    width: 86px;
+    border: 1px solid #E6E6E6;
+    border-left: 0;
+    border-right: 0;
+  }
+  .clock-icon, .datetimepicker-submit {
+    background-color: #399ae0;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken(#399ae0, 3%);
+    }
+    &:active {
+      box-shadow: inset 3px 3px 3px rgba(0,0,0,0.1);
+    }
+  }
+  .datetimepicker-submit {
+    float: left;
+    padding: 18px 10px;
+    border: 1px solid #3484D6;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: #399ae0;
+
+    color: #FFF;
+    font-size: 15px;
+    line-height: 0;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+  }
+}
+
+.imgContainer {
+  @include outer-container;
+  
+  .image {
+    @include span-columns(6);
+    position: relative;
+    margin-right: 0;
+
+    .delete {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      color: #fff;
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+  }
 }
 
 .footer-2 {
@@ -260,5 +366,166 @@ body.admin {
         }
       }
     }
+  }
+}
+
+$base-spacing: 1.5em !default;
+$alert-color: #fff6bf !default;
+$error-color: #fbe3e4 !default;
+$notice-color: #e5edf8 !default;
+$success-color: #e6efc2 !default;
+
+@mixin flash($color) {
+  background-color: $color;
+  color: darken($color, 60%);
+  display: block;
+  font-weight: 600;
+  margin-bottom: $base-spacing / 2;
+  padding: $base-spacing / 2;
+  text-align: center;
+
+  a {
+    color: darken($color, 70%);
+
+    &:focus,
+    &:hover {
+      color: darken($color, 90%);
+    }
+  }
+}
+
+.flash-alert {
+  @include flash($alert-color);
+}
+
+.flash-error {
+  @include flash($error-color);
+}
+
+.flash-notice {
+  @include flash($notice-color);
+}
+
+.flash-success {
+  @include flash($success-color);
+}
+
+.label-switch {  
+  ///////////////////////////////////////////////////////////////////////////////////
+  $base-accent-color: #477DCA !default;
+  $base-background-color: white !default;
+  //////////////////////////////////////////////////////////////////////////////////
+
+  $switch-width: 52px;
+  $switch-padding: 2px;
+  $switch-height: 32px;
+  $switch-radius: $switch-height;
+  $knob-size: $switch-height - ($switch-padding * 2);
+  $knob-radius: $switch-height - ($switch-padding * 2);
+  $knob-width: $knob-size;
+  $switch-background: $base-background-color;
+  $switch-border-background: darken($base-background-color, 9%);
+  $switch-shadow: 0 2px 5px transparentize(black, 0.6);
+
+  border-radius: $switch-radius;
+  cursor: pointer;
+  display: inline-block;
+  height: $switch-height;
+  position: relative;
+  width: $switch-width;
+
+  input[type="checkbox"] {
+    display: none;
+
+    + .checkbox {
+      @include transition(all 0.3s ease);
+      background: $switch-border-background;
+      border-radius: $switch-radius;
+      border: none;
+      cursor: pointer;
+      height: $switch-height;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      width: $switch-width;
+      z-index: 0;
+
+      &:before {
+        @include position(absolute, 2px 0 0 2px);
+        @include transform(scale(1));
+        @include transition(all 0.3s ease);
+        background: $switch-background;
+        border-radius: $switch-radius;
+        content: "";
+        height: $knob-radius;
+        width: $switch-width - ($switch-padding * 2);
+        z-index: 1;
+      }
+
+      &:after {
+        @include position(absolute, 2px 0 0 2px);
+        @include transition(all 0.3s ease);
+        @include size($knob-size);
+        background: $switch-background;
+        border-radius: $knob-radius;
+        box-shadow: $switch-shadow;
+        content: "";
+        z-index: 2;
+      }
+    }
+
+    &:checked {
+      + .checkbox {
+        background: $base-accent-color;
+
+        &:before {
+          @include transform(scale(0));
+        }
+
+        &:after {
+          left: $switch-width - $knob-width - ($switch-padding);
+        }
+      }
+    }
+  }
+}
+
+.stats {
+  $base-spacing: 1.5em !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $base-accent-color: #477dca !default;
+  $stats-color: lighten($base-accent-color, 10%);
+
+  padding: $base-spacing / 2;
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    border-right: 1px solid transparentize($base-font-color, 0.8);
+    color: $stats-color;
+    display: inline;
+    float: left;
+    font-size: 1.2em;
+    font-weight: 800;
+    line-height: 1.1em;
+    padding: 0 0.7em;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  span {
+    color: $base-font-color;
+    display: block;
+    font-size: 0.7em;
+    font-weight: normal;
   }
 }

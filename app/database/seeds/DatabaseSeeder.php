@@ -15,6 +15,9 @@ class DatabaseSeeder extends Seeder {
 		$this->call('CategoryTableSeeder');
 		$this->call('ActivityCategoryTableSeeder');
 		$this->call('UserTableSeeder');
+		$this->call('AgendaTableSeeder');
+		$this->call('AgendaCategoryTableSeeder');
+		$this->call('NewsTableSeeder');
 	}
 }
 
@@ -31,13 +34,19 @@ class ActivityTableSeeder extends Seeder {
 			'longitude' => 4.673864,
 			'short_desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 			'long_desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quaerat, voluptatibus ipsa numquam commodi, vero, fugit quibusdam quo excepturi odit error ea enim praesentium necessitatibus nemo, aliquid veniam iure ullam.',
-			'street_name' => 'Jansstraat 5',
+			'address' => 'Jansstraat 5',
 			'zipcode' => '2012XX',
 			'city' => 'Haarlem',
 			'phone' => '023-5252525',
 			'website_url' => 'http://www.example.com/',
 			'facebook_url' => 'http://www.facebook.com/spaarnwoude',
-			'twitter_url' => 'http://www.twitter.com/spaarnwoude'
+			'twitter_url' => 'http://www.twitter.com/spaarnwoude',
+			'logo' => 'logo.png',
+			'img1' => 'medium_image1.jpg',
+			'img2' => 'medium_image1.jpg',
+			'img3' => 'medium_image1.jpg',
+			'img4' => 'medium_image1.jpg',
+			'img5' => 'medium_image1.jpg'
 		));
 
 		Activity::create(array(
@@ -47,13 +56,19 @@ class ActivityTableSeeder extends Seeder {
 			'longitude' => 4.680558,
 			'short_desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 			'long_desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quaerat, voluptatibus ipsa numquam commodi, vero, fugit quibusdam quo excepturi odit error ea enim praesentium necessitatibus nemo, aliquid veniam iure ullam.',
-			'street_name' => 'Jansstraat 5',
+			'address' => 'Jansstraat 5',
 			'zipcode' => '2012XX',
 			'city' => 'Haarlem',
 			'phone' => '023-5252525',
 			'website_url' => 'http://www.example.com/',
 			'facebook_url' => 'http://www.facebook.com/spaarnwoude',
-			'twitter_url' => 'http://www.twitter.com/spaarnwoude'
+			'twitter_url' => 'http://www.twitter.com/spaarnwoude',
+			'logo' => 'logo.png',
+			'img1' => 'medium_image1.jpg',
+			'img2' => 'medium_image1.jpg',
+			'img3' => 'medium_image1.jpg',
+			'img4' => 'medium_image1.jpg',
+			'img5' => 'medium_image1.jpg'
 		));
 
 		Activity::create(array(
@@ -63,13 +78,19 @@ class ActivityTableSeeder extends Seeder {
 			'longitude' => 4.689656,
 			'short_desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 			'long_desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quaerat, voluptatibus ipsa numquam commodi, vero, fugit quibusdam quo excepturi odit error ea enim praesentium necessitatibus nemo, aliquid veniam iure ullam.',
-			'street_name' => 'Jansstraat 5',
+			'address' => 'Jansstraat 5',
 			'zipcode' => '2012XX',
 			'city' => 'Haarlem',
 			'phone' => '023-5252525',
 			'website_url' => 'http://www.example.com/',
 			'facebook_url' => 'http://www.facebook.com/spaarnwoude',
-			'twitter_url' => 'http://www.twitter.com/spaarnwoude'
+			'twitter_url' => 'http://www.twitter.com/spaarnwoude',
+			'logo' => 'logo.png',
+			'img1' => 'medium_image1.jpg',
+			'img2' => 'medium_image1.jpg',
+			'img3' => 'medium_image1.jpg',
+			'img4' => 'medium_image1.jpg',
+			'img5' => 'medium_image1.jpg'
 		));
 
 		Activity::create(array(
@@ -79,13 +100,19 @@ class ActivityTableSeeder extends Seeder {
 			'longitude' => 4.685537,
 			'short_desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 			'long_desc' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis quaerat, voluptatibus ipsa numquam commodi, vero, fugit quibusdam quo excepturi odit error ea enim praesentium necessitatibus nemo, aliquid veniam iure ullam.',
-			'street_name' => 'Jansstraat 5',
+			'address' => 'Jansstraat 5',
 			'zipcode' => '2012XX',
 			'city' => 'Haarlem',
 			'phone' => '023-5252525',
 			'website_url' => 'http://www.example.com/',
 			'facebook_url' => 'http://www.facebook.com/spaarnwoude',
-			'twitter_url' => 'http://www.twitter.com/spaarnwoude'
+			'twitter_url' => 'http://www.twitter.com/spaarnwoude',
+			'logo' => 'logo.png',
+			'img1' => 'medium_image1.jpg',
+			'img2' => 'medium_image1.jpg',
+			'img3' => 'medium_image1.jpg',
+			'img4' => 'medium_image1.jpg',
+			'img5' => 'medium_image1.jpg'
 		));
 	}
 
@@ -177,6 +204,63 @@ class UserTableSeeder extends Seeder {
 			'lastname' => 'Admin',
 			'username' => 'admin',
 			'password' => Hash::make('password')
+		));
+	}
+}
+
+class AgendaTableSeeder extends Seeder {
+	public function run()
+	{
+		Agenda::create(array(
+			'name' => 'Agenda Item 1',
+			'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+			'start' => Carbon\Carbon::now(),
+			'end' => Carbon\Carbon::tomorrow()
+		));
+
+		Agenda::create(array(
+			'name' => 'Item 2',
+			'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+			'start' => Carbon\Carbon::now(),
+			'end' => Carbon\Carbon::tomorrow()
+		));
+	}
+}
+
+class AgendaCategoryTableSeeder extends Seeder {
+	public function run()
+	{
+		AgendaCategory::create(array(
+			'agenda_id' => 1,
+			'category_id' => 1
+		));
+
+		AgendaCategory::create(array(
+			'agenda_id' => 1,
+			'category_id' => 3
+		));
+
+		AgendaCategory::create(array(
+			'agenda_id' => 2,
+			'category_id' => 2
+		));
+
+		AgendaCategory::create(array(
+			'agenda_id' => 2,
+			'category_id' => 4
+		));
+	}
+}
+
+class NewsTableSeeder extends Seeder {
+	public function run()
+	{
+		News::create(array(
+			'title' => 'Lorem Ipsum',
+			'subtitle' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, necessitatibus tenetur consectetur soluta delectus. Ipsum quidem dignissimos ab consequuntur facere iure accusamus, esse sint ducimus eveniet neque mollitia exercitationem est.',
+			'content' => '<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo nobis placeat voluptate magni, molestias at illum expedita sunt minus quod quaerat accusantium deleniti voluptatibus odit rem consequatur aut, aspernatur esse!</div>
+			<div>Itaque iste quod pariatur nostrum nihil doloremque optio eligendi, mollitia laboriosam aspernatur voluptatibus voluptatum sunt ipsa hic, magni, facilis veniam dolor ratione, sequi commodi ad iusto. Ipsam, odio! Et, nemo!</div>',
+			'featured_image' => 'featured_image.jpg'
 		));
 	}
 }
