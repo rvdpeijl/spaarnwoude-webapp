@@ -97,6 +97,7 @@ class NewsController extends \BaseController {
 	    $newsItem->title 		= $updated['title'];
 	    $newsItem->subtitle		= $updated['subtitle'];
 	    $newsItem->content 		= $updated['content'];
+	    $newsItem->url 			= $updated['url'];
 	   	$newsItem->save();
 
 	   	return Redirect::to('/admin/news/')->with('message', 'Nieuws item bewerkt.');

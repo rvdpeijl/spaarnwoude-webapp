@@ -19,6 +19,7 @@ class CreateNewsTable extends Migration {
 			$table->text('subtitle')->nullable();
 			$table->longText('content');
 			$table->string('featured_image')->nullable();
+			$table->string('url')->nullable();
 			$table->timestamps();
 		});
 	}

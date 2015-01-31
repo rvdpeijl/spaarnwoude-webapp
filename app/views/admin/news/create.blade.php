@@ -14,6 +14,9 @@
 	    <label>Subtitel: (Optioneel)</label>
 	    {{ Form::textarea('subtitle') }}
 
+	    <label>URL: (Optioneel)</label>
+	    {{ Form::text('url') }}
+
 	    <label>Afbeelding:</label>
 	    {{ Form::file('featured_image', array('class' => 'activityfiles')) }}
 

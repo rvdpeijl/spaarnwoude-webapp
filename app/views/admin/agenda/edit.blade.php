@@ -48,6 +48,18 @@
 	    <label>Eind:</label>
 	    {{ Form::input('datetime', 'end') }}
 
+	    <h3>Locatie</h3>
+	    <hr>
+
+	    <label>Adres:</label>
+	    {{ Form::text('address') }}
+
+	    <label>Postcode:</label>
+	    {{ Form::text('zipcode') }}
+
+	    <label>Stad:</label>
+	    {{ Form::text('city') }}
+
 
 	    <button class="saveagenda">Opslaan</button>
 
