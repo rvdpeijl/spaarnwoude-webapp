@@ -200,10 +200,24 @@ class UserTableSeeder extends Seeder {
 	public function run()
 	{
 		User::create(array(
-			'firstname' => 'Admin',
-			'lastname' => 'Admin',
-			'username' => 'admin',
-			'password' => Hash::make('password')
+			'firstname' => 'Creadiv',
+			'lastname' => 'Enterprises',
+			'username' => 'creadiv',
+			'password' => Hash::make('g3tm0n3y!')
+		));
+
+		User::create(array(
+			'firstname' => 'Janke',
+			'lastname' => 'Papa',
+			'username' => 'janke',
+			'password' => Hash::make('sp44rnw0ud3')
+		));
+
+		User::create(array(
+			'firstname' => 'Ineke',
+			'lastname' => 'van der Geest',
+			'username' => 'ineke',
+			'password' => Hash::make('sp44rnw0ud3')
 		));
 	}
 }

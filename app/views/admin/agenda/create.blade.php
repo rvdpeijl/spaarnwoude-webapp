@@ -58,6 +58,9 @@
 		<label>Naam:</label>
 	    {{ Form::text('name') }}
 
+	    <label>Url (Optioneel):</label>
+	    {{ Form::text('url') }}
+
 	    <label>Beschrijving:</label>
 	    {{ Form::textarea('description') }}
 
