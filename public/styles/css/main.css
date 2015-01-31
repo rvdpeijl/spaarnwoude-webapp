@@ -2602,6 +2602,45 @@ article.type-system-geometric {
   article.type-system-geometric p.author {
     font-family: "Questrial", sans-serif; }
 
+.accordion {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  border: 1px solid #DDD;
+  margin-bottom: 1.5em; }
+  .accordion ul {
+    margin: 0;
+    padding: 0; }
+  .accordion li {
+    list-style: none; }
+  .accordion p {
+    color: #333;
+    line-height: 1.5; }
+  .accordion a {
+    text-decoration: none; }
+  .accordion li {
+    border-bottom: 1px solid #DDD; }
+    .accordion li > a {
+      color: #333;
+      display: block;
+      padding: 0.75em 1.618em; }
+    .accordion li:last-child {
+      border: none; }
+    .accordion li:focus, .accordion li:hover {
+      background-color: #fcfcfc; }
+  .accordion ul.submenu {
+    display: none; }
+    .accordion ul.submenu li {
+      background-color: #eaeaea; }
+      .accordion ul.submenu li:first-child {
+        border-top: 1px solid #DDD;
+        box-shadow: inset 0 1px 1px #dadada; }
+      .accordion ul.submenu li:focus, .accordion ul.submenu li:hover {
+        background-color: #efefef; }
+  .accordion .is-expanded {
+    display: block;
+    padding-bottom: 0; }
+
 body {
   margin: auto;
   background-image: url("../../img/bg.jpg");

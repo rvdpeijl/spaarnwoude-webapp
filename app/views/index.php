@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Spaarnwoude App</title>
 	<script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/lib/agenda/agenda.js"></script>
+
 	<script type="text/javascript" src="/lib/angular/angular.js"></script>
 	<script src="/node_modules/angular-touch/angular-touch.js"></script>
 	<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
@@ -89,6 +91,7 @@
 	<script type="text/javascript" src="/app/modules/agenda/agenda.service.js"></script>
 	<script type="text/javascript" src="/app/modules/agenda/agenda.controller.js"></script>
 	<script type="text/javascript" src="/app/modules/agenda/agenda.directive.js"></script>
+	<script type="text/javascript" src="/lib/agenda/agenda.js"></script>
 
 	<!-- News -->
 	<script type="text/javascript" src="/app/modules/news/news.service.js"></script>

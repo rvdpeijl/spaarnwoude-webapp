@@ -1,4 +1,4 @@
-<div class="activity-content">
+<div ng-click="$root.showModal(activity)" class="activity-content">
 	<div class="wrapper">
 		<div class="image">
 			<img ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
@@ -6,8 +6,8 @@
 
 		<div class="logo" ng-if="activity.logo !== null">
 			<a target="_blank" href="{{activity.website_url}}"><img src="/img/activities/{{activity.id}}/logo/{{activity.logo}}" alt=""></a>
-		</div>	
-		
+		</div>
+
 	</div>
 	<div class="infoBar">
 			<p>{{activity.name}}</p>
@@ -15,7 +15,6 @@
 			BEKIJK
 		</div>
 	</div>
-
 </div>
 
 
