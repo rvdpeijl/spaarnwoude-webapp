@@ -12,7 +12,9 @@
 	<div class="infoBar">
 			<p>{{activity.name}}</p>
 		<div ng-click="$root.showModal(activity)" class="bekijk {{ activity.categories[0].toLowerCase()}}">
-			BEKIJK
+			<div class="categoryWrapper">
+				<img width="20" ng-repeat="category in activity.categories" ng-src="/img/icons/{{category}}_colored.png" alt="">
+			</div>
 		</div>
 	</div>
 </div>

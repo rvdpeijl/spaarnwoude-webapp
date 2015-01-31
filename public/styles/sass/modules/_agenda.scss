@@ -7,12 +7,16 @@
     $medium-screen: em(640) !default;
     display:inline-block;
     position: relative;
+    &:nth-child(odd) {
+      border-right:1px solid rgba(0, 0, 0, 0.1);
+    }
     h4 {
       margin: 0;
     }
     h2 {
       color:#333;
       font-size:20px;
+      margin-bottom:5px;
     }
 
     p {
@@ -38,6 +42,18 @@
       }
     }
 
+    .info {
+      position:absolute;
+      top:0;
+      right:0;
+      padding: 1em 1.5em 1.5em 1.5em;
+      
+      small {
+        display:block;
+
+      }
+    }
+
 
     //////////////////////////////////////////////////////////////////////////////////
 
@@ -46,8 +62,8 @@
     /* background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png"); */
     background-position: top;
     background-size: cover;
-    background-color: white;
-    border: 1px solid $base-border-color;
+    background-color: rgba(255, 255, 255, 0.8);
+
     cursor: pointer;
     height: $hover-tile-height;
     margin-bottom: $base-line-height;
@@ -71,14 +87,14 @@
       color: white;
       height: inherit;
       overflow: hidden;
-      padding: $base-spacing;
+      padding: 1em 1.5em 1.5em 1.5em;
     }
 
     .hover-tile-hidden {
-      background: transparentize(#000, 0.5);
+      /* background: transparentize(#0099ff, 0.5); */
 
       p {
-        color: transparentize(#fff, 0.3);
+        /* color: transparentize(#fff, 0.3); */
       }
 
       h4 {

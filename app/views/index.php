@@ -18,6 +18,8 @@
 
 	<modal ng-if="$root.activity" activity="$root.activity"></modal>
 	<div class="topBar">
+		<div class="outer-container">
+		<a class="facebook-login" href="javascript:void(0)"><span><i class="fa fa-facebook"></i></span> &nbsp; Login met Facebook</a>
 		<div class="social">
 		<ul class="socialList">
 			<li class="facebook"><a href="javascript:void(0)"><span><i class="fa fa-facebook"></i></span></a></li>
@@ -27,16 +29,16 @@
 </span></a></li>
 		</ul>
 	</div>
+</div>
 	</div>
 	<nav>
 	<div class="outer-container">
-
+	<div class="logo">
+		<a href="#/">
+			<img src="img/logo2.png" alt="">
+		</a>
+	</div>
 		<ul>
-			<li class="logo">
-				<a href="#/">
-					<img width="260" src="img/logo.png" alt="">
-				</a>
-			</li>
 			<li ng-repeat="menuItem in $root.config.menuItems"><a ui-sref="{{menuItem.slug}}">{{menuItem.name}}</a></li>
 		</ul>
 

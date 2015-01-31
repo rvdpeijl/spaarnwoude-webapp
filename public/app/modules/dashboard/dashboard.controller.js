@@ -42,7 +42,7 @@
 
             });
         }
-
+        
         function getLoginStatus() {
             Facebook.getLoginStatus(function(response) {
                 if(response.status === 'connected') {

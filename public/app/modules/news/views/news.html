@@ -8,10 +8,13 @@
 </div> -->
 
 <article class="type-system-geometric">
-	<p class="type">Article Type</p>
+	<p class="type">	<a target="_blank" href="{{news.url}}">{{news.url}}</a></p>
 	<h1>{{news.title}}</h1>
-	<h2>{{news.subtitle}}</h2>
 	<p class="date">{{news.created_at}}</p>
+	<br>
 	<img ng-src="/img/news/{{news.id}}/featured_image/{{news.featured_image}}" alt="">
+	<br><br>
+	<h2>{{news.subtitle}}</h2>
+	
 	<div ng-bind-html="news.content"></div>
 </article>

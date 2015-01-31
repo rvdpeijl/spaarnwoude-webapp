@@ -6,7 +6,12 @@
       <small><strong>Vanaf:</strong> {{item.start}}</small> <br/>
       <small><strong>Tot:</strong> {{item.end}}</small>
       <div class="categoryWrapper">
-        <img width="20" ng-repeat="category in item.categories" ng-src="/img/icons/{{category}}_colored.png" alt="">
+        <img width="20" ng-repeat="category in item.categories" ng-src="/img/icons/{{category}}_black.png" alt="">
+      </div>
+      <div class="info">
+        <small>{{item.address}}</small>
+        <small>{{item.zipcode}}</small>
+        <small>{{item.city}}</small>
       </div>
 
 
