@@ -3,5 +3,5 @@
 	<input ng-model="vm.searchAct" type="text" placeholder="Bijvoorbeeld: Fietsen">
 </div>
 <div class="activities-list">
-	<activity ng-repeat="activity in vm.activities | filter:vm.searchAct" activity="activity"></activity>
+	<activity ng-repeat="activity in vm.activities | filter:vm.searchAct | orderBy:'recommended':reverse=true" activity="activity"></activity>
 </div>

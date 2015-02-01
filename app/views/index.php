@@ -19,7 +19,17 @@
 	<modal ng-if="$root.activity" activity="$root.activity"></modal>
 	<div class="topBar">
 		<div class="outer-container">
-		<a class="facebook-login" href="javascript:void(0)"><span><i class="fa fa-facebook"></i></span> &nbsp; Login met Facebook</a>
+
+		<a ng-if="!$root.user.loggedin" class="facebook-login" href="javascript:void(0)" ng-click="$root.login()"><span><i class="fa fa-facebook"></i></span> &nbsp; Login met Facebook</a>
+		
+		<div ng-if="$root.user.loggedin">
+			Sorteer activiteiten op basis van uw Facebook profiel.
+			<label class="label-switch">
+			  <input type="checkbox" ng-model="$root.profilerEnabled" />
+			  <div class="checkbox"></div>
+			</label>
+		</div>
+
 		<div class="social">
 		<ul class="socialList">
 			<li class="facebook"><a href="javascript:void(0)"><span><i class="fa fa-facebook"></i></span></a></li>
