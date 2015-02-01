@@ -1011,7 +1011,28 @@ table form {
     font-weight: bold;
     padding-top: 19px; }
   .weatherWidget .rn-carousel-controls span {
-    color: white; }
+    color: white;
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    transition: all 0.1s; }
+    .weatherWidget .rn-carousel-controls span:hover {
+      margin-top: -2px; }
+  .weatherWidget .rn-carousel-control.rn-carousel-control-prev:before {
+    content: "<";
+    color: transparent;
+    background-image: url(../../img/icons/left_white.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 30px;
+    display: inline-block; }
+  .weatherWidget .rn-carousel-control.rn-carousel-control-next:before {
+    content: ">";
+    color: transparent;
+    background-image: url(../../img/icons/right_white.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 30px;
+    display: inline-block; }
 
 .miniMap {
   width: 100%;
@@ -1019,20 +1040,37 @@ table form {
   height: 150px;
   position: relative;
   background-image: url(../../img/minimap.jpg);
-  background-size: cover; }
-  .miniMap a p {
-    position: absolute;
-    top: 50%;
-    margin-top: -20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: center;
-    width: 100%;
-    background-color: #ff9405;
-    font-size: 15px;
-    font-weight: bold;
-    -webkit-font-smoothing: antialiased;
-    color: #fff; }
+  background-size: cover;
+  overflow: hidden; }
+  .miniMap .overlay {
+    background-image: url(../../img/minimap-overlay.png);
+    background-size: cover;
+    cursor: pointer;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s; }
+    .miniMap .overlay:hover {
+      opacity: 1; }
+  .miniMap a {
+    height: 100%;
+    display: block;
+    pointer-events: none; }
+    .miniMap a p {
+      position: absolute;
+      top: 50%;
+      margin-top: -20px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      text-align: center;
+      width: 100%;
+      background-color: #ff9405;
+      font-size: 15px;
+      font-weight: bold;
+      -webkit-font-smoothing: antialiased;
+      color: #fff;
+      box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.4); }
 
 /* .facebook {
 	@include span-columns(2);
@@ -1160,7 +1198,6 @@ table form {
 
 #buttons {
   float: left;
-  overflow: hidden;
   width: 100%;
   margin-top: 20px; }
   #buttons p {
@@ -1178,7 +1215,14 @@ table form {
     height: 110px;
     cursor: pointer;
     width: 24.6%;
-    position: relative; }
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s; }
+    #buttons .btn:hover {
+      position: relative;
+      margin-top: -7px;
+      box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5); }
   #buttons .categoryImg {
     height: 110px;
     background-repeat: no-repeat;

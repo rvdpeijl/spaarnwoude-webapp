@@ -10,7 +10,7 @@
         /*jshint validthis: true */
         var vm = this;
         vm.title = 'Activities';
-        vm.activities = activities;
+        vm.activities = _.shuffle(activities);
 
         console.log($stateParams);
 

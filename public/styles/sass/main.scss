@@ -164,8 +164,33 @@ table {
 	}
 	.rn-carousel-controls {
 		span {
-			color:white
+			color:white;
+			@include transition(all 0.1s);
+
+			&:hover {
+				margin-top: -2px;
+			}
 		}
+	}
+
+	.rn-carousel-control.rn-carousel-control-prev:before {
+		content: "<";
+		color: transparent;
+		background-image: url(../../img/icons/left_white.png);
+		background-repeat: no-repeat;
+		background-size: 100%;
+		width: 30px;
+		display: inline-block;
+	}
+
+	.rn-carousel-control.rn-carousel-control-next:before {
+		content: ">";
+		color: transparent;
+		background-image: url(../../img/icons/right_white.png);
+		background-repeat: no-repeat;
+		background-size: 100%;
+		width: 30px;
+		display: inline-block;
 	}
 // @include row(table);
 }
@@ -177,9 +202,32 @@ table {
 	position: relative;
 	background-image: url(../../img/minimap.jpg);
 	background-size: cover;
+	overflow:hidden;
 // @include row(table);
 
+	.overlay {
+
+		background-image: url(../../img/minimap-overlay.png);
+		background-size: cover;
+
+		cursor: pointer;
+
+		height: 100%;
+
+		opacity: 0;
+		@include transition( all 0.5s );
+
+		&:hover {
+			opacity: 1;
+		}
+
+	}
+
 	a {
+		height: 100%;
+		display: block;
+		pointer-events: none;
+
 		p{
 			position: absolute;
 			top: 50%;
@@ -193,6 +241,8 @@ table {
 			font-weight: bold;
 			-webkit-font-smoothing: antialiased;
 			color: #fff;
+
+			box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.4);
 		}
 	}
 }
@@ -364,7 +414,6 @@ table {
 
 #buttons {
 	float: left;
-	overflow: hidden;
 	width: 100%;
 	margin-top:20px;
 
@@ -387,6 +436,14 @@ table {
 			cursor:pointer;
 			width:24.6%;
 			position:relative;
+
+			@include transition( all 0.3s );
+
+			&:hover {
+				position: relative;
+				margin-top: -7px;
+				box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.5)
+			}
 
 		}
 

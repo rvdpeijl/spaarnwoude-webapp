@@ -6,9 +6,9 @@
         .controller('Dashboard', Dashboard);
 
     /* @ngInject */
-    Dashboard.$inject = ['activityService', '$rootScope', 'weatherService', 'ngProgress', 'Facebook']; // activities come from resolve
+    Dashboard.$inject = ['activityService', '$rootScope', 'weatherService', 'ngProgress', 'Facebook', '$state']; // activities come from resolve
 
-    function Dashboard(activityService, $rootScope, weatherService, ngProgress, Facebook) {
+    function Dashboard(activityService, $rootScope, weatherService, ngProgress, Facebook, $state) {
         /*jshint validthis: true */
         ngProgress.color('#59ABE3');
         var vm = this;
@@ -18,6 +18,8 @@
         vm.currentWeather = null;
         vm.loggedIn = false;
         vm.user = null;
+
+        vm.state = $state;
 
         activate();
 

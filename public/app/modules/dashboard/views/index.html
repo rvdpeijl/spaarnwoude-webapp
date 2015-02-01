@@ -13,11 +13,13 @@
 </div>
 
 <div class="widgets">
-	<div class="miniMap">
-		<!-- <a href="#/kaart">
+	<div class="miniMap" ng-click="vm.state.go('map')">
+		<div class="overlay"></div>
+
+		<a href="#/kaart">
 			<p>Bekijk de interactieve kaart van Spaarnwoude</p>
-		</a> -->
-		<map></map>
+		</a>
+		<!-- <map></map> -->
 	</div>
 	<div class="weatherWidget">
 		<weather ng-if="vm.forecast" forecast="vm.forecast" current-weather="vm.currentWeather"></weather>
