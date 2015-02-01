@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'spaarnwoude',
 			'username'  => 'root',
-			'password'  => '',
+			'password'  => 'Abc023',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

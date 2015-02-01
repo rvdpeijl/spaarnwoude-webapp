@@ -28,6 +28,8 @@ nav {
 		margin-top: 28px;
 		max-width: 150px;
 		float: left;
+
+
 	}
 	ul {
 		display: inline-block;
@@ -197,7 +199,8 @@ table {
 
 .miniMap {
 	@include fill-parent();
-		margin:0;
+	width: 99.6%;
+	margin-left: 1px;
 	height: 150px;
 	position: relative;
 	background-image: url(../../img/minimap.jpg);
@@ -270,24 +273,29 @@ table {
 	margin:0;
 	.infoBar {
 		cursor:pointer;
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		position: relative;
-		height: 75px;
+		height: 55px;
 		margin-top: -3px;
-		padding: 21px;
+		padding: 15px;
+		.categoryWrapper {
+			float:right;
+		}
 		p {
 			margin: 0;
 			float: left;
 			vertical-align: middle;
 			height: 100%;
-			font-size:20px;
-			font-weight:bold;
+			font-size:17px;
+			font-weight:600;
 			max-width: 80%;
 			clear: right;
 			color:#555;
 		}
 		img {
-			margin-right:12px;
+			margin-right: 12px;
+			float: left;
+			margin-top: 17px;
 			&:last-of-type{
 				margin-right:0px;
 			}
@@ -323,6 +331,7 @@ table {
 		border-radius: 0;
 		border: 0;
 		padding: 15px;
+		background:rgba(255, 255, 255, 0.7);
 	}
 
 	&.map {
@@ -374,10 +383,16 @@ table {
 		position:relative;
 
 		.logo {
+			@include transition(all, .5s, ease-in-out);
+
+			opacity:0.5;
 			position:absolute;
 			bottom:15px;
 			left:10px;
-			max-width:140px;
+			max-width:80px;
+			&:hover {
+				opacity:1;
+			}
 		}
 	}
 }
@@ -393,23 +408,37 @@ table {
 		cursor:pointer;
 
 		.logo {
+			@include transition( opacity 0.5s );
+			opacity:0.5;
 			position:absolute;
 			bottom:10px;
 			left:10px;
-			max-width:140px;
+			max-width:80px;
+
+			&:hover {
+				opacity:1;
+			}
 		}
 
 		.image {
 			img {
-				min-width:679px;
-				height:100%;
-				display:block;
+				min-width: 679px;
+				height: auto;
+				display: block;
+				max-height: 310px;
 			}
 
 		}
 	}
 
+.activity-content {
+	max-width: 100%;
+	min-width:681px;
 
+		.categoryWrapper {
+			margin-right:20px;
+		}
+	}
 }
 
 #buttons {

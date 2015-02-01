@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* Bitters 0.10.0
  * http://bitters.bourbon.io
- * Copyright 2013ΓÇô2014 thoughtbot, inc.
+ * Copyright 2013–2014 thoughtbot, inc.
  * MIT License */
 button,
 input[type="submit"] {
@@ -241,7 +241,7 @@ modal {
   background-color: rgba(0, 0, 0, 0.5); }
   modal .panel {
     position: absolute;
-    background-color: #eeeeee;
+    background-color: rgba(255, 255, 255, 0.9);
     top: 50%;
     border-radius: 2px;
     left: 50%;
@@ -249,20 +249,77 @@ modal {
     max-width: 960px;
     min-width: 330px;
     height: auto;
-    padding: 13px;
     -webkit-transform: translateX(-50%) translateY(-50%);
     -moz-transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     box-shadow: 0px 0px 45px rgba(0, 0, 0, 0.35); }
     modal .panel button {
+      -webkit-transition: background-color, 0.5s, ease-in-out;
+      -moz-transition: background-color, 0.5s, ease-in-out;
+      transition: background-color, 0.5s, ease-in-out;
       position: absolute;
       top: 0px;
       right: 0;
       border-radius: 0px 2px 0px 2px;
-      background-color: black;
+      background-color: rgba(0, 0, 0, 0.5);
       font-weight: bold;
       text-transform: uppercase; }
+      modal .panel button:hover {
+        background-color: rgba(0, 0, 0, 0.8); }
+    modal .panel .images {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 57.35098%;
+      margin-right: 0; }
+      modal .panel .images:last-child {
+        margin-right: 0; }
+      modal .panel .images .bigImage {
+        position: relative; }
+        modal .panel .images .bigImage .logo {
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          opacity: 0.7; }
+      modal .panel .images .smallImages {
+        margin-left: 1px; }
+        modal .panel .images .smallImages img {
+          margin: 7px;
+          height: auto;
+          max-width: 120px;
+          cursor: pointer; }
+          modal .panel .images .smallImages img:last-of-type {
+            margin-right: 0; }
+      modal .panel .images .companyInfo {
+        /* background:#eee; */
+        padding: 10px 10px 10px 20px;
+        overflow: hidden; }
+        modal .panel .images .companyInfo .social {
+          float: left; }
+          modal .panel .images .companyInfo .social ul li {
+            margin-bottom: 12px;
+            margin-left: 20px; }
+        modal .panel .images .companyInfo .location {
+          float: left; }
+    modal .panel .description {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 40.29137%;
+      padding: 13px 13px 13px 20px; }
+      modal .panel .description:last-child {
+        margin-right: 0; }
+      modal .panel .description img {
+        margin: 5px; }
+      modal .panel .description h2 {
+        font-size: 24px;
+        font-weight: 200;
+        color: #555; }
+      modal .panel .description p {
+        color: #777;
+        font-size: 15px;
+        margin: 2px; }
 
 .angular-google-map-container {
   min-height: 500px; }
@@ -1036,7 +1093,8 @@ table form {
 
 .miniMap {
   width: 100%;
-  margin: 0;
+  width: 99.6%;
+  margin-left: 1px;
   height: 150px;
   position: relative;
   background-image: url(../../img/minimap.jpg);
@@ -1099,23 +1157,27 @@ table form {
     color: white; }
   .activity-content .infoBar {
     cursor: pointer;
-    background: white;
+    background: rgba(255, 255, 255, 0.8);
     position: relative;
-    height: 75px;
+    height: 55px;
     margin-top: -3px;
-    padding: 21px; }
+    padding: 15px; }
+    .activity-content .infoBar .categoryWrapper {
+      float: right; }
     .activity-content .infoBar p {
       margin: 0;
       float: left;
       vertical-align: middle;
       height: 100%;
-      font-size: 20px;
-      font-weight: bold;
+      font-size: 17px;
+      font-weight: 600;
       max-width: 80%;
       clear: right;
       color: #555; }
     .activity-content .infoBar img {
-      margin-right: 12px; }
+      margin-right: 12px;
+      float: left;
+      margin-top: 17px; }
       .activity-content .infoBar img:last-of-type {
         margin-right: 0px; }
     .activity-content .infoBar .bekijk {
@@ -1141,7 +1203,8 @@ table form {
   /* margin-left: 9px; */
   border-radius: 0;
   border: 0;
-  padding: 15px; }
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.7); }
 .filter.map {
   margin-left: 0px; }
   .filter.map .zoeken {
@@ -1175,10 +1238,16 @@ table form {
   .activities-list .wrapper {
     position: relative; }
     .activities-list .wrapper .logo {
+      -webkit-transition: all, 0.5s, ease-in-out;
+      -moz-transition: all, 0.5s, ease-in-out;
+      transition: all, 0.5s, ease-in-out;
+      opacity: 0.5;
       position: absolute;
       bottom: 15px;
       left: 10px;
-      max-width: 140px; }
+      max-width: 80px; }
+      .activities-list .wrapper .logo:hover {
+        opacity: 1; }
 
 .activities ul {
   width: 100%;
@@ -1187,14 +1256,26 @@ table form {
   position: relative;
   cursor: pointer; }
   .activities ul li .wrapper .logo {
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+    opacity: 0.5;
     position: absolute;
     bottom: 10px;
     left: 10px;
-    max-width: 140px; }
+    max-width: 80px; }
+    .activities ul li .wrapper .logo:hover {
+      opacity: 1; }
   .activities ul li .wrapper .image img {
     min-width: 679px;
-    height: 100%;
-    display: block; }
+    height: auto;
+    display: block;
+    max-height: 310px; }
+.activities .activity-content {
+  max-width: 100%;
+  min-width: 681px; }
+  .activities .activity-content .categoryWrapper {
+    margin-right: 20px; }
 
 #buttons {
   float: left;
