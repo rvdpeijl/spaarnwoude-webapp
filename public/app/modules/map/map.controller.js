@@ -6,9 +6,9 @@
         .controller('Map', Map);
 
     /* @ngInject */
-    Map.$inject = ['activities', '$window', '$rootScope']; // activities come from resolve
+    Map.$inject = ['activities', '$window', '$rootScope', '$stateParams']; // activities come from resolve
 
-    function Map(activities, $window, $rootScope) {
+    function Map(activities, $window, $rootScope, $stateParams) {
         /*jshint validthis: true */
         var vm = this;
         vm.title = 'Map';
@@ -16,6 +16,12 @@
         vm.infoWindowVisible = false;
         vm.currentActivity = null;
         vm.filterQuery = '';
+
+        console.log($stateParams)
+
+        if ($stateParams.name !== '') {
+          vm.filterQuery = $stateParams.name;
+        }
 
         var tooltip = document.getElementById('tooltip');
         var tooltipName = document.getElementById('tooltipName');

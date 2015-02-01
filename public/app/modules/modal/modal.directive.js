@@ -5,8 +5,8 @@
         .module('app')
         .directive('modal', modal);
 
-    /* @ngInject */
-    function modal () {
+    modal.$inject = ['$state', '$rootScope'];
+    function modal ($state, $rootScope) {
         // Usage:
         //
         // Creates:
@@ -20,6 +20,9 @@
         return directive;
 
         function link(scope, element, attrs) {
+          scope.openMap = function(activity) {
+            
+          }
         }
     }
 })();

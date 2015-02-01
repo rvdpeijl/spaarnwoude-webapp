@@ -52,6 +52,17 @@
                     }
                 }
             })
+            .state('mapfilter', {
+                url: '/kaart/{name}',
+                templateUrl: 'app/modules/map/views/index.html',
+                controller: 'Map',
+                controllerAs: 'vm',
+                resolve: {
+                    activities: function(activityService) {
+                        return activityService.getActivities();
+                    }
+                }
+            })
             .state('agenda', {
                 url: '/agenda',
                 templateUrl: 'app/modules/agenda/views/index.html',

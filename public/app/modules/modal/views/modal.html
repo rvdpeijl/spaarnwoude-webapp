@@ -2,15 +2,9 @@
 	<div class="images">
 			<div class="bigImage">
 				<div class="logo" ng-if="activity.logo !== null">
-					<a target="_blank" href="{{activity.website_url}}"><img width="50" src="/img/activities/{{activity.id}}/logo/{{activity.logo}}" alt="">
+					<a target="_blank" href="{{activity.website_url}}"><img width="70" src="/img/activities/{{activity.id}}/logo/{{activity.logo}}" alt="">
 					</a>
 				</div>
-				<img ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
-			</div>
-			<div class="smallImages">
-				<img ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
-				<img ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
-				<img ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
 				<img ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
 			</div>
 
@@ -29,11 +23,24 @@
 					</ul>
 				</div>
 			</div>
+
+			<div class="smallImages">
+				<img ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
+				<img ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
+				<img ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
+				<img ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
+			</div>
+
 	</div>
 	<div class="description">
 		<h2>{{activity.name}}</h2>
-		<img width="15" ng-repeat="category in activity.categories" ng-src="/img/icons/{{category}}_colored.png" alt="">
-
+		<div class="categories">
+			<div ng-repeat="category in activity.categories" class="categorie">
+				<img width="15"  ng-src="/img/icons/{{category}}_colored.png" alt="">
+					<small> {{category}} </small>
+			</div>
+		</div><br>
+		<div ng-click="openMap(activity)" class="openMap">Bekijk op de kaart</div>
 		<p>{{activity.long_desc}}</p>
 	</div>
 	<button ng-click="$root.closeModal()">X</button>

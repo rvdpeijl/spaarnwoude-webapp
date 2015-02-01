@@ -19,7 +19,7 @@
             var verblijven = [
                 'hotel',
                 'bags/luggage',
-                'travel/leisure', 
+                'travel/leisure',
                 'airport'
             ];
 
@@ -66,6 +66,7 @@
                     return like.category.toLowerCase();
                 });
 
+
                 angular.forEach(likes, function(category, key) {
                     if (_.contains(doen, category)) {
                         recommendations.doen++;
@@ -84,7 +85,7 @@
                     };
                 });
 
-                angular.forEach(activities, function(activity, key) {                    
+                angular.forEach(activities, function(activity, key) {
                     angular.forEach(activity.categories, function(category, key) {
                         if (category === 'Beleven' && recommendations.beleven > 0) {
                             activity.recommended = true;
@@ -103,6 +104,7 @@
                         }
                     });
                 });
+                console.log(activities);
                 return activities;
             })
         }

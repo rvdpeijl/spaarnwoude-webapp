@@ -6,7 +6,7 @@ modal {
 
   .panel {
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 1);
     top: 50%;
     border-radius:2px;
     left: 50%;
@@ -50,12 +50,15 @@ modal {
       }
 
       .smallImages {
+        @include span-columns(8);
         margin-left:1px;
+        margin-top:0px;
         img {
-          margin: 7px;
           height: auto;
-          max-width: 120px;
-          cursor:pointer;
+          max-width: 85px;
+          cursor: pointer;
+          float: left;
+          margin: 3px;
 
           &:last-of-type {
             margin-right:0;
@@ -63,33 +66,54 @@ modal {
         }
       }
       .companyInfo {
+        @include span-columns(4);
         /* background:#eee; */
-        padding:10px 10px 10px 20px;
+        padding:10px 0px 10px 20px;
         overflow:hidden;
-
+        width:30.76157%;
+        display:block;
         .social {
-          float:left;
+          /* float:left; */
+          display:block;
 
           ul {
             li {
-              margin-bottom: 12px;
-              margin-left: 20px;
+              float:left;
+
+              margin-right: 20px;
             }
           }
         }
 
         .location {
-          float:left;
+          /* float:left; */
+          margin-bottom:10px;
         }
       }
     }
 
     .description {
       @include span-columns(5);
+      position:relative;
+      min-height:490px;
+
       padding:13px 13px 13px 20px;
       img {
-        margin:5px;
+        margin-right:4px;
       }
+      small {
+        margin-right:8px;
+        color:#999;
+      }
+      .categories {
+        display:block;
+        margin-top:10px;
+        margin-bottom:10px;
+        .categorie {
+          float:left;
+        }
+      }
+
       h2 {
         font-size: 24px;
         font-weight: 200;
@@ -97,11 +121,31 @@ modal {
       }
 
       p {
-        color:#777;
+        color:#666;
         font-size:15px;
         margin:2px;
+        max-height:400px;
+        margin-top:10px;
+        padding-bottom: 50px;
+        float:left;
+        overflow:scroll;
+        text-align:justify;
+        font-size:15px;
+        position:relative;
+
       }
 
+      &:after {
+        content: "";
+        background: url("../../img/fade.png");
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-size: cover;
+        height: 100px;
+        opacity: 0.8;
+      }
     }
   }
 }
