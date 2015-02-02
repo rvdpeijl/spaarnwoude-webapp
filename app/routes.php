@@ -21,6 +21,28 @@ Route::get('login', 'AuthController@getLogin');
 Route::post('login', 'AuthController@postLogin');
 Route::get('logout', 'AuthController@logout');
 
+Route::post('massadd', function() {
+    // return Input::get('activities');
+    foreach ($activities as $key => $activity) {
+        return Activity::create(array(
+            'name' => $activity->name,
+            'organization' => $activity->organisatie,
+            'latitude' => $activity->latitude,
+            'longitude' => $activity->longitude,
+            'short_desc' => $activity->short_desc,
+            'long_desc' => $activity->long_desc,
+            'address' => $activity->straatnaam,
+            'zipcode' => $activity->postcode,
+            'city' => $activity->plaats,
+            'phone' => $activity->telefoon,
+            'website_url' => $activity->website_url,
+            'facebook_url' => $activity->facebook_url,
+            'twitter_url' => $activity->twitter_url,
+            'img1' => 'image.jpg'
+        ));
+    }
+});
+
 // API
 Route::group(array('prefix' => 'api'), function()
 {

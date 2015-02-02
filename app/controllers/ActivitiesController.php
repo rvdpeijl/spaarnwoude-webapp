@@ -357,4 +357,28 @@ class ActivitiesController extends \BaseController {
 
 		return $activity;
 	}
+
+	public function massAdd()
+	{
+		$activities = Input::get('activities');
+		foreach ($activities as $key => $activity) {
+			Activity::create(array(
+				'name' => $activity->name,
+				'organization' => $activity->organisatie,
+				'latitude' => $activity->latitude,
+				'longitude' => $activity->longitude,
+				'short_desc' => $activity->short_desc,
+				'long_desc' => $activity->long_desc,
+				'address' => $activity->straatnaam,
+				'zipcode' => $activity->postcode,
+				'city' => $activity->plaats,
+				'phone' => $activity->telefoon,
+				'website_url' => $activity->website_url,
+				'facebook_url' => $activity->facebook_url,
+				'twitter_url' => $activity->twitter_url
+			));
+		}
+
+		return response::json(Activity::all(), 200);
+	}
 }
