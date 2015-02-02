@@ -1333,7 +1333,10 @@ table form {
     /* margin: 10px 10px 10px 10px; */ }
     .activities-list .activity-content .image {
       height: 246px;
-      overflow: hidden; }
+      overflow: hidden;
+      width: 490px; }
+      .activities-list .activity-content .image img {
+        width: 100%; }
     .activities-list .activity-content img {
       /* margin-right:12px; */ }
       .activities-list .activity-content img:last-of-type {
