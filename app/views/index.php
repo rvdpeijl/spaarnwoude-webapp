@@ -19,8 +19,11 @@
 	<modal ng-if="$root.activity" activity="$root.activity"></modal>
 	<div class="topBar">
 		<div class="outer-container">
+		<a ng-if="$root.user.loggedin" ng-click="$root.logout()" class="facebook-logout" href="javascript:void(0)">
+			<span><i class="fa fa-facebook"></i></span> &nbsp; Uitloggen</a></a>
 
-		<a ng-if="!$root.user.loggedin" class="facebook-login" href="javascript:void(0)" ng-click="$root.login()"><span><i class="fa fa-facebook"></i></span> &nbsp; Login met Facebook</a>
+		<a ng-if="!$root.user.loggedin" class="facebook-login" href="javascript:void(0)" ng-click="$root.login()">
+			<span><i class="fa fa-facebook"></i></span> &nbsp; Login met Facebook</a>
 
 		<div class="userLoggedIn" ng-if="$root.user.loggedin">
 			<small>Sorteer activiteiten op basis van uw Facebook profiel.</small>
@@ -32,10 +35,10 @@
 
 		<div class="social">
 		<ul class="socialList">
-			<li class="facebook"><a href="javascript:void(0)"><span><i class="fa fa-facebook"></i></span></a></li>
-			<li class="twitter"><a href="javascript:void(0)"><span><i class="fa fa-twitter"></i>
+			<li class="facebook"><a target="_blank" href="https://facebook.com/spaarnwoude"><span><i class="fa fa-facebook"></i></span></a></li>
+			<li class="twitter"><a target="_blank" href="https://twitter.com/Spaarnwoude020"><span><i class="fa fa-twitter"></i>
 </span></a></li>
-			<li class="email"><a href="javascript:void(0)"><span><i class="fa fa-envelope-o"></i>
+			<li class="email"><a href="mailto:info@spaarnwoudegeeftenergie.nl"><span><i class="fa fa-envelope-o"></i>
 </span></a></li>
 		</ul>
 	</div>

@@ -40,7 +40,7 @@
 					<small> {{category}} </small>
 			</div>
 		</div><br>
-		<div ng-click="openMap(activity)" class="openMap">Bekijk op de kaart</div>
+		<div class="openMap"><a ng-href="#/kaart/{{transform(activity.name)}}">Bekijk op de kaart</a></div>
 		<p>{{activity.long_desc}}</p>
 	</div>
 	<button ng-click="$root.closeModal()">X</button>

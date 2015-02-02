@@ -5,8 +5,8 @@
         .module('app')
         .directive('modal', modal);
 
-    modal.$inject = ['$state', '$rootScope'];
-    function modal ($state, $rootScope) {
+    modal.$inject = ['$state', '$rootScope', '$stateParams'];
+    function modal ($state, $rootScope, $stateParams) {
         // Usage:
         //
         // Creates:
@@ -17,11 +17,15 @@
             scope: { activity: '=' },
             templateUrl: '/app/modules/modal/views/modal.html'
         };
+
         return directive;
 
         function link(scope, element, attrs) {
-          scope.openMap = function(activity) {
-            
+
+          scope.transform = function(name) {
+            name = name.replace(' ', '-');
+            name = name.toLowerCase();
+            return name;
           }
         }
     }

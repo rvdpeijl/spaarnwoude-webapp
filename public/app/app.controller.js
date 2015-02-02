@@ -7,7 +7,7 @@
 
     App.$inject = ['$scope', '$rootScope', 'Facebook'];
     function App($scope, $rootScope, Facebook) {
-    	
+
     	$rootScope.user = {
     		loggedin: false,
     		id: null,
@@ -25,7 +25,7 @@
     	* Activity Modal
     	*
     	**/
-    	
+
 
 		$rootScope.showModal = function(activity) {
 			$rootScope.$emit('showModal', activity);
@@ -49,10 +49,11 @@
 		* Facebook Login
 		*
 		**/
-		
+
 
 		function getLoginStatus () {
             Facebook.getLoginStatus(function(response) {
+              console.log(response)
                 if(response.status === 'connected') {
                 	$rootScope.user.loggedin = true;
                 	$rootScope.user.id = response.authResponse.userID;
@@ -69,7 +70,10 @@
 
         $rootScope.login = function() {
             Facebook.login(function(response) {
-                console.log('logged in', response);
+              $rootScope.user.loggedin = true;
+
+              // refresh browser to activate facebook user
+              location.reload();
             });
         }
 
@@ -87,7 +91,10 @@
 
         $rootScope.logout = function() {
             Facebook.logout(function() {
-                console.log('logged out');
+                $rootScope.user.loggedin = false;
+
+                // refresh browser to activate facebook user
+                location.reload();
             })
         }
 

@@ -1,3 +1,9 @@
+body.kaart {
+  .openMap {
+    display:none;
+  }
+}
+
 modal {
   position: fixed;
   z-index: 9999999;
@@ -128,7 +134,7 @@ modal {
         margin-top:10px;
         padding-bottom: 50px;
         float:left;
-        overflow:scroll;
+        overflow-y:scroll;
         text-align:justify;
         font-size:15px;
         position:relative;
@@ -145,6 +151,19 @@ modal {
         background-size: cover;
         height: 100px;
         opacity: 0.8;
+      }
+
+      .openMap {
+        /* display:block; */
+        @include transition(color .5s ease-in-out);
+        color: #fb8e00;
+        font-size: 10px;
+        cursor:pointer;
+        margin-top: 7px;
+        margin-left: 1px;
+        &:hover {
+          color:#b75e00;
+        }
       }
     }
   }

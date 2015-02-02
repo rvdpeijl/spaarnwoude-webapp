@@ -231,6 +231,9 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit; }
 
+body.kaart .openMap {
+  display: none; }
+
 modal {
   position: fixed;
   z-index: 9999999;
@@ -353,7 +356,7 @@ modal {
         margin-top: 10px;
         padding-bottom: 50px;
         float: left;
-        overflow: scroll;
+        overflow-y: scroll;
         text-align: justify;
         font-size: 15px;
         position: relative; }
@@ -367,6 +370,18 @@ modal {
         background-size: cover;
         height: 100px;
         opacity: 0.8; }
+      modal .panel .description .openMap {
+        /* display:block; */
+        -webkit-transition: color 0.5s ease-in-out;
+        -moz-transition: color 0.5s ease-in-out;
+        transition: color 0.5s ease-in-out;
+        color: #fb8e00;
+        font-size: 10px;
+        cursor: pointer;
+        margin-top: 7px;
+        margin-left: 1px; }
+        modal .panel .description .openMap:hover {
+          color: #b75e00; }
 
 .angular-google-map-container {
   min-height: 500px; }
@@ -863,6 +878,10 @@ article.type-system-geometric {
       article.type-system-geometric .type a:hover {
         color: #32AADF;
         border-bottom: 1px solid #32AADF; }
+    article.type-system-geometric .type.bigger {
+      text-transform: initial;
+      font-size: 17px;
+      font-weight: 100; }
   article.type-system-geometric h1 {
     font-family: "Sanchez", serif;
     font-size: 1.8em;
@@ -1047,6 +1066,12 @@ nav {
   .topBar a.facebook-login {
     margin-top: 10px;
     color: #666;
+    float: left; }
+  .topBar a.facebook-logout {
+    margin-top: 13px;
+    margin-right: 20px;
+    font-size: 14px;
+    /* color:#666; */
     float: left; }
   .topBar .social {
     float: right;

@@ -53,7 +53,7 @@
                 }
             })
             .state('mapfilter', {
-                url: '/kaart/{name}',
+                url: '/kaart/:name',
                 templateUrl: 'app/modules/map/views/index.html',
                 controller: 'Map',
                 controllerAs: 'vm',

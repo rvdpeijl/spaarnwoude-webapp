@@ -14,6 +14,9 @@
         vm.activities = _.shuffle(activities);
         vm.cached = vm.activities;
 
+        // painful hack
+        $('body').removeClass('kaart');
+
         $rootScope.$watch('profilerEnabled', function(newValue, oldValue) {
             if ($rootScope.profilerEnabled === true) {
                 FacebookProfiler.recommend(activities).then(function(recommendedActivities) {

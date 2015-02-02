@@ -15,11 +15,15 @@
         vm.activities = activities;
         vm.infoWindowVisible = false;
         vm.currentActivity = null;
-        vm.filterQuery = '';
+        vm.filterQuery = null;
+        vm.openMapFilter = null;
 
-        console.log($stateParams)
+        // painful hack
+        $('body').addClass('kaart');
 
-        if ($stateParams.name !== '') {
+        if ($stateParams.name) {
+          $rootScope.closeModal();
+          $stateParams.name = $stateParams.name.replace('-', ' ');
           vm.filterQuery = $stateParams.name;
         }
 
@@ -29,11 +33,11 @@
         var infoWindow = document.getElementById('infoWindow');
         var infoWindowName = document.getElementById('infoWindowName');
         var infoWindowDescription = document.getElementById('infoWindowDescription');
-
+        var myIcon = new google.maps.MarkerImage("/img/icons/location_red.png", null, null, null, new google.maps.Size(30,30));
         // console.log(activities);
 
         vm.map = {
-            center: { latitude: 52.413307, longitude: 4.680558 },
+            center: { latitude: 52.429757, longitude: 4.692685 },
             zoom: 13,
             options: {
                 scrollwheel: false
@@ -51,10 +55,11 @@
                 latitude: 52.413307,
                 longitude: 4.680558
             },
-            icon: '/img/icons/location_purple.png',
+            icon: myIcon,
             events:  {
                 mouseover: function(gMarker, eventName, model) {
                     if (!vm.infoWindowVisible) {
+                      console.log(gMarker)
                         var left = ($window.event.clientX+50) + 'px';
                         var top = ($window.event.clientY-50) + 'px';
                         tooltip.style.display = 'block';
