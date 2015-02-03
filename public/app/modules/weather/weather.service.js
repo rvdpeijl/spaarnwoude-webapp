@@ -5,7 +5,7 @@
         .module('app')
         .factory('weatherService', weatherService);
 
-    /* @ngInject */ 
+    /* @ngInject */
     function weatherService($http) {
         var service = {
             getForecast: getForecast,
@@ -21,7 +21,9 @@
         		.catch(failed);
 
         	function complete(response) {
-        		return response.data;
+            // console.log(response.data)
+            return response.data;
+
         	}
 
         	function failed(response) {
@@ -35,6 +37,7 @@
         		.catch(failed);
 
         	function complete(response) {
+            console.log(response.data)
         		return response.data;
         	}
 
@@ -43,8 +46,5 @@
         	}
         }
 
-        function addWeatherIcons(response) {
-
-        }
     }
 })();

@@ -27,6 +27,19 @@
             name = name.toLowerCase();
             return name;
           }
+
+          scope.swap = function(el, image) {
+            console.log(image)
+            // console.log(el)
+            // console.log(image)
+            var bigImage = $('.bigImage > img')[0];
+
+            var newImage = image;
+            var element = el.toElement.src
+            element = bigImage.src;
+            bigImage.src = newImage;
+            // console.log(bigImage.src)
+          }
         }
     }
 })();

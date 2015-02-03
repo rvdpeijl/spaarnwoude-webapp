@@ -28,6 +28,15 @@
                         return '/img/icons/weather-icons/broken_clouds.png';
                     break;
 
+                    case 'sky is clear':
+                      return '/img/icons/weather-icons/clear_sky.png';
+                    break;
+
+                    case 'Sky is Clear':
+                      return '/img/icons/weather-icons/clear_sky.png';
+                    break;
+
+
                     case 'few clouds':
                         return '/img/icons/weather-icons/few_clouds.png';
                     break;
@@ -65,7 +74,7 @@
                     break;
 
                     case 'calm':
-                        return '/img/icons/weather-icons/clear-sky.png';
+                        return '/img/icons/weather-icons/clear_sky.png';
                     break;
 
                     case 'light rain':

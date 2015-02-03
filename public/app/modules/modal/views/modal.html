@@ -25,10 +25,10 @@
 			</div>
 
 			<div class="smallImages">
-				<img ng-src="{{activity.img1}}" alt="">
-				<img ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
-				<img ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
-				<img ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
+				<img ng-click="swap($event, activity.img1)" ng-src="{{activity.img1}}" alt="">
+				<img ng-click="swap($event, activity.img1)" ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
+				<img ng-click="swap($event, activity.img1)" ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
+				<img ng-click="swap($event, activity.img1)" ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
 			</div>
 
 	</div>
