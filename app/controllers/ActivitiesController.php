@@ -239,20 +239,22 @@ class ActivitiesController extends \BaseController {
 	    	$activity->save();
 	    }
 
-	    if ($currentImages[0] !== null) {
+	    // return $currentImages;
 
-	    	foreach ($currentImages as $key => $value) {
-				if ($value['img'] !== null) {
-					$column = 'img'.($key+1);
-					$activity->$column = $value['img'];
-					array_push($images, $value['img']);
-				}
-			}
-	    }
+	  //   if (count($currentImages) < 1) {
+
+	  //   	foreach ($currentImages as $key => $value) {
+			// 	if ($value['img'] !== null) {
+			// 		$column = 'img'.($key+1);
+			// 		$activity->$column = $value['img'];
+			// 		array_push($images, $value['img']);
+			// 	}
+			// }
+	  //   }
 
 		if ($imagesToUpload[0] !== null) {
 			foreach($imagesToUpload as $key => $file) {
-		    	if (count($images) < 5) {
+		    	if (count($images) < 4) {
 		    		$destinationPath = public_path().'/img/activities/'.$activity->id.'/medium/';
 	                $filename = $file->getClientOriginalName();
 			        $upload_success = $file->move($destinationPath, $filename);
@@ -324,16 +326,14 @@ class ActivitiesController extends \BaseController {
 			$activity->img1,
 			$activity->img2,
 			$activity->img3,
-			$activity->img4,
-			$activity->img5
+			$activity->img4
 		);
 
 		$activity->img1 = null;
 		$activity->img2 = null;
 		$activity->img3 = null;
 		$activity->img4 = null;
-		$activity->img5 = null;
-
+		
 		$output = array_filter($input);
 		$output = array_values($output);
 
@@ -343,30 +343,5 @@ class ActivitiesController extends \BaseController {
 		}
 
 		return $activity;
-	}
-
-	public function massAdd()
-	{
-		
-		// $activities = Input::get('activities');
-		// foreach ($activities as $key => $activity) {
-		// 	Activity::create(array(
-		// 		'name' => $activity->name,
-		// 		'organization' => $activity->organisatie,
-		// 		'latitude' => $activity->latitude,
-		// 		'longitude' => $activity->longitude,
-		// 		'short_desc' => $activity->short_desc,
-		// 		'long_desc' => $activity->long_desc,
-		// 		'address' => $activity->straatnaam,
-		// 		'zipcode' => $activity->postcode,
-		// 		'city' => $activity->plaats,
-		// 		'phone' => $activity->telefoon,
-		// 		'website_url' => $activity->website_url,
-		// 		'facebook_url' => $activity->facebook_url,
-		// 		'twitter_url' => $activity->twitter_url
-		// 	));
-		// }
-
-		// return response::json(Activity::all(), 200);
 	}
 }

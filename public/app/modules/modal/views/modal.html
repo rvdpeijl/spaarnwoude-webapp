@@ -5,7 +5,7 @@
 					<a target="_blank" href="{{activity.website_url}}"><img width="70" src="/img/activities/{{activity.id}}/logo/{{activity.logo}}" alt="">
 					</a>
 				</div>
-				<img ng-src="{{activity.img1}}" alt="">
+				<img ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
 			</div>
 
 			<div class="companyInfo">
@@ -25,10 +25,10 @@
 			</div>
 
 			<div class="smallImages">
-				<img ng-click="swap($event, activity.img1)" ng-src="{{activity.img1}}" alt="">
 				<img ng-click="swap($event, activity.img1)" ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
-				<img ng-click="swap($event, activity.img1)" ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
-				<img ng-click="swap($event, activity.img1)" ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
+				<img ng-click="swap($event, activity.img2)" ng-src="/img/activities/{{activity.id}}/medium/{{activity.img2}}" alt="">
+				<img ng-click="swap($event, activity.img3)" ng-src="/img/activities/{{activity.id}}/medium/{{activity.img3}}" alt="">
+				<img ng-click="swap($event, activity.img4)" ng-src="/img/activities/{{activity.id}}/medium/{{activity.img4}}" alt="">
 			</div>
 
 	</div>

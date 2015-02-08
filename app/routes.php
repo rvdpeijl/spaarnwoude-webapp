@@ -21,16 +21,6 @@ Route::get('login', 'AuthController@getLogin');
 Route::post('login', 'AuthController@postLogin');
 Route::get('logout', 'AuthController@logout');
 
-Route::get('massadd', function() {
-    // $activities = Activity::all();
-
-    // foreach ($activities as $key => $activity) {
-    //     File::makeDirectory(public_path().'/plaatjedingems/'.$activity->id.'/logo');
-    //     File::makeDirectory(public_path().'/plaatjedingems/'.$activity->id.'/medium');
-    // }
-    // return 'done';
-});
-
 // API
 Route::group(array('prefix' => 'api'), function()
 {

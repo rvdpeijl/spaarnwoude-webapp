@@ -19,18 +19,6 @@
 
         vm.activities = activities;
 
-        // = _.map(activities, function(a) { 
-        //     var activity = {
-        //         id: a.id,
-        //         name: a.name,
-        //         longitude: a.longitude,
-        //         latitude: a.latitude
-        //     };
-        //     return activity; 
-        // });
-
-        // console.log(vm.activities);
-
         // painful hack
         $('body').addClass('kaart');
 
