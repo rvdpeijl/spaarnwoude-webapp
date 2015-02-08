@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'spaarnwoude',
+			'database'  => 'spaarnwoude_v2',
 			'username'  => 'root',
-			'password'  => 'Abc023',
+			'password'  => 'root',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

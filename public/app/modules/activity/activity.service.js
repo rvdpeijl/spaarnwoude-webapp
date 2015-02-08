@@ -17,37 +17,38 @@
         ////////////////
 
         function getActivities() {
-        	return $http.get('http://spaarnwoude.creadiv.nl/api/activiteiten')
+        	return $http.get('/api/activities')
         		.then(complete)
         		.catch(failed);
 
         	function complete(response) {
+                return response.data;
 
-                var activities = [];
+          //       var activities = [];
 
-                angular.forEach(response.data, function(activity, key) {
-                    var bla = {
-                        name: activity.naam,
-                        organization: activity.organisatie,
-                        latitude: activity.latitude,
-                        longitude: activity.longitude,
-                        short_desc: activity.short_desc,
-                        long_desc: activity.long_desc,
-                        address: activity.straatnaam,
-                        zipcode: activity.postcode,
-                        city: activity.plaats,
-                        phone: activity.telefoon,
-                        website_url: activity.website_url,
-                        facebook_url: activity.facebook_url,
-                        twitter_url: activity.twitter_url,
-                        img1: 'http://spaarnwoude.creadiv.nl/files'+activity.big_image1,
-                        categories: [activity.categorie]
-                    };
+          //       angular.forEach(response.data, function(activity, key) {
+          //           var bla = {
+          //               name: activity.naam,
+          //               organization: activity.organisatie,
+          //               latitude: activity.latitude,
+          //               longitude: activity.longitude,
+          //               short_desc: activity.short_desc,
+          //               long_desc: activity.long_desc,
+          //               address: activity.straatnaam,
+          //               zipcode: activity.postcode,
+          //               city: activity.plaats,
+          //               phone: activity.telefoon,
+          //               website_url: activity.website_url,
+          //               facebook_url: activity.facebook_url,
+          //               twitter_url: activity.twitter_url,
+          //               img1: 'http://spaarnwoude.creadiv.nl/files'+activity.big_image1,
+          //               categories: [activity.categorie]
+          //           };
 
-                    activities.push(bla);
-                });
+          //           activities.push(bla);
+          //       });
 
-        		return activities;
+        		// return activities;
         	}
 
         	function failed(response) {
@@ -120,6 +121,8 @@
                     });
 
                     console.log(activities);
+
+					return activities;
                 });
         }
     }

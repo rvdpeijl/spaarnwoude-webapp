@@ -8,6 +8,8 @@
 
 	{{ Form::model($activity, array('method' => 'put', 'files' => true, 'action' => array('ActivitiesController@update', $activity->id)) ) }}
 
+	<button class="saveactivity">Opslaan</button>
+	
 	<input type="hidden" id="activityId" value="{{$activity->id}}">
 	<input type="hidden" value="[[images]]" name="currentImages">
 	<input type="hidden" value="[[deleted]]" name="deletedImages">

@@ -57,8 +57,7 @@
 	    			{ name: 'img1', img: data.img1 },
 	    			{ name: 'img2', img: data.img2 },
 	    			{ name: 'img3', img: data.img3 },
-	    			{ name: 'img4', img: data.img4 },
-	    			{ name: 'img5', img: data.img5 }
+	    			{ name: 'img4', img: data.img4 }
 	    		);
 	    	});
 

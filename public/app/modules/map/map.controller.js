@@ -12,11 +12,24 @@
         /*jshint validthis: true */
         var vm = this;
         vm.title = 'Map';
-        vm.activities = activities;
         vm.infoWindowVisible = false;
         vm.currentActivity = null;
         vm.filterQuery = null;
         vm.openMapFilter = null;
+
+        vm.activities = activities;
+
+        // = _.map(activities, function(a) { 
+        //     var activity = {
+        //         id: a.id,
+        //         name: a.name,
+        //         longitude: a.longitude,
+        //         latitude: a.latitude
+        //     };
+        //     return activity; 
+        // });
+
+        // console.log(vm.activities);
 
         // painful hack
         $('body').addClass('kaart');
@@ -59,7 +72,6 @@
             events:  {
                 mouseover: function(gMarker, eventName, model) {
                     if (!vm.infoWindowVisible) {
-                      console.log(gMarker)
                         var left = ($window.event.clientX+50) + 'px';
                         var top = ($window.event.clientY-50) + 'px';
                         tooltip.style.display = 'block';
