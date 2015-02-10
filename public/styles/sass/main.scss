@@ -410,14 +410,20 @@ table {
 		.image {
 
 				height:246px;
+				max-height:230px;
 				overflow:hidden;
 				width:490px;
+				
 				img {
 					width:100%;
+					min-height:240px;
 				}
 		}
 		img {
+
 			/* margin-right:12px; */
+			max-height:240px;
+			overflow:hidden;
 			&:last-of-type{
 				margin-right:12px;
 			}
@@ -487,6 +493,7 @@ table {
 				height: auto;
 				display: block;
 				max-height: 310px;
+				overflow:hidden;
 			}
 
 		}

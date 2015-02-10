@@ -28,17 +28,20 @@
             return name;
           }
 
-          scope.swap = function(el, image) {
-            console.log(image)
-            // console.log(el)
-            // console.log(image)
-            var bigImage = $('.bigImage > img')[0];
+          // swap images in the modal
+          scope.swap = function(el, image, id) {
 
-            var newImage = image;
+            var hostUrl = window.location.origin
+            var bigImage = $('img.bigImage')[0]
+            var imageToSwap = hostUrl + "/img/activities/" + id + "/medium/" + image
             var element = el.toElement.src
-            element = bigImage.src;
-            bigImage.src = newImage;
-            // console.log(bigImage.src)
+
+            element = bigImage.src
+
+            bigImage.src = imageToSwap
+            
+            element = bigImage.src
+
           }
         }
     }

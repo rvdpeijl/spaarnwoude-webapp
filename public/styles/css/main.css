@@ -275,16 +275,19 @@ modal {
       display: block;
       margin-right: 2.35765%;
       width: 57.35098%;
-      margin-right: 0; }
+      margin-right: 0;
+      width: 52.35098%; }
       modal .panel .images:last-child {
         margin-right: 0; }
       modal .panel .images .bigImage {
-        position: relative; }
+        position: relative;
+        z-index: 9; }
         modal .panel .images .bigImage .logo {
           position: absolute;
           bottom: 10px;
           left: 10px;
-          opacity: 0.7; }
+          opacity: 0.7;
+          z-index: 9999; }
       modal .panel .images .smallImages {
         float: left;
         display: block;
@@ -330,6 +333,7 @@ modal {
       width: 40.29137%;
       position: relative;
       min-height: 490px;
+      width: 45.29137%;
       padding: 13px 13px 13px 20px; }
       modal .panel .description:last-child {
         margin-right: 0; }
@@ -359,6 +363,7 @@ modal {
         overflow-y: scroll;
         text-align: justify;
         font-size: 15px;
+        padding-right: 8px;
         position: relative; }
       modal .panel .description:after {
         content: "";
@@ -1333,12 +1338,16 @@ table form {
     /* margin: 10px 10px 10px 10px; */ }
     .activities-list .activity-content .image {
       height: 246px;
+      max-height: 230px;
       overflow: hidden;
       width: 490px; }
       .activities-list .activity-content .image img {
-        width: 100%; }
+        width: 100%;
+        min-height: 240px; }
     .activities-list .activity-content img {
-      /* margin-right:12px; */ }
+      /* margin-right:12px; */
+      max-height: 240px;
+      overflow: hidden; }
       .activities-list .activity-content img:last-of-type {
         margin-right: 12px; }
     .activities-list .activity-content .infoBar {
@@ -1388,7 +1397,8 @@ table form {
       min-width: 679px;
       height: auto;
       display: block;
-      max-height: 310px; }
+      max-height: 310px;
+      overflow: hidden; }
   .activities .activity-content {
     max-width: 100%;
     min-width: 681px; }
