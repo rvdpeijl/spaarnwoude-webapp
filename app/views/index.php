@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Spaarnwoude App</title>
 	<script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/global.js"></script>
 
 	<script type="text/javascript" src="/lib/angular/angular.js"></script>
 	<script src="/node_modules/angular-touch/angular-touch.js"></script>

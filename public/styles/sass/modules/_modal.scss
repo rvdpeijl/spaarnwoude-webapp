@@ -43,17 +43,19 @@ modal {
     .images {
       @include span-columns(7);
       margin-right:0;
+      width:52.35098%;
 
       .bigImage {
         position:relative;
         height: 314px;
         overflow:hidden;
-
+        z-index:9;
         .logo {
           position:absolute;
           bottom:10px;
           left:10px;
           opacity:0.7;
+          z-index:9999;
         }
 
         .mainImage {
@@ -109,8 +111,10 @@ modal {
       @include span-columns(5);
       position:relative;
       min-height:490px;
+      width:45.29137%;
 
       padding:13px 13px 13px 20px;
+
       img {
         margin-right:4px;
       }
@@ -146,6 +150,7 @@ modal {
         overflow-y:scroll;
         text-align:justify;
         font-size:15px;
+        padding-right:8px;
         position:relative;
 
       }
