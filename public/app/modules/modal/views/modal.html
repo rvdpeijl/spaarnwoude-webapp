@@ -5,42 +5,44 @@
 					<a target="_blank" href="{{activity.website_url}}"><img width="70" src="/img/activities/{{activity.id}}/logo/{{activity.logo}}" alt="">
 					</a>
 				</div>
-				<img ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
+				<img ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="" class="mainImage">
 			</div>
 
 			<div class="companyInfo">
 				<div class="location">
+					<small><strong>{{activity.organization}}</strong></small><br>
 					<small>{{activity.address}}</small><br>
+					<small>{{activity.zipcode}} </small>
 					<small> {{activity.city}} </small><br>
 					<small>{{activity.phone}} </small><br>
-					<small>{{activity.zipcode}} </small>
 				</div>
 				<div class="social">
 					<ul>
-						<li><span><a href="{{activity.facebook_url}}"><i class="fa fa-facebook"></i></a></span></li>
-						<li><span><a href="{{activity.twitter_url}}"><i class="fa fa-twitter"></i></a></span></li>
-						<li><span><a href="{{activity.website_url}}"><i class="fa fa-home"></i></a></span></li>
+						<li ng-if="activity.facebook_url"><span><a ng-href="{{activity.facebook_url}}" target="_blank"><i class="fa fa-facebook"></i></a></span></li>
+						<li ng-if="activity.twitter_url"><span><a ng-href="{{activity.twitter_url}}" target="_blank"><i class="fa fa-twitter"></i></a></span></li>
+						<li ng-if="activity.website_url"><span><a ng-href="{{activity.website_url}}" target="_blank"><i class="fa fa-home"></i></a></span></li>
 					</ul>
 				</div>
 			</div>
 
 			<div class="smallImages">
-				<img ng-click="swap($event, activity.img1)" ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
-				<img ng-click="swap($event, activity.img2)" ng-src="/img/activities/{{activity.id}}/medium/{{activity.img2}}" alt="">
-				<img ng-click="swap($event, activity.img3)" ng-src="/img/activities/{{activity.id}}/medium/{{activity.img3}}" alt="">
-				<img ng-click="swap($event, activity.img4)" ng-src="/img/activities/{{activity.id}}/medium/{{activity.img4}}" alt="">
+				<img ng-click="swap($event, activity.id, activity.img1)" ng-src="/img/activities/{{activity.id}}/medium/{{activity.img1}}" alt="">
+				<img ng-click="swap($event, activity.id, activity.img2)" ng-src="/img/activities/{{activity.id}}/medium/{{activity.img2}}" alt="">
+				<img ng-click="swap($event, activity.id, activity.img3)" ng-src="/img/activities/{{activity.id}}/medium/{{activity.img3}}" alt="">
+				<img ng-click="swap($event, activity.id, activity.img4)" ng-src="/img/activities/{{activity.id}}/medium/{{activity.img4}}" alt="">
 			</div>
 
 	</div>
 	<div class="description">
 		<h2>{{activity.name}}</h2>
+		<small><strong>{{activity.organization}}</strong></small><br>
 		<div class="categories">
 			<div ng-repeat="category in activity.categories" class="categorie">
 				<img width="15"  ng-src="/img/icons/{{category}}_colored.png" alt="">
 					<small> {{category}} </small>
 			</div>
 		</div><br>
-		<div class="openMap"><a ng-href="#/kaart/{{transform(activity.name)}}">Bekijk op de kaart</a></div>
+		<div class="openMap"><a ng-href="#/kaart/{{transform(activity.name)}}" ng-click="$root.mapActivity = activity">Bekijk op de kaart</a></div>
 		<p>{{activity.long_desc}}</p>
 	</div>
 	<button ng-click="$root.closeModal()">X</button>

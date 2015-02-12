@@ -14,8 +14,8 @@
         vm.title = 'Map';
         vm.infoWindowVisible = false;
         vm.currentActivity = null;
-        vm.filterQuery = null;
         vm.openMapFilter = null;
+        vm.center = { latitude: 52.429757, longitude: 4.692685 };
 
         vm.activities = activities;
 
@@ -23,9 +23,15 @@
         $('body').addClass('kaart');
 
         if ($stateParams.name) {
-          $rootScope.closeModal();
-          $stateParams.name = $stateParams.name.replace('-', ' ');
-          vm.filterQuery = $stateParams.name;
+            $rootScope.closeModal();
+
+            if ($rootScope.mapActivity == undefined) {
+                // do nothing
+            } else {
+                vm.center.latitude = $rootScope.mapActivity.latitude;
+                vm.center.longitude = $rootScope.mapActivity.longitude;
+                vm.filterQuery = $rootScope.mapActivity.name;
+            }
         }
 
         var tooltip = document.getElementById('tooltip');
@@ -38,7 +44,7 @@
         // console.log(activities);
 
         vm.map = {
-            center: { latitude: 52.429757, longitude: 4.692685 },
+            center: vm.center,
             zoom: 13,
             options: {
                 scrollwheel: false
@@ -56,12 +62,22 @@
                 latitude: 52.413307,
                 longitude: 4.680558
             },
-            icon: myIcon,
+            icon: '/img/icons/location_purple.png',
             events:  {
                 mouseover: function(gMarker, eventName, model) {
                     if (!vm.infoWindowVisible) {
-                        var left = ($window.event.clientX+50) + 'px';
-                        var top = ($window.event.clientY-50) + 'px';
+
+                        var evt = arguments[0] || window.event;
+
+                        if (evt == arguments[0]) {
+                            var left = '0px';
+                            var top = '0px';
+
+                        } else {
+                            var left = (evt.clientX+50) + 'px';
+                            var top = (evt.clientY-50) + 'px';
+                        }
+                        
                         tooltip.style.display = 'block';
                         tooltip.style.left = left;
                         tooltip.style.top = top;
@@ -71,6 +87,7 @@
                         angular.forEach(gMarker.categories, function(val, key) {
                             $('<div class="category"><img src="/img/icons/'+val+'_white.png"><span>'+val+'</span></div>').appendTo($(tooltipCategories));
                         });
+
                     };
                 },
                 mouseout: function(gMarker, eventName, model) {
@@ -78,8 +95,17 @@
                     tooltip.style.display = 'none';
                 },
                 click: function(gMarker, eventName, model) {
-                    var left = ($window.event.clientX+50) + 'px';
-                    var top = ($window.event.clientY-50) + 'px';
+
+                    var evt = arguments[0] || window.event;
+
+                    if (evt == arguments[0]) {
+                        var left = '0px';
+                        var top = '0px';
+
+                    } else {
+                        var left = (evt.clientX+50) + 'px';
+                        var top = (evt.clientY-50) + 'px';
+                    }
 
                     vm.currentActivity = gMarker;
 

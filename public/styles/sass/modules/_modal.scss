@@ -46,6 +46,8 @@ modal {
 
       .bigImage {
         position:relative;
+        height: 314px;
+        overflow:hidden;
 
         .logo {
           position:absolute;
@@ -53,12 +55,17 @@ modal {
           left:10px;
           opacity:0.7;
         }
+
+        .mainImage {
+          min-height: 100%;
+          min-width: 100%;
+        }
       }
 
       .smallImages {
         @include span-columns(8);
         margin-left:1px;
-        margin-top:0px;
+        margin-top: 15px;
         img {
           height: auto;
           max-width: 85px;
@@ -124,13 +131,15 @@ modal {
         font-size: 24px;
         font-weight: 200;
         color: #555;
+        width: 325px;
       }
 
       p {
+        padding-right: 15px;
         color:#666;
         font-size:15px;
         margin:2px;
-        max-height:400px;
+        max-height: 325px;
         margin-top:10px;
         padding-bottom: 50px;
         float:left;

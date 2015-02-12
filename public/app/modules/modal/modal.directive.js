@@ -23,22 +23,21 @@
         function link(scope, element, attrs) {
 
           scope.transform = function(name) {
-            name = name.replace(' ', '-');
+            name = name.replace(/\W+/g, "-");
             name = name.toLowerCase();
             return name;
           }
 
-          scope.swap = function(el, image) {
-            console.log(image)
-            // console.log(el)
-            // console.log(image)
+          scope.swap = function(el, id, image) {
             var bigImage = $('.bigImage > img')[0];
+            var newImage = '/img/activities/' + id + '/medium/' + image;
+            var element = el.toElement.src;
 
-            var newImage = image;
-            var element = el.toElement.src
-            element = bigImage.src;
-            bigImage.src = newImage;
-            // console.log(bigImage.src)
+            $('.bigImage').fadeOut(50, function () {
+                element = bigImage.src;
+                bigImage.src = newImage;
+                $('.bigImage').fadeIn();
+            });
           }
         }
     }
