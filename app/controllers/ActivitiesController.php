@@ -51,13 +51,18 @@ class ActivitiesController extends \BaseController {
 		$files = Input::file('files');
 		$logo = Input::file('logo');
 
+		$errors = [];
+
 	    if ($beleven !== 'on' && $doen !== 'on' && $genieten !== 'on' && $verblijven !== 'on') {
+	    	// array_push($errors,)
 			return Redirect::to('api/activities/create')->with(array('input' => Input::all(), 'error' => 'Selecteer een categorie'));
 		}
 
 		if ($files[0] === null) {
 			return Redirect::to('api/activities/create')->with(array('input' => Input::all(), 'error' => 'Selecteer op zijn minst één afbeelding'));
 		}
+
+		$v = Activity::validate(Input::all());
 
 		$activity = Activity::create(Input::all());
 
