@@ -45,9 +45,22 @@
 		@endif
 		@if(Session::has('error'))
 		    <div class="flash-error">
+		    	<?php
+
+		    	 ?>
+				<ul>
+			        @foreach(Session::get('error')->all() as $error)
+			            <li>{{ $error }}</li>
+			        @endforeach
+			    </ul>
+			</div>
+		@endif
+
+		@if(Session::has('errors'))
+		    <div class="flash-error">
 				<span>{{ Session::get('error') }}</span>
 				<ul>
-			        @foreach($errors->all() as $error)
+			        @foreach($errors as $error)
 			            <li>{{ $error }}</li>
 			        @endforeach
 			    </ul>
