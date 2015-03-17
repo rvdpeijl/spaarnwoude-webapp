@@ -7,6 +7,7 @@
 
     /* @ngInject */
     function agendaService($http) {
+        
         var service = {
             getAgenda: getAgenda
         };

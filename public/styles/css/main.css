@@ -957,74 +957,45 @@ article.type-system-geometric {
   article.type-system-geometric p.author {
     font-family: "Questrial", sans-serif; }
 
-.agendaLijst .hover-tile-outer {
-  display: inline-block;
+.agendaLijst .categoryWrapper {
+  margin-bottom: 15px;
+  position: absolute;
+  top: 20px;
+  right: 20px; }
+  .agendaLijst .categoryWrapper img {
+    margin-right: 10px; }
+.agendaLijst .item {
+  -webkit-transition: all, 0.3s, ease-in-out;
+  -moz-transition: all, 0.3s, ease-in-out;
+  transition: all, 0.3s, ease-in-out;
   position: relative;
-  /* background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png"); */
-  background-position: top;
-  background-size: cover;
-  background-color: rgba(255, 255, 255, 0.8);
+  background: rgba(250, 250, 250, 0.8);
+  display: block;
+  width: 100%;
   cursor: pointer;
-  height: 10em;
-  margin-bottom: 1.5; }
-  .agendaLijst .hover-tile-outer:nth-child(odd) {
-    border-right: 1px solid rgba(0, 0, 0, 0.1); }
-  .agendaLijst .hover-tile-outer h4 {
-    margin: 0; }
-  .agendaLijst .hover-tile-outer h2 {
-    color: #333;
-    font-size: 20px;
-    margin-bottom: 5px; }
-  .agendaLijst .hover-tile-outer p {
-    line-height: 1.5;
-    color: #666; }
-  .agendaLijst .hover-tile-outer small {
-    color: #666; }
-    .agendaLijst .hover-tile-outer small strong {
-      min-width: 45px;
-      display: inline-block; }
-  .agendaLijst .hover-tile-outer .categoryWrapper {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    width: 100px; }
-    .agendaLijst .hover-tile-outer .categoryWrapper img {
-      float: left;
-      margin: 10px; }
-  .agendaLijst .hover-tile-outer .info {
-    position: absolute;
-    top: 0;
+  margin-bottom: 10px;
+  padding: 18px; }
+  .agendaLijst .item .top {
+    left: 0;
     right: 0;
-    padding: 1em 1.5em 1.5em 1.5em; }
-    .agendaLijst .hover-tile-outer .info small {
-      display: block; }
-  @media screen and (min-width: 40em) {
-    .agendaLijst .hover-tile-outer {
-      width: 500px; } }
-  .agendaLijst .hover-tile-outer .hover-tile-container {
-    height: 10em;
-    overflow: hidden; }
-  .agendaLijst .hover-tile-outer .hover-tile-container:hover > .hover-tile {
-    -webkit-transform: translate(0, -100%);
-    -moz-transform: translate(0, -100%);
-    -ms-transform: translate(0, -100%);
-    -o-transform: translate(0, -100%);
-    transform: translate(0, -100%); }
-  .agendaLijst .hover-tile-outer .hover-tile {
-    -webkit-transition: all, 0.2s ease-in-out;
-    -moz-transition: all, 0.2s ease-in-out;
-    transition: all, 0.2s ease-in-out;
-    background: inherit;
-    color: white;
-    height: inherit;
-    overflow: hidden;
-    padding: 1em 1.5em 1.5em 1.5em; }
-  .agendaLijst .hover-tile-outer .hover-tile-hidden {
-    /* background: transparentize(#0099ff, 0.5); */ }
-    .agendaLijst .hover-tile-outer .hover-tile-hidden p {
-      /* color: transparentize(#fff, 0.3); */ }
-    .agendaLijst .hover-tile-outer .hover-tile-hidden h4 {
-      margin-bottom: 0.5em; }
+    position: absolute;
+    background-color: black;
+    height: 5px;
+    display: none; }
+  .agendaLijst .item .info {
+    font-style: italic; }
+  .agendaLijst .item .description {
+    opacity: 0;
+    height: 0;
+    margin-top: 15px;
+    -webkit-transition: all, 0.3s, ease-in-out;
+    -moz-transition: all, 0.3s, ease-in-out;
+    transition: all, 0.3s, ease-in-out; }
+  .agendaLijst .item.expanded .description {
+    opacity: 1;
+    min-height: 160px; }
+  .agendaLijst .item:hover {
+    background: #fafaff; }
 
 body {
   margin: auto;
@@ -1435,6 +1406,13 @@ table form {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s; }
+    #buttons .btn .icon {
+      z-index: 999;
+      position: absolute;
+      top: 41px;
+      bottom: 0;
+      left: 20px;
+      width: 13%; }
     #buttons .btn:hover {
       position: relative;
       margin-top: -7px;

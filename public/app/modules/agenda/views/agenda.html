@@ -1,19 +1,20 @@
-<!-- <div class="agendaItem">
-  <div class="lijntje" style="background:#32aadf"></div>
-  <ul class="punten">
-    <li>{{agenda.name}}</li>
-    <li>{{agenda.start}}</li>
-    <li>{{agenda.end}}</li>
-    <li>{{agenda.address}}</li>
-  </ul>
-  <div class="info closed">
-    <p>{{agenda.description}}</p>
-    <div class="address">
-      {{agenda.address}}
-      {{agenda.zipcode}}
-      {{agenda.city}}
+<div class="top"></div>
+<div class="categoryWrapper">
+    <img width="20" ng-repeat="category in item.categories" ng-src="/img/icons/{{category}}_colored.png" alt="">
   </div>
+<div ng-click="setActive(item)">
+  <h5>{{item.name}}</h5>
+  
+  <small><strong>Vanaf:</strong> {{item.start}}</small> <br/>
+  <small><strong>Tot:</strong> {{item.end}}</small>
+  <div class="info">
+    <small>{{item.address}}</small>
+    <small>{{item.zipcode}}</small>
+    <small>{{item.city}}</small>
   </div>
-</div>
+  <div class="description">
+    <p><b>Beschrijving:</b></p>
+    <p>{{item.description || "Geen beschrijving"}}</p>
+  </div>
 
- -->
+</div>

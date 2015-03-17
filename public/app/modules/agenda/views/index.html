@@ -1,26 +1,9 @@
 <div class="agendaLijst">
-<div ng-repeat="item in vm.agenda" class="hover-tile-outer">
-  <div class="hover-tile-container">
-    <div class="hover-tile hover-tile-visible">
-      <h2>{{item.name}}</h2>
-      <small><strong>Vanaf:</strong> {{item.start}}</small> <br/>
-      <small><strong>Tot:</strong> {{item.end}}</small>
-      <div class="categoryWrapper">
-        <img width="20" ng-repeat="category in item.categories" ng-src="/img/icons/{{category}}_black.png" alt="">
-      </div>
-      <div class="info">
-        <small>{{item.address}}</small>
-        <small>{{item.zipcode}}</small>
-        <small>{{item.city}}</small>
-      </div>
+
+  <h4 style="color:white;font-weight:200">Klik op een agenda punt voor meer informatie</h4>
+  <br>
+
+  <agenda class="item" ng-repeat="item in vm.agenda | orderBy: 'sortDate'" item="item"></agenda>
 
 
-    </div>
-    <div class="hover-tile hover-tile-hidden">
-      <p>{{item.description}}</p>
-
-
-    </div>
-  </div>
-</div>
 </div>
