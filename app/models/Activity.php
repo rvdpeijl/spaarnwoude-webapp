@@ -62,7 +62,7 @@ class Activity extends Eloquent {
 
     public function getId()
     {
-        return $this->id;
+        dd($this->id);
     }
 
 }

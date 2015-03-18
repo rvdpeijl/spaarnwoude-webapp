@@ -66,17 +66,17 @@
 
 	    <label>Start:</label>
 	    <small>Formaat: JJJJ-MM-DD UU:MM:SS</small>
-	    {{ Form::input('datetime', 'start') }}
+	    {{ Form::input('date', 'start') }}
 
 	    <label>Eind:</label>
-	    {{ Form::input('datetime', 'end') }}
+	    {{ Form::input('date', 'end') }}
 
 	    <h3>Locatie</h3>
 	    <hr>
 
 	    <label>Adres:</label>
 	    {{ Form::text('address') }}
-
+	    
 	    <label>Postcode:</label>
 	    {{ Form::text('zipcode') }}
 

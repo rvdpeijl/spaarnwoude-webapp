@@ -47,6 +47,7 @@ class AgendaController extends \BaseController {
 		$beleven = Input::get('beleven');
 		$genieten = Input::get('genieten');
 		$verblijven = Input::get('verblijven');
+		
 
 		if ($beleven !== 'on' && $doen !== 'on' && $genieten !== 'on' && $verblijven !== 'on') {
 			return Redirect::to('api/agenda/create')->with(array('input' => Input::all(), 'error' => 'Selecteer een categorie'));
@@ -55,7 +56,6 @@ class AgendaController extends \BaseController {
 		$agenda = Agenda::create(Input::all());
 		$agenda->description = Input::get('description');
 		$agenda->save();
-
 		if ($beleven === 'on') {
 			AgendaCategory::create(array(
 				'agenda_id' => $agenda->id,

@@ -68,9 +68,8 @@ class ActivitiesController extends \BaseController {
 		$errors = array();
 
 		$input = Input::all();
-
+		
 		$activity = Activity::create(Input::all());
-		dd($activity->id);
 
 		// Checks if validator passes
 		if ( $activity->validate($input) ) {
@@ -98,9 +97,7 @@ class ActivitiesController extends \BaseController {
 				if (count($errors) > 0) {
 					return Redirect::to('api/activities/create')->with(array('input' => Input::all(), 'errors' => $errors));
 				}
-
-				$activity->save();
-
+				
 				// Add logo
 				if ($logo) {
 			    	$destinationPath = public_path().'/img/activities/'.$activity->id.'/logo/';
@@ -109,6 +106,7 @@ class ActivitiesController extends \BaseController {
 			    	$activity->logo = $filename;
 			    	$activity->save();
 			    }
+			    
 			    foreach($files as $key => $file) {
 			    	if ($key < 5) {
 			    		$destinationPath = public_path().'/img/activities/'.$activity->id.'/medium/';
@@ -283,6 +281,7 @@ class ActivitiesController extends \BaseController {
 		    		$destinationPath = public_path().'/img/activities/'.$activity->id.'/medium/';
 	                $filename = $file->getClientOriginalName();
 			        $upload_success = $file->move($destinationPath, $filename);
+
 			        array_push($images, $filename);
 		    	}
 		    }
