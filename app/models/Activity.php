@@ -60,11 +60,6 @@ class Activity extends Eloquent {
         return $this->errors;
     }
 
-    public function getId()
-    {
-        return $this->id;
-    }
-
 }
 
 

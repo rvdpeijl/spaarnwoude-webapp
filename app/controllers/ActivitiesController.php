@@ -67,76 +67,81 @@ class ActivitiesController extends \BaseController {
 
 		$errors = array();
 
+		$activity = new Activity;
+
 		$input = Input::all();
 
-		$activity = Activity::create(Input::all());
-		dd($activity->id);
-
 		// Checks if validator passes
-		if ( $activity->validate($input) ) {
+		if ( $activity->validate(Input::all()) ) {
 
-				// Checks if any of the categories are empty
-				$emptyCategoryCount = 0;
-				foreach ($categories as $category) {
-					if ($category['checked'] !== 'on') {
-						$emptyCategoryCount++;
-					}
+			// Checks if any of the categories are empty
+			$emptyCategoryCount = 0;
+			foreach ($categories as $category) {
+				if ($category['checked'] !== 'on') {
+					$emptyCategoryCount++;
 				}
+			}
 
-				// Is it empty? Add new string to the errors array
-				if ($emptyCategoryCount === count($categories)) {
-					array_push($errors, 'Selecteer een categorie');
-				}
+			// Is it empty? Add new string to the errors array
+			if ($emptyCategoryCount === count($categories)) {
+				array_push($errors, 'Selecteer een categorie');
+			}
 
-				// Checks if there is at least one image
-				if ($files[0] === null) {
-					array_push($errors, 'Selecteer op zijn minst één afbeelding');
-				}
+			// Checks if there is at least one image
+			if ($files[0] === null) {
+				array_push($errors, 'Selecteer op zijn minst één afbeelding');
+			}
 
 
-				// Checks if there are any errors
-				if (count($errors) > 0) {
-					return Redirect::to('api/activities/create')->with(array('input' => Input::all(), 'errors' => $errors));
-				}
+			// Checks if there are any errors
+			if (count($errors) > 0) {
+				return Redirect::to('api/activities/create')->with(array('input' => $input, 'errors' => $errors));
+			}
 
-				$activity->save();
+			$activity->fill($input);
 
-				// Add logo
-				if ($logo) {
-			    	$destinationPath = public_path().'/img/activities/'.$activity->id.'/logo/';
-			    	$filename = $logo->getClientOriginalName();
-			    	$upload_success = $logo->move($destinationPath, $filename);
-			    	$activity->logo = $filename;
-			    	$activity->save();
-			    }
-			    foreach($files as $key => $file) {
-			    	if ($key < 5) {
-			    		$destinationPath = public_path().'/img/activities/'.$activity->id.'/medium/';
-		                $filename = $file->getClientOriginalName();
-				        $upload_success = $file->move($destinationPath, $filename);
-				        $column = 'img'.($key+1);
-				        $activity->$column = $filename;
-				        $activity->save();
-			    	}
-			    }
+			// Save Activity
+			$activity->save();
 
-				// Save activity categories
-				foreach ($categories as $category) {
-					ActivityCategory::create(array(
-						'activity_id' => $activity->id,
-						'category_id' => $category['id']
-					));
-				}
+			// Add logo
+			if ($logo) {
+		    	$destinationPath = public_path().'/img/activities/'.$activity->id.'/logo/';
+		    	$filename = $logo->getClientOriginalName();
+		    	$upload_success = $logo->move($destinationPath, $filename);
+		    	$activity->logo = $filename;
+		    }
 
-                return Redirect::to('admin/activities')->with(array('message' => 'Activiteit gecreeërd'));
+		    // Add images
+		    foreach($files as $key => $file) {
+		    	if ($key < 5) {
+		    		$destinationPath = public_path().'/img/activities/'.$activity->id.'/medium/';
+	                $filename = $file->getClientOriginalName();
+			        $upload_success = $file->move($destinationPath, $filename);
+			        $column = 'img'.($key+1);
+			        $activity->$column = $filename;
+		    	}
+		    }
+
+		    // Save Activity
+			$activity->save();
+
+			// Save activity categories
+			foreach ($categories as $category) {
+				ActivityCategory::create(array(
+					'activity_id' => $activity->id,
+					'category_id' => $category['id']
+				));
+			}
+
+            return Redirect::to('admin/activities')->with(array('message' => 'Activiteit gecreeërd'));
         } else {
         	// Gets error messages from laravel validator
         	$validationErrors = $activity->errors();
-        	return Redirect::to('api/activities/create')->with(array('input' => Input::all(), 'error' => $validationErrors));
+        	return Redirect::to('api/activities/create')->with(array('input' => $input, 'error' => $validationErrors));
         }
 
         if (count($errors > 0)) {
-        	return Redirect::to('api/activities/create')->with(array('input' => Input::all(), 'errors' => $errors));
+        	return Redirect::to('api/activities/create')->with(array('input' => $input, 'errors' => $errors));
         }
 	}
 
@@ -202,6 +207,25 @@ class ActivitiesController extends \BaseController {
 	 */
 	public function update($id)
 	{
+		$categories = array(
+			'beleven' => array(
+				'id' => 1,
+				'checked' => Input::get('beleven')
+			),
+			'doen' => array(
+				'id' => 2,
+				'checked' => Input::get('doen')
+			),
+			'genieten' => array(
+				'id' => 3,
+				'checked' => Input::get('genieten')
+			),
+			'verblijven' => array(
+				'id' => 4,
+				'checked' => Input::get('verblijven')
+			)
+		);
+
 		$updated = Input::all();
 		$activity = Activity::find($id);
 		$images = [];
@@ -213,47 +237,75 @@ class ActivitiesController extends \BaseController {
 		$deletedImages = json_decode($deletedImages, true);
 		$logo = Input::file('logo');
 
-		foreach ($deletedImages as $key => $image) {
-			$activity = $this->removeImage($activity, $image['name']);
+		// Create the Errors array
+		$errors = array();
+
+		// Checks if validator passes
+		if ( $activity->validate($updated) ) {
+
+			// Checks if any of the categories are empty
+			$emptyCategoryCount = 0;
+			foreach ($categories as $category) {
+				if ($category['checked'] !== 'on') {
+					$emptyCategoryCount++;
+				}
+			}
+
+			// Is it empty? Add new string to the errors array
+			if ($emptyCategoryCount === count($categories)) {
+				array_push($errors, 'Selecteer een categorie');
+			}
+
+			// Delete all images first 
+			foreach ($deletedImages as $key => $image) {
+				if ($imagesToUpload[0] !== null) {
+					$activity = $this->removeImage($activity, $image['name']);
+				}
+			}
+
+			if ($imagesToUpload[0] !== null) {
+				foreach($imagesToUpload as $key => $file) {
+			    	if (count($images) < 4) {
+			    		$destinationPath = public_path().'/img/activities/'.$activity->id.'/medium/';
+		                $filename = $file->getClientOriginalName();
+				        $upload_success = $file->move($destinationPath, $filename);
+				        array_push($images, $filename);
+			    	}
+			    }
+			} 
+
+			if (count($images) > 0) {
+				foreach ($images as $key => $value) {
+					$column = 'img'.($key+1);
+			        $activity->$column = $value;
+			        $activity->save();
+				}
+			} else {
+	        	array_push($errors, 'Selecteer minimaal één afbeelding');
+			}
+
+			// if ($emptyImageCount === count($currentImages)) {
+			// 	array_push($errors, 'Selecteer minimaal één afbeelding.');
+			// }
+
+			// Checks if there are any errors
+			if (count($errors) > 0) {
+				return Redirect::action('ActivitiesController@edit', array($id))->with(array('input' => $updated, 'errors' => $errors));
+			}
+
 		}
 
-		$doen = Input::get('doen');
-		$beleven = Input::get('beleven');
-		$genieten = Input::get('genieten');
-		$verblijven = Input::get('verblijven');
-
-		if ($beleven !== 'on' && $doen !== 'on' && $genieten !== 'on' && $verblijven !== 'on') {
-			return Redirect::action('ActivitiesController@edit', array($id))->with(array('input' => Input::all(), 'error' => 'Selecteer een categorie'));
-		}
-
+		// Delete all off the activity's categories prior to making new ones (i know, kinda hackish)
 		$massDelete = ActivityCategory::where('activity_id', '=', $activity->id)->delete();
 
-		if ($beleven === 'on') {
-			ActivityCategory::create(array(
-				'activity_id' => $activity->id,
-				'category_id' => 1
-			));
-		}
-
-		if ($doen === 'on') {
-			ActivityCategory::create(array(
-				'activity_id' => $activity->id,
-				'category_id' => 2
-			));
-		}
-
-		if ($genieten === 'on') {
-			ActivityCategory::create(array(
-				'activity_id' => $activity->id,
-				'category_id' => 3
-			));
-		}
-
-		if ($verblijven === 'on') {
-			ActivityCategory::create(array(
-				'activity_id' => $activity->id,
-				'category_id' => 4
-			));
+		// Save activity categories
+		foreach ($categories as $category) {
+			if ($category['checked'] === 'on') {
+				ActivityCategory::create(array(
+					'activity_id' => $activity->id,
+					'category_id' => $category['id']
+				));
+			}
 		}
 
 		if ($logo) {
@@ -276,27 +328,6 @@ class ActivitiesController extends \BaseController {
 			// 	}
 			// }
 	  //   }
-
-		if ($imagesToUpload[0] !== null) {
-			foreach($imagesToUpload as $key => $file) {
-		    	if (count($images) < 4) {
-		    		$destinationPath = public_path().'/img/activities/'.$activity->id.'/medium/';
-	                $filename = $file->getClientOriginalName();
-			        $upload_success = $file->move($destinationPath, $filename);
-			        array_push($images, $filename);
-		    	}
-		    }
-		}
-
-		if (count($images) > 0) {
-			foreach ($images as $key => $value) {
-				$column = 'img'.($key+1);
-		        $activity->$column = $value;
-		        $activity->save();
-			}
-		} else {
-			return Redirect::action('ActivitiesController@edit', array($id))->with(array('input' => Input::all(), 'error' => 'Selecteer minimaal één afbeelding'));
-		}
 
 		$activity->name 			= $updated['name'];
 		$activity->organization 	= $updated['organization'];
