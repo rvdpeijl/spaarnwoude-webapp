@@ -15,6 +15,11 @@
         activate();
 
         function activate() {
+
+            vm.agenda.forEach(function(item) {
+                item.sortDate = new Date(item.start)
+            });
+
         }
     }
 })();

@@ -532,6 +532,16 @@ table {
 			cursor:pointer;
 			width:24.6%;
 			position:relative;
+			
+			.icon {
+				z-index: 999;
+				position: absolute;
+				top: 41px;
+				bottom: 0;
+				left: 20px;
+				width: 13%;
+
+			}
 
 			@include transition( all 0.3s );
 
