@@ -43,6 +43,7 @@ class ActivitiesController extends \BaseController {
 	 */
 	public function store()
 	{
+
 		$categories = array(
 			'beleven' => array(
 				'id' => 1,
@@ -72,7 +73,7 @@ class ActivitiesController extends \BaseController {
 		$activity = Activity::create(Input::all());
 
 		// Checks if validator passes
-		if ( $activity->validate($input) ) {
+		if ( $activity->validate($input)) {
 
 				// Checks if any of the categories are empty
 				$emptyCategoryCount = 0;
@@ -198,21 +199,75 @@ class ActivitiesController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	public function update($id)
 	{
+		
 		$updated = Input::all();
 		$activity = Activity::find($id);
+
 		$images = [];
+
+		$errors = array();
+
+		$currentImageCount = 1;
+		$uploadImageCount = 0;
+		$deletedImageCount = 0;
 
 		$currentImages = Input::get('currentImages');
 		$deletedImages = Input::get('deletedImages');
+
 		$imagesToUpload = Input::file('files');
+		
 		$currentImages = json_decode($currentImages, true);
 		$deletedImages = json_decode($deletedImages, true);
+					
+		foreach ($currentImages as $key => $value) {
+			if ($value['img'] !== null) {
+				$currentImageCount++;
+			}
+		}
+
+		// dd($currentImages);
 		$logo = Input::file('logo');
 
-		foreach ($deletedImages as $key => $image) {
-			$activity = $this->removeImage($activity, $image['name']);
+		if (!empty($deletedImages)){
+			$deletedImageCount++;
+			$currentImageCount--;	
+		}
+		
+		foreach ($imagesToUpload as $img) {
+			if($img != null){
+				$currentImageCount++;
+				$uploadImageCount++;
+			}			
 		}
 
 		$doen = Input::get('doen');
@@ -221,10 +276,16 @@ class ActivitiesController extends \BaseController {
 		$verblijven = Input::get('verblijven');
 
 		if ($beleven !== 'on' && $doen !== 'on' && $genieten !== 'on' && $verblijven !== 'on') {
-			return Redirect::action('ActivitiesController@edit', array($id))->with(array('input' => Input::all(), 'error' => 'Selecteer een categorie'));
+			return Redirect::action('ActivitiesController@edit', array($id))->with(array('input' => Input::all(), 'errors' => 'Selecteer een categorie'));
 		}
 
+		if ( $currentImageCount > 0 ) {
+
 		$massDelete = ActivityCategory::where('activity_id', '=', $activity->id)->delete();
+
+		// TODO: Normale update functie maken
+				// mass delete word select from where id remove images(imagesToRemove)
+		// uploaden werkt wel
 
 		if ($beleven === 'on') {
 			ActivityCategory::create(array(
@@ -262,40 +323,53 @@ class ActivitiesController extends \BaseController {
 	    	$activity->save();
 	    }
 
-	    // return $currentImages;
-
-	  //   if (count($currentImages) < 1) {
-
-	  //   	foreach ($currentImages as $key => $value) {
-			// 	if ($value['img'] !== null) {
-			// 		$column = 'img'.($key+1);
-			// 		$activity->$column = $value['img'];
-			// 		array_push($images, $value['img']);
-			// 	}
-			// }
-	  //   }
-
-		if ($imagesToUpload[0] !== null) {
-			foreach($imagesToUpload as $key => $file) {
-		    	if (count($images) < 4) {
+	    if ($deletedImageCount > 0) {
+	    	foreach($deletedImages as $key => $image) {
+	    		// dd($deletedImages);
+	    		$activity = $this->removeImage($activity, $image['name']);
+	    	}
+	    }
+	    
+// er zijn wel images om te uploaden
+	    if ($uploadImageCount > 0) {
+	    	foreach($imagesToUpload as $key => $file) {
+		    	if ($key < 4) {
 		    		$destinationPath = public_path().'/img/activities/'.$activity->id.'/medium/';
 	                $filename = $file->getClientOriginalName();
 			        $upload_success = $file->move($destinationPath, $filename);
-
-			        array_push($images, $filename);
+			        $column = 'img'.($key+1);
+			        $activity->$column = $filename;
+			        $activity->save();
 		    	}
-		    }
-		}
+	    	}
+	    }
 
-		if (count($images) > 0) {
+	    // dd($currentImages);
+	    // 		if ($imagesToUpload[0] !== null) {
+// 			foreach($imagesToUpload as $key => $file) {
+// 		    	if (count($images) < 4) {
+// 		    		$destinationPath = public_path().'/img/activities/'.$activity->id.'/medium/';
+// 	                $filename = $file->getClientOriginalName();
+// 			        $upload_success = $file->move($destinationPath, $filename);
+// //$images[] = array($filename);
+// 			       // array_push($images, $filename);
+// 		    	}
+// 		    }
+// 		} 
+//dd($images);
+		// else {
+        	//return Redirect::action('ActivitiesController@edit', array($id))->with(array('input' => Input::all(), 'errors' => $errors));
+		// }
+
+		// if (count($images) > 0) {
 			foreach ($images as $key => $value) {
 				$column = 'img'.($key+1);
 		        $activity->$column = $value;
 		        $activity->save();
 			}
-		} else {
-			return Redirect::action('ActivitiesController@edit', array($id))->with(array('input' => Input::all(), 'error' => 'Selecteer minimaal één afbeelding'));
-		}
+		// } else {
+		
+		// }
 
 		$activity->name 			= $updated['name'];
 		$activity->organization 	= $updated['organization'];
@@ -312,9 +386,45 @@ class ActivitiesController extends \BaseController {
 		$activity->twitter_url		= $updated['twitter_url'];
 
 		$activity->save();
+		// dd($currentImageCount, $deletedImageCount, $uploadImageCount);
 		return Redirect::to('admin/activities')->with(array('message' => 'Activiteit opgeslagen'));
-		
+
+		} else {
+			// dd($currentImageCount, $deletedImageCount, $uploadImageCount);
+ 			array_push($errors, "Selecteer minimaal 1 afbeelding");
+			return Redirect::action('ActivitiesController@edit', array($id))->with(array('input' => Input::all(), 'errors' => $errors));
+		}
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	/**
